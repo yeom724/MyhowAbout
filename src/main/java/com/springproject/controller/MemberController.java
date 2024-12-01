@@ -45,4 +45,10 @@ public class MemberController {
 		
 		return "home";
 	}
+	
+	@GetMapping("/read")
+	public String readOneMember() {
+		System.out.println("멤버 조회 페이지 진입");
+		return "memberR";
+	}
 }

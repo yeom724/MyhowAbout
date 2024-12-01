@@ -35,14 +35,31 @@ public class MemberRepositoryImpl implements MemberRepository{
 
 	@Override
 	public Member getMember(String userId) {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println(userId + " : 해당 아이디의 멤버 조회를 시작합니다.");
+		
+		Member member = null;
+		
+		sql="select count(*) from aboutMember where userId=?";
+		int row = temp.queryForObject(sql, Integer.class, userId);
+		if(row != 0) {
+			System.out.println("일치하는 아이디를 발견했습니다.");
+			sql = "select * from aboutMember where userId=?";
+			member = temp.queryForObject(sql, new MemberRowMapper(), userId);
+		} else { System.out.println("일치하는 회원을 발견할 수 없었습니다."); }
+		
+		System.out.println("해당 멤버 정보를 전송합니다.");
+		return member;
 	}
 
 	@Override
 	public List<Member> getAllMember() {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("전체 멤버 조회를 시작합니다.");
+		
+		sql = "select * from aboutMember";
+		List<Member> mem_list = temp.query(sql, new MemberRowMapper());
+		
+		System.out.println("전체 멤버 조회가 끝났습니다.");
+		return mem_list;
 	}
 
 	@Override

@@ -11,7 +11,7 @@ public class Member {
 	private String userPw;				//유저 비밀번호
 	private String userTel;				//유저 전화번호
 	private String userAddr;			//유저 주소
-	private String userDate;				//유저 가입일
+	private String userDate;			//유저 가입일
 	private MultipartFile userIcon;		//유저 이미지 파일
 	private String iconName;
 	
