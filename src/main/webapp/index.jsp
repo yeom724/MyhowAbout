@@ -12,5 +12,6 @@
 	<a href="/howAbout/user/create">회원가입</a>
 	<a href="/howAbout/user/read">회원조회</a>
 	<a href="/howAbout/user/login">로그인</a>
+	<a href="/howAbout/map/serch">지도검색</a>
 </body>
 </html>
