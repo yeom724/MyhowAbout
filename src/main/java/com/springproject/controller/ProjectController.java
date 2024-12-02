@@ -12,4 +12,9 @@ public class ProjectController {
 	public String test() {
 		return "mapAdd";
 	}
+	
+	@GetMapping("/length")
+	public String test2() {
+		return "maplength";
+	}
 }

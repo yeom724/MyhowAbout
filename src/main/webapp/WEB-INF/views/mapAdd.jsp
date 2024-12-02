@@ -14,6 +14,7 @@
         <input type="submit" value="검색">
     </form>
 	<div id="map" style="width:100%;height:350px;"></div>
+	<a href="/howAbout/map/length">바로가기</a>
 
 
 <script>
