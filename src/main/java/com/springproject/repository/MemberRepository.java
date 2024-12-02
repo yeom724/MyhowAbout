@@ -16,4 +16,6 @@ public interface MemberRepository {
 	
 	void deleteMember(String userId);
 	
+	Member loginMember(String userId, String userPw);
+	
 }

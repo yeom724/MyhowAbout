@@ -12,3 +12,14 @@ create table aboutMember(
 
 drop table aboutMember;
 select * from aboutMember;
+
+create table aboutReview(
+	userId varchar(20),
+    reviewText varchar(500),
+    reviewDate char(10),
+    millisId bigint primary key,
+    foreign key (userId) references aboutMember(userId) on delete cascade
+);
+
+drop table aboutReview;
+select * from aboutReview;

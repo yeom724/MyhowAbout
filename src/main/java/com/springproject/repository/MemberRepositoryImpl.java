@@ -64,14 +64,56 @@ public class MemberRepositoryImpl implements MemberRepository{
 
 	@Override
 	public void updateMember(Member member) {
-		// TODO Auto-generated method stub
+		System.out.println("멤버 정보를 업데이트 합니다.");
+		
+		sql = "update aboutMember set userName=?, userPw=?, userTel=?, userAddr=? where userId=?";
+		temp.update(sql, member.getUserName(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getUserId());
+		
+		System.out.println("정보 업데이트가 완료되었습니다.");
 		
 	}
 
 	@Override
 	public void deleteMember(String userId) {
-		// TODO Auto-generated method stub
+		System.out.println("회원 탈퇴를 진행합니다.");
 		
+		sql="select count(*) from aboutMember where userId=?";
+		int row = temp.queryForObject(sql, Integer.class, userId);
+		if(row != 0) {
+			sql = "delete from aboutMember where userId=?";
+			temp.update(sql, userId);
+			System.out.println("회원 탈퇴가 완료되었습니다.");
+		} else {
+			System.out.println("일치하는 회원을 찾을 수 없었습니다.");
+		}
+
+	}
+
+
+	@Override
+	public Member loginMember(String userId, String userPw) {
+		System.out.println("입력한 회원 정보를 조회합니다.");
+		Member member = null;
+		
+		sql="select count(*) from aboutMember where userId=?";
+		
+		int row = temp.queryForObject(sql, Integer.class, userId);
+		
+		if(row != 0) {
+			System.out.println("일치하는 아이디를 발견했습니다.");
+			
+			sql = "select * from aboutMember where userId=?";
+			Member session = temp.queryForObject(sql, new MemberRowMapper(), userId);
+			
+			if(session.getUserPw().equals(userPw)) {
+				System.out.println("비밀번호가 일치합니다.");
+				member = session;
+				
+			} else { System.out.println("비밀번호가 일치하지 않습니다."); }
+
+		} else { System.out.println("아이디가 일치하지 않습니다."); }
+		
+		return member;
 	}
 
 }

@@ -23,26 +23,35 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public Member getMember(String userId) {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("getMember 서비스 도착");
+		Member member = memberRepository.getMember(userId);
+		return member;
 	}
 
 	@Override
 	public List<Member> getAllMember() {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("getAllMember 서비스 도착");
+		List<Member> listMember = memberRepository.getAllMember();
+		return listMember;
 	}
 
 	@Override
 	public void updateMember(Member member) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("updateMember 서비스 도착");
+		memberRepository.updateMember(member);
 	}
 
 	@Override
 	public void deleteMember(String userId) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("deleteMember 서비스 도착");
+		memberRepository.deleteMember(userId);
+	}
+
+	@Override
+	public Member loginMember(String userId, String userPw) {
+		System.out.println("loginMember 서비스 도착");
+		Member member = memberRepository.loginMember(userId, userPw);
+		return member;
 	}
 
 }

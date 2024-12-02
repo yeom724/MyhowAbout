@@ -16,4 +16,6 @@ public interface MemberService {
 	
 	void deleteMember(String userId);
 	
+	Member loginMember(String userId, String userPw);
+	
 }
