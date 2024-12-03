@@ -12,4 +12,8 @@ public interface PlaceRepository {
 	
 	void deletePlace(Place place);
 	
+	void run();
+	
+	void getCoordinates(Place obj) throws Exception;
+	
 }

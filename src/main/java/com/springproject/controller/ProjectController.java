@@ -17,4 +17,9 @@ public class ProjectController {
 	public String test2() {
 		return "maplength";
 	}
+	
+	@GetMapping("/abc")
+	public String test3() {
+		return "maptest";
+	}
 }
