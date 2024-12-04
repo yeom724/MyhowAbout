@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -15,7 +16,9 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
 
+import com.springproject.domain.Member;
 import com.springproject.domain.Place;
 
 @Repository
@@ -23,6 +26,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 	private static final String API_KEY = "20643075f94a998f4e14a1853f11935c"; // 실제 Kakao API 키로 변경하세요.
 	
     private JdbcTemplate temp;
+    String sql;
 
     @Autowired
     public void setJdbcTemplate(DataSource dataSource) {
@@ -120,7 +124,13 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 
 	@Override
 	public void addPlace(Place place) {
-		// TODO Auto-generated method stub
+		
+		System.out.println("addPlace aboutPlace 레파지토리 도착");
+		
+		sql = "insert into aboutPlace values(?,?,?,?,?,?,?,?)";
+		temp.update(sql, place.getJuso(), place.getJibun(), place.getCategory(), place.getTitle(), place.getStatus(), place.getFoodCategory(), place.getLatitude(), place.getLongitude());
+		
+		System.out.println("aboutPlace 테이블에 새 시설 정보를 입력했습니다.");
 		
 	}
 
@@ -140,6 +150,90 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 	public void deletePlace(Place place) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public boolean matchPlace(Place place) {
+		
+		boolean result = false;
+		
+		sql="select count(*) from aboutPlace where juso Like ?";
+		int rowJuso = temp.queryForObject(sql, Integer.class, '%'+place.getJuso()+'%');
+		sql="select count(*) from aboutPlace where jibun Like ?";
+		int rowJibun = temp.queryForObject(sql, Integer.class, '%'+place.getJibun()+'%');
+		sql="select count(*) from aboutPlace where title=?";
+		int rowTitle = temp.queryForObject(sql, Integer.class, place.getTitle());
+		
+		
+		String latitudeP = String.valueOf(place.getLatitude())+'%';
+		String longitudeP = String.valueOf(place.getLongitude())+'%';
+		
+		sql="select count(*) from aboutPlace where CAST(latitude AS CHAR) LIKE ? AND CAST(longitude AS CHAR) LIKE ?";
+		int rowXY = temp.queryForObject(sql, Integer.class, latitudeP, longitudeP);
+		
+		if(rowXY>=1) {
+			System.out.println("해당 위도와 경도를 가진 장소가 저장되어 있습니다.");
+			if(rowJibun>=1) {
+				System.out.println("해당 지번을 가진 장소가 저장되어 있습니다.");
+				if(rowJuso>=1) {
+					System.out.println("해당 도로명 주소를 가진 장소가 저장되어 있습니다.");
+					if(rowTitle>=1) {
+						System.out.println("해당 타이틀을 가진 장소가 저장되어 있습니다. 등록할 수 없습니다.");
+					} else {
+						System.out.println("상호명이 다릅니다, 등록대상입니다.");
+						result = true;
+					}
+				}
+			}
+		} else {
+			System.out.println("등록대상입니다.");
+			result = true;
+		}
+		
+		return result;
+	}
+
+	@Override
+	public List<Place> getAllPlace(Model model) {
+		
+		String category = (String)model.getAttribute("category");
+		int count = 0;
+		int pageNum = Integer.parseInt((String)model.getAttribute("pageNum"));
+		int offset = (pageNum - 1)*50;
+		
+		List<Place> place_list = null;
+		
+		if(category.equals("all")) {
+			System.out.println("Place 전체 조회");
+			sql = "select count(*) from aboutPlace";
+			count = temp.queryForObject(sql, Integer.class);
+			model.addAttribute("Count",count);
+			
+			sql = "select * from aboutPlace limit 50 offset ?";
+			place_list = temp.query(sql, new PlaceRowMapper(), offset);
+			
+		} else if(category.equals("hotel")) {
+			System.out.println("Place 숙박 조회");
+			sql = "select count(*) from aboutPlace where category IN ('숙박업','일반야영장업','외국인관광도시민박업','한옥체험업','관광펜션업','자동차야영장업','관광숙박업','농어촌민박업')";
+			count = temp.queryForObject(sql, Integer.class);
+			model.addAttribute("Count",count);
+			
+			sql = "select * from aboutPlace where category IN ('숙박업','일반야영장업','외국인관광도시민박업','한옥체험업','관광펜션업','자동차야영장업','관광숙박업','농어촌민박업') limit 50 offset ?";
+			place_list = temp.query(sql, new PlaceRowMapper(), offset);
+			
+		} else if(category.equals("food")) {
+			System.out.println("Place 식당 조회");
+			sql = "select count(*) from aboutPlace where category IN ('일반음식점','휴게음식점','외국인전용유흥음식점업','관광식당')";
+			count = temp.queryForObject(sql, Integer.class);
+			model.addAttribute("Count",count);
+			
+			sql = "select * from aboutPlace where category IN ('일반음식점','휴게음식점','외국인전용유흥음식점업','관광식당') limit 50 offset ?";
+			place_list = temp.query(sql, new PlaceRowMapper(), offset);
+		}
+		
+		System.out.println("카테고리별 목록이 반환되었습니다.");
+	    
+		return place_list;
 	}
     
 }

@@ -11,6 +11,8 @@
 <body>
 	<a href="/howAbout/user/create">회원가입</a><br>
 	<a href="/howAbout/user/read">회원조회</a><br>
+	<a href="/howAbout/place/addPlaceForm">시설등록</a>
+	<a href="/howAbout/place/allPlace/all/1">시설전체조회</a>
 	<%
 		HttpSession session = request.getSession(false);
 		Member member = null;
