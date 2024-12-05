@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.springproject.domain.Member;
@@ -210,7 +211,39 @@ public class PlcaeController {
 	}
 	
 	@GetMapping("/allPlace/{range}/{pageNum}")
-	public String getPlaceView(@PathVariable("range") String category, @PathVariable("pageNum") String pageNum, Model model) {
+	public String getPlaceView(@PathVariable("range") String category, @PathVariable("pageNum") String pageNum, Model model,
+							   @RequestParam(value = "city", required = false) String city,
+							   @RequestParam(value = "big", required = false) String big,
+							   @RequestParam(value = "sub", required = false) String sub,
+							   @RequestParam(value = "foodsub", required = false) String foodsub) {
+		
+		if(category.equals("category")) {
+			model.addAttribute("city", city);
+			model.addAttribute("serchAddr1","/howAbout/place/allPlace/"+category+"/");
+			model.addAttribute("serchAddr2", "?city="+city);
+			System.out.println("지역 정보를 저장합니다.");
+			
+			if(big != null && !(big.isEmpty())) {
+				model.addAttribute("big", big);
+				System.out.println("대분류를 저장합니다.");
+				model.addAttribute("serchAddr","/howAbout/place/allPlace/"+category+"/");
+				model.addAttribute("serchAddr2", "?city="+city+"&big="+big);
+				
+				if(sub != null && !(sub.isEmpty())) {
+					model.addAttribute("sub", sub);
+					System.out.println("소분류 저장합니다.");
+					model.addAttribute("serchAddr","/howAbout/place/allPlace/"+category+"/");
+					model.addAttribute("serchAddr2", "?city="+city+"&big="+big+"&sub="+sub);
+					
+					if(foodsub != null && !(foodsub.isEmpty())) {
+						model.addAttribute("foodsub", foodsub);
+						System.out.println("음식분류를 저장합니다.");
+						model.addAttribute("serchAddr","/howAbout/place/allPlace/"+category+"/");
+						model.addAttribute("serchAddr2", "?city="+city+"&big="+big+"&sub="+sub+"&foodsub="+foodsub);
+					}
+				}
+			}
+		}
 		
 		model.addAttribute("category", category);
 		model.addAttribute("pageNum", pageNum);
@@ -221,4 +254,15 @@ public class PlcaeController {
 		
 		return "allPlace";
 	}
+	
+	@GetMapping("/update/{updateNum}")
+	public String updatePlace(@PathVariable String updateNum, @ModelAttribute Place place) {
+		System.out.println("시설 업데이트 Form 화면으로 이동합니다.");
+		
+		placeService.getPlace(updateNum);
+		
+		return "placeUpdateForm";
+	}
+	
+	
 }

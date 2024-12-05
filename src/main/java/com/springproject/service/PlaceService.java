@@ -10,7 +10,7 @@ public interface PlaceService {
 	
 	void addPlace(Place place);
 	
-	Place getPlace(Place place);
+	Place getPlace(String updateNum);
 	
 	List<Place> getAllPlace(Model model);
 	

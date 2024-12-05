@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.springproject.domain.Member;
+import com.springproject.domain.Place;
 import com.springproject.repository.MemberRepository;
 
 @Service
@@ -53,5 +54,7 @@ public class MemberServiceImpl implements MemberService{
 		Member member = memberRepository.loginMember(userId, userPw);
 		return member;
 	}
+
+
 
 }

@@ -10,6 +10,7 @@ public class Place {
 	String foodCategory;
 	double latitude;
 	double longitude;
+	int updateNum;
 	
 	public String getJuso() {
 		return juso;
@@ -58,6 +59,12 @@ public class Place {
 	}
 	public void setFoodCategory(String foodCategory) {
 		this.foodCategory = foodCategory;
+	}
+	public int getUpdateNum() {
+		return updateNum;
+	}
+	public void setUpdateNum(int updateNum) {
+		this.updateNum = updateNum;
 	}
 	
 	

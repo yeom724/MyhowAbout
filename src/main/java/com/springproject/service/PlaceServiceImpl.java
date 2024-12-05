@@ -22,9 +22,9 @@ public class PlaceServiceImpl implements PlaceService{
 	}
 
 	@Override
-	public Place getPlace(Place place) {
-		// TODO Auto-generated method stub
-		return null;
+	public Place getPlace(String updateNum) {
+		System.out.println("getPlace 서비스 도착");
+		return placeRepository.getPlace(updateNum);
 	}
 
 	@Override

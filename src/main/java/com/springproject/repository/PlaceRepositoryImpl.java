@@ -127,7 +127,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 		
 		System.out.println("addPlace aboutPlace 레파지토리 도착");
 		
-		sql = "insert into aboutPlace values(?,?,?,?,?,?,?,?)";
+		sql = "insert into aboutPlace values(?,?,?,?,?,?,?,?,null)";
 		temp.update(sql, place.getJuso(), place.getJibun(), place.getCategory(), place.getTitle(), place.getStatus(), place.getFoodCategory(), place.getLatitude(), place.getLongitude());
 		
 		System.out.println("aboutPlace 테이블에 새 시설 정보를 입력했습니다.");
@@ -135,7 +135,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 	}
 
 	@Override
-	public Place getPlace(Place place) {
+	public Place getPlace(String updateNum) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -199,7 +199,12 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 		String category = (String)model.getAttribute("category");
 		int count = 0;
 		int pageNum = Integer.parseInt((String)model.getAttribute("pageNum"));
-		int offset = (pageNum - 1)*50;
+		int offset = (pageNum - 1)*20;
+		
+		String city = null;
+		String big = null;
+		String sub = null;
+		String foodsub = null;
 		
 		List<Place> place_list = null;
 		
@@ -207,28 +212,114 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 			System.out.println("Place 전체 조회");
 			sql = "select count(*) from aboutPlace";
 			count = temp.queryForObject(sql, Integer.class);
+			System.out.println(count);
 			model.addAttribute("Count",count);
 			
-			sql = "select * from aboutPlace limit 50 offset ?";
+			sql = "select * from aboutPlace limit 20 offset ?";
 			place_list = temp.query(sql, new PlaceRowMapper(), offset);
 			
-		} else if(category.equals("hotel")) {
-			System.out.println("Place 숙박 조회");
-			sql = "select count(*) from aboutPlace where category IN ('숙박업','일반야영장업','외국인관광도시민박업','한옥체험업','관광펜션업','자동차야영장업','관광숙박업','농어촌민박업')";
-			count = temp.queryForObject(sql, Integer.class);
-			model.addAttribute("Count",count);
+		} else if(category.equals("category")) {
+			System.out.println("category별 조회");
 			
-			sql = "select * from aboutPlace where category IN ('숙박업','일반야영장업','외국인관광도시민박업','한옥체험업','관광펜션업','자동차야영장업','관광숙박업','농어촌민박업') limit 50 offset ?";
-			place_list = temp.query(sql, new PlaceRowMapper(), offset);
+			city = (String)model.getAttribute("city");
 			
-		} else if(category.equals("food")) {
-			System.out.println("Place 식당 조회");
-			sql = "select count(*) from aboutPlace where category IN ('일반음식점','휴게음식점','외국인전용유흥음식점업','관광식당')";
-			count = temp.queryForObject(sql, Integer.class);
-			model.addAttribute("Count",count);
+			if (model.asMap().containsKey("big")) { big = (String)model.getAttribute("big");}
+			if (model.asMap().containsKey("sub")) { sub = (String)model.getAttribute("sub");}
+			if (model.asMap().containsKey("foodsub")) { foodsub = (String)model.getAttribute("foodsub");}
 			
-			sql = "select * from aboutPlace where category IN ('일반음식점','휴게음식점','외국인전용유흥음식점업','관광식당') limit 50 offset ?";
-			place_list = temp.query(sql, new PlaceRowMapper(), offset);
+			if (big == null) {
+				System.out.println(city + "지역의 조회를 시작합니다.");
+				
+				sql = "select count(*) from aboutPlace where juso Like ?";
+				count = temp.queryForObject(sql, Integer.class, '%'+city+'%');
+				System.out.println(count);
+				model.addAttribute("Count",count);
+				
+				sql = "select * from aboutPlace where juso Like ? limit 20 offset ?";
+				place_list = temp.query(sql, new PlaceRowMapper(), '%'+city+'%', offset);
+				
+			} else if(big != null){
+				
+				if(big.equals("hotel") && sub == null) {
+					sql = "select count(*) from aboutPlace where juso Like ? and category IN ('숙박업','일반야영장업','외국인관광도시민박업','한옥체험업','관광펜션업','자동차야영장업','관광숙박업','농어촌민박업')";
+					count = temp.queryForObject(sql, Integer.class, '%'+city+'%');
+					System.out.println(count);
+					model.addAttribute("Count",count);
+					
+					sql = "select * from aboutPlace where juso Like ? and category IN ('숙박업','일반야영장업','외국인관광도시민박업','한옥체험업','관광펜션업','자동차야영장업','관광숙박업','농어촌민박업') limit 20 offset ?";
+					place_list = temp.query(sql, new PlaceRowMapper(), '%'+city+'%', offset);
+					
+				} else if(big.equals("hotel") && sub != null) {
+					
+					String hotelCategory = null;
+					
+					if(sub.equals("0100_0700")) { hotelCategory = "'숙박업','관광숙박업'"; }
+					if(sub.equals("0200_0600")) { hotelCategory = "'일반야영장업','자동차야영장업'"; }
+					if(sub.equals("0400")) { hotelCategory = "'한옥체험업'"; }
+					if(sub.equals("0500")) { hotelCategory = "'관광펜션업'"; }
+					if(sub.equals("0300_0800")) { hotelCategory = "'외국인관광도시민박업','농어촌민박업'"; }
+					
+					sql = "select count(*) from aboutPlace where juso Like ? and category IN ("+hotelCategory+")";
+					count = temp.queryForObject(sql, Integer.class, '%'+city+'%');
+					System.out.println(count);
+					model.addAttribute("Count",count);
+					
+					sql = "select * from aboutPlace where juso Like ? and category IN ("+hotelCategory+") limit 20 offset ?";
+					place_list = temp.query(sql, new PlaceRowMapper(), '%'+city+'%', offset);
+					
+				} else if(big.equals("food") && sub == null) {
+					
+					sql = "select count(*) from aboutPlace where juso Like ? and category IN ('일반음식점', '휴게음식점', '관광식당', '외국인전용유흥음식점업')";
+					count = temp.queryForObject(sql, Integer.class, '%'+city+'%');
+					System.out.println(count);
+					model.addAttribute("Count",count);
+					
+					sql = "select * from aboutPlace where juso Like ? and category IN ('일반음식점', '휴게음식점', '관광식당', '외국인전용유흥음식점업') limit 20 offset ?";
+					place_list = temp.query(sql, new PlaceRowMapper(), '%'+city+'%', offset);
+					
+					
+				} else if(big.equals("food") && sub != null) {
+					
+					String foodCategory = null;
+					String subfood = null;
+					
+					if(sub.equals("1100_1400")) { foodCategory = "'일반음식점','관광식당'"; }
+					if(sub.equals("1200")) { foodCategory = "'휴게음식점'"; }
+					
+					sql = "select count(*) from aboutPlace where juso Like ? and category IN ("+foodCategory+")";
+					
+					if(foodsub != null) {
+						
+						if(foodsub.equals("3900")) { subfood = "'기타','극장','유원지','철도역구내','관광호텔'"; }
+						if(foodsub.equals("4000")) { subfood = "'일반조리판매','기타 휴게음식점','백화점','한식','탕류(보신용)','식육(숯불구이)'"; }
+						if(foodsub.equals("4400")) { subfood = "'일식','복어취급'"; }
+						if(foodsub.equals("4450")) { subfood = "'회집','횟집'"; }
+						if(foodsub.equals("4500")) { subfood = "'중국식'"; }
+						if(foodsub.equals("4600")) { subfood = "'외국음식전문점(인도,태국등)'"; }
+						if(foodsub.equals("4700")) { subfood = "'분식','김밥(도시락)','냉면집'"; }
+						if(foodsub.equals("4800")) { subfood = "'패스트푸드','패밀리레스트랑','경양식','통닭(치킨)'"; }
+						if(foodsub.equals("4100")) { subfood = "'호프/통닭','정종/대포집/소주방','감성주점','라이브카페'"; }
+						if(foodsub.equals("4200")) { subfood = "'커피숍','전통찻집','까페','다방','아이스크림','편의점','푸드트럭','키즈카페','과자점','떡카페'"; }
+						if(foodsub.equals("4300")) { subfood = "'뷔페식'"; }
+						
+						sql = "select count(*) from aboutPlace where juso Like ? and category IN ("+foodCategory+") and foodCategory IN ("+subfood+")";
+						
+					}
+
+					count = temp.queryForObject(sql, Integer.class, '%'+city+'%');
+					System.out.println(count);
+					model.addAttribute("Count",count);
+					
+					sql = "select * from aboutPlace where juso Like ? and category IN ("+foodCategory+") limit 20 offset ?";
+					
+					if(foodsub != null) {
+						sql = "select * from aboutPlace where juso Like ? and category IN ("+foodCategory+") and foodCategory IN ("+subfood+") limit 20 offset ?";
+					}
+					
+					place_list = temp.query(sql, new PlaceRowMapper(), '%'+city+'%', offset);
+
+				}
+			}
 		}
 		
 		System.out.println("카테고리별 목록이 반환되었습니다.");

@@ -27,6 +27,7 @@ public class PlaceRowMapper implements RowMapper<Place>{
 		place.setFoodCategory(rs.getString(6));
 		place.setLatitude(rs.getDouble(7));
 		place.setLongitude(rs.getDouble(8));
+		place.setUpdateNum(rs.getInt(9));
 
 		return place;
 	}

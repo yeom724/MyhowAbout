@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.springproject.domain.Member;
 import com.springproject.service.MemberService;
@@ -40,7 +41,7 @@ public class MemberController {
 	@PostMapping("/create")
 	public String createMember(@ModelAttribute Member member) {
 		System.out.println("회원 정보 도착");
-		SimpleDateFormat today = new SimpleDateFormat("yyyy/MM/dd");
+		SimpleDateFormat today = new SimpleDateFormat("yyyy-MM-dd");
 		member.setUserDate(today.format(new Date()));
 		//데이터 형식 지정
 		

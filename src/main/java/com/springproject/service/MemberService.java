@@ -3,6 +3,7 @@ package com.springproject.service;
 import java.util.List;
 
 import com.springproject.domain.Member;
+import com.springproject.domain.Place;
 
 public interface MemberService {
 
