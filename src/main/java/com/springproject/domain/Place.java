@@ -1,5 +1,6 @@
 package com.springproject.domain;
 
+
 public class Place {
 	
 	String juso;

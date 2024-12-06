@@ -51,6 +51,12 @@ public class PlcaeController {
 		placeRepository.run();
 	}
 	
+	@GetMapping("/json/jackson")
+	public void runmobum() {
+		System.out.println("함수실행");
+		placeRepository.runmobum();
+	}
+	
 	@GetMapping("/addPlaceForm")
 	public String addPlaceForm(@ModelAttribute Place place, HttpServletRequest req) {
 		System.out.println("권한 확인중...");
@@ -170,10 +176,9 @@ public class PlcaeController {
 	public HashMap<String,Boolean> placeAPIserch(@RequestBody HashMap<String,Object> map) {
 		
 		HashMap<String,Boolean> result = new HashMap<String, Boolean>();
+		boolean code = false;
 		
 		Place place = new Place();
-		
-		System.out.println();
 		
 		String jusoPattern = (String)map.get("juso");
 		if(jusoPattern.contains("경남")) {
@@ -188,22 +193,19 @@ public class PlcaeController {
 		}
 		
 		place.setJibun(jibunPattern);
-		
-		System.out.println(place.getJuso());
-		System.out.println(place.getJibun());
-		
 		place.setTitle((String)map.get("title"));
-		
 		DecimalFormat df = new DecimalFormat("#.####");
 		String lax = df.format(Double.parseDouble((String)map.get("latitude")));
 		String loy = df.format(Double.parseDouble((String)map.get("longitude")));
-		
 		place.setLatitude(Double.parseDouble(lax));
 		place.setLongitude(Double.parseDouble(loy));
-		System.out.println(place.getLatitude());
-		System.out.println(place.getLongitude());
-		boolean code = placeService.matchPlace(place);
 		
+		
+		if(map.get("update").equals("ok")) {
+			
+			code = placeService.updateMatchPlace(place);
+			
+		} else { code = placeService.matchPlace(place); }
 		
 		result.put("status", code);
 		
@@ -256,12 +258,48 @@ public class PlcaeController {
 	}
 	
 	@GetMapping("/update/{updateNum}")
-	public String updatePlace(@PathVariable String updateNum, @ModelAttribute Place place) {
+	public String updatePlaceForm(@PathVariable String updateNum, @ModelAttribute Place place, HttpServletRequest req, Model model) {
+		System.out.println("권한 확인중...");
+		
+		HttpSession session = req.getSession(false);
+		String result = "redirect:/user/home";
+		
+		if(session != null) {
+			Member member = (Member)session.getAttribute("userStatus");
+			if(member != null) {
+				System.out.println("접근 아이디 : "+member.getUserId());
+				if(member.getUserId().equals("admin")) {
+					System.out.println("관리자 권환 확인 완료");
+					result = "addPlace";
+				} else { System.out.println("관리자가 아닙니다."); }
+
+			} else { System.out.println("멤버 정보가 없습니다."); };
+		} else { System.out.println("세션 정보가 없습니다."); };
+		
 		System.out.println("시설 업데이트 Form 화면으로 이동합니다.");
+	
+		Place conPlace = placeService.getPlace(updateNum);
 		
-		placeService.getPlace(updateNum);
 		
-		return "placeUpdateForm";
+		if(place == null) {
+			System.out.println("받아온 정보가 없습니다.");
+			result = "/allPlace/all/1";
+		} else {
+			req.setAttribute("update", "ok");
+			model.addAttribute("place",conPlace);
+		}
+		
+		System.out.println(place);
+		return result;
+	}
+	
+	@PostMapping("/update/{updateNum}")
+	public String updatePlace(@PathVariable String updateNum, @ModelAttribute Place place) {
+		System.out.println("업데이트 정보를 받아왔습니다.");
+		
+		
+		
+		return "redirect:/home";
 	}
 	
 	

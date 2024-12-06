@@ -1,0 +1,5209 @@
+{
+  "gyeongnamgoodrestaurantlist": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL_CODE"
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "seq": "1",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "닭요리",
+            "entrprsNm": "아자방",
+            "rdnmadr": " 마산합포구 3·15대로 383-1 (중성동,(1.2층))"
+          },
+          {
+            "seq": "2",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "백제령삼계탕",
+            "rdnmadr": " 마산합포구 3·15대로 383-4 (중성동)"
+          },
+          {
+            "seq": "3",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "순대전골",
+            "entrprsNm": "개성순대 주식회사",
+            "rdnmadr": " 마산합포구 가포로 686 (덕동동,(지상1층))"
+          },
+          {
+            "seq": "4",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "곱창전골",
+            "entrprsNm": "인혜돌곱창",
+            "rdnmadr": " 마산합포구 교방천남길 320 (오동동)"
+          },
+          {
+            "seq": "5",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "생선회",
+            "entrprsNm": "청송해변집",
+            "rdnmadr": " 마산합포구 구산면 해양관광로 1285-57"
+          },
+          {
+            "seq": "6",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "추어탕",
+            "entrprsNm": "황토추어탕",
+            "rdnmadr": " 마산합포구 동서동2길 41 (신포동2가,기전씨티텔 101호)"
+          },
+          {
+            "seq": "7",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "해물탕",
+            "entrprsNm": "백일섭의 전복예찬 마산점",
+            "rdnmadr": " 마산합포구 동서동로 18 (신포동2가)"
+          },
+          {
+            "seq": "8",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "모듬쌈밥",
+            "entrprsNm": "해송",
+            "rdnmadr": " 마산합포구 동서북14길 16 (동성동)"
+          },
+          {
+            "seq": "9",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "비빔밥, 수육",
+            "entrprsNm": "홍화",
+            "rdnmadr": " 마산합포구 동서북9길 8-17 (남성동)"
+          },
+          {
+            "seq": "10",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "한정식",
+            "entrprsNm": "시골밥상",
+            "rdnmadr": " 마산합포구 동서북9길 8-26 (남성동)"
+          },
+          {
+            "seq": "11",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "오리고기",
+            "entrprsNm": "길상식당",
+            "rdnmadr": " 마산합포구 만날고개1길 16 (월영동,(지상2층))"
+          },
+          {
+            "seq": "12",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "한우",
+            "entrprsNm": "소반",
+            "rdnmadr": " 마산합포구 무학로 440, 가동 2층호 (자산동,소반빌딩)"
+          },
+          {
+            "seq": "13",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "백두봉삼계탕",
+            "rdnmadr": " 마산합포구 문화동로 11 (월포동,(지상2층))"
+          },
+          {
+            "seq": "14",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "소고기, 등심",
+            "entrprsNm": "함흥집",
+            "rdnmadr": " 마산합포구 문화북1길 42 (두월동1가,(지상2,3층),   8 - 1 (지상2층))"
+          },
+          {
+            "seq": "15",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "아구불고기",
+            "entrprsNm": "25 아구불고기",
+            "rdnmadr": " 마산합포구 문화북4길 71 (월남동1가)"
+          },
+          {
+            "seq": "16",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "등심구이,돼지갈비",
+            "entrprsNm": "판문점",
+            "rdnmadr": " 마산합포구 문화의길 8 (오동동)"
+          },
+          {
+            "seq": "17",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "김치찌개",
+            "entrprsNm": "청송",
+            "rdnmadr": " 마산합포구 산호북21길 11 (산호동)"
+          },
+          {
+            "seq": "18",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "생선초밥",
+            "entrprsNm": "청해초밥",
+            "rdnmadr": " 마산합포구 삼호로 35 (산호동)"
+          },
+          {
+            "seq": "19",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "킹크랩",
+            "entrprsNm": "아라횟집",
+            "rdnmadr": " 마산합포구 어시장9길 84 (남성동)"
+          },
+          {
+            "seq": "20",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "아구찜",
+            "entrprsNm": "고향아구찜",
+            "rdnmadr": " 마산합포구 오동남3길 3 (오동동)"
+          },
+          {
+            "seq": "21",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "소갈비, 삼겹살",
+            "entrprsNm": "석정원숯불갈비",
+            "rdnmadr": " 마산합포구 오동동14길 28 (오동동, 1층, 2층)"
+          },
+          {
+            "seq": "22",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "생선초밥",
+            "entrprsNm": "신라초밥",
+            "rdnmadr": " 마산합포구 오동서1길 8 (중성동)"
+          },
+          {
+            "seq": "23",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "흑돼지,국밥",
+            "entrprsNm": "한옥산에산에",
+            "rdnmadr": " 마산합포구 완월북10길 5-1 (완월동)"
+          },
+          {
+            "seq": "24",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "설렁탕",
+            "entrprsNm": "동문설렁탕",
+            "rdnmadr": " 마산합포구 용마로 82 (산호동)"
+          },
+          {
+            "seq": "25",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "감자탕",
+            "entrprsNm": "가랑 식육식당",
+            "rdnmadr": " 마산합포구 월영동16길 57 (해운동,(2,3층))"
+          },
+          {
+            "seq": "26",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "소갈비",
+            "entrprsNm": "신마산 합천 흑돼지 황토한우",
+            "rdnmadr": " 마산합포구 월영동16길 8 (해운동, 태백팔레스상가103.104호)"
+          },
+          {
+            "seq": "27",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "돼지갈비",
+            "entrprsNm": "삼도정 한우 한돈생고기",
+            "rdnmadr": " 마산합포구 월영동6길 20 (해운동)"
+          },
+          {
+            "seq": "28",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "대가",
+            "rdnmadr": " 마산합포구 자산삼거리로 24 (자산동)"
+          },
+          {
+            "seq": "29",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "생선회",
+            "entrprsNm": "진동활어횟집",
+            "rdnmadr": " 마산합포구 장장군로 37 (장군동4가)"
+          },
+          {
+            "seq": "30",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "생선회",
+            "entrprsNm": "향로봉횟집",
+            "rdnmadr": " 마산합포구 중앙동3길 17, 우방아파트 상가동 201/지하1호호 (중앙동2가)"
+          },
+          {
+            "seq": "31",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "생선회",
+            "entrprsNm": "광암식당",
+            "rdnmadr": " 마산합포구 진동면 광암회단지길 2"
+          },
+          {
+            "seq": "32",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "칼국수,만두",
+            "entrprsNm": "유가네뽕잎칼국수",
+            "rdnmadr": " 마산합포구 진동면 동전고개로 7, 1층"
+          },
+          {
+            "seq": "33",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "돼지국밥",
+            "entrprsNm": "장터돼지국밥전문점",
+            "rdnmadr": " 마산합포구 진북면 지산1길 37-24"
+          },
+          {
+            "seq": "34",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "등심, 차돌",
+            "entrprsNm": "한우천하통일",
+            "rdnmadr": " 마산합포구 진전면 팔의사로 255"
+          },
+          {
+            "seq": "35",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "생선회",
+            "entrprsNm": "시락한바다횟집",
+            "rdnmadr": " 마산합포구 진전면 회진로 1027, 1층"
+          },
+          {
+            "seq": "36",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "초밥",
+            "entrprsNm": "노렌스시",
+            "rdnmadr": " 마산합포구 해안대로 288 (신포동1가,(지상1층))"
+          },
+          {
+            "seq": "37",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "아구찜",
+            "entrprsNm": "다정생아구찜",
+            "rdnmadr": " 마산합포구 해안대로 308 (신포동2가)"
+          },
+          {
+            "seq": "38",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "일식",
+            "entrprsNm": "금와",
+            "rdnmadr": " 마산합포구 해안대로 359 (동성동)"
+          },
+          {
+            "seq": "39",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산합포구",
+            "mainMenu": "등심구이,돼지갈비",
+            "entrprsNm": "한우촌",
+            "rdnmadr": " 마산합포구 해안대로 416 (오동동, 2,3층)"
+          },
+          {
+            "seq": "40",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "오리양념불고기",
+            "entrprsNm": "맛있는생오리",
+            "rdnmadr": " 마산회원구 3·15대로 650, 지하1층 (석전동)"
+          },
+          {
+            "seq": "41",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "한우수육,한우국밥",
+            "entrprsNm": "옥필가",
+            "rdnmadr": " 마산회원구 구암남12길 31 (구암동, 지상1층)"
+          },
+          {
+            "seq": "42",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "등심, 갈비살",
+            "entrprsNm": "우장군식육식당",
+            "rdnmadr": " 마산회원구 내서읍 광려천북로 198-2 ((지상1층))"
+          },
+          {
+            "seq": "43",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "갈비",
+            "entrprsNm": "부영가든",
+            "rdnmadr": " 마산회원구 내서읍 구미길 26-49, 지상1층"
+          },
+          {
+            "seq": "44",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "해장국",
+            "entrprsNm": "양평해장국(해정각)",
+            "rdnmadr": " 마산회원구 내서읍 삼계3길 39-4"
+          },
+          {
+            "seq": "45",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "칼국수",
+            "entrprsNm": "남촌칼국수",
+            "rdnmadr": " 마산회원구 내서읍 삼계본동3길 65"
+          },
+          {
+            "seq": "46",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "진고려삼계탕",
+            "rdnmadr": " 마산회원구 내서읍 중리상곡로 98"
+          },
+          {
+            "seq": "47",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "갈비",
+            "entrprsNm": "독불장군",
+            "rdnmadr": " 마산회원구 내서읍 호계본동로 17-2 (코오롱그랜드쇼핑201.202호)"
+          },
+          {
+            "seq": "48",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "소고기, 갈비탕",
+            "entrprsNm": "고구려",
+            "rdnmadr": " 마산회원구 두척1길 27, 지상1층 (두척동)"
+          },
+          {
+            "seq": "49",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "생선회",
+            "entrprsNm": "강변횟집",
+            "rdnmadr": " 마산회원구 석전동16길 25, 지상1층 (석전동)"
+          },
+          {
+            "seq": "50",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "생선회",
+            "entrprsNm": "키다리횟집",
+            "rdnmadr": " 마산회원구 석전동16길 27, 지상1층 (석전동)"
+          },
+          {
+            "seq": "51",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "생선회",
+            "entrprsNm": "역전소나무횟집",
+            "rdnmadr": " 마산회원구 석전동16길 32, 지상1층 (석전동)"
+          },
+          {
+            "seq": "52",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "돼지갈비",
+            "entrprsNm": "마굿들식당",
+            "rdnmadr": " 마산회원구 석전동5길 46, 지상1층 (석전동)"
+          },
+          {
+            "seq": "53",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "오리",
+            "entrprsNm": "거창가든",
+            "rdnmadr": " 마산회원구 송평로 170 (두척동, (지상1층))"
+          },
+          {
+            "seq": "54",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "뼈다귀해장국,감자탕",
+            "entrprsNm": "진고려삼계탕 양덕점",
+            "rdnmadr": " 마산회원구 양덕로 163, 지상1층 (양덕동, 명덕빌딩)"
+          },
+          {
+            "seq": "55",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "소갈비",
+            "entrprsNm": "장원가면",
+            "rdnmadr": " 마산회원구 양덕로 83, 지상1층 (양덕동, 158-1,158-2,158-3,158-4)"
+          },
+          {
+            "seq": "56",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "고기류",
+            "entrprsNm": "정가네한우고집",
+            "rdnmadr": " 마산회원구 양덕북17길 11 (양덕동)"
+          },
+          {
+            "seq": "57",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "순대전골",
+            "entrprsNm": "봄내멸치쌈밥",
+            "rdnmadr": " 마산회원구 양덕옛2길 107, 101호 (석전동,신우복합상가)"
+          },
+          {
+            "seq": "58",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "굴국밥",
+            "entrprsNm": "굴마을낙지촌 양덕점",
+            "rdnmadr": " 마산회원구 양덕옛2길 107, 지상1층 104호 (석전동, 신우주상종합)"
+          },
+          {
+            "seq": "59",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "감자탕",
+            "entrprsNm": "감자꽃피는감자탕",
+            "rdnmadr": " 마산회원구 율림교로 6 (양덕동, 메트로스퀘어6  A동 204호~207호)"
+          },
+          {
+            "seq": "60",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "한방삼계탕",
+            "rdnmadr": " 마산회원구 합성남8길 19 (합성동,(지상1층))"
+          },
+          {
+            "seq": "61",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "마당있는집",
+            "rdnmadr": " 마산회원구 합성옛길 238 (합성동,(2층))"
+          },
+          {
+            "seq": "62",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "육류",
+            "entrprsNm": "고인돌",
+            "rdnmadr": " 마산회원구 합성옛길 309 (합성동,지상1층)"
+          },
+          {
+            "seq": "63",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "돼지국밥",
+            "entrprsNm": "남양돼지국밥",
+            "rdnmadr": " 마산회원구 합포로 286, 지상1층 (양덕동)"
+          },
+          {
+            "seq": "64",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 마산회원구",
+            "mainMenu": "국밥",
+            "entrprsNm": "소문난밀양돼지국밥",
+            "rdnmadr": " 마산회원구 회원동서로 11-1, 지상1층 (회원동)"
+          },
+          {
+            "seq": "65",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "오리탕, 오리불고기",
+            "entrprsNm": "오리향",
+            "rdnmadr": " 성산구 공단로 732 (안민동,미소빌딩 3층)"
+          },
+          {
+            "seq": "66",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "찜",
+            "entrprsNm": "설향꽃게찜",
+            "rdnmadr": " 성산구 대암로 40-14 (남양동,람세스빌딩1층106호)"
+          },
+          {
+            "seq": "67",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "해물찜,아구탕",
+            "entrprsNm": "해담월성찜",
+            "rdnmadr": " 성산구 대암로 40-14, 1층 101호 (남양동, 람세스빌)"
+          },
+          {
+            "seq": "68",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "생선회",
+            "entrprsNm": "가음정자연산횟집",
+            "rdnmadr": " 성산구 대정로 36 (가음동, 종합상가 지하1호)"
+          },
+          {
+            "seq": "69",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "돼지갈비",
+            "entrprsNm": "무학산숙성갈비",
+            "rdnmadr": " 성산구 동산로 124, 406호 (상남동, 성원주상가)"
+          },
+          {
+            "seq": "70",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "오리고기",
+            "entrprsNm": "장수정산더미오리대패삼겹",
+            "rdnmadr": " 성산구 동산로48번길 79, 성원2단지상가 1층 108호 (상남동)"
+          },
+          {
+            "seq": "71",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "생선회",
+            "entrprsNm": "해송횟집",
+            "rdnmadr": " 성산구 동산로65번길 26-12 (상남동,다모아타운3층302호)"
+          },
+          {
+            "seq": "72",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "일식",
+            "entrprsNm": "와사비",
+            "rdnmadr": " 성산구 마디미동로 58 (상남동,골든벨ll빌딩 4층 401호)"
+          },
+          {
+            "seq": "73",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "생선회",
+            "entrprsNm": "녹산횟집",
+            "rdnmadr": " 성산구 마디미로38번길 11, 2층 203,204,205호 (상남동, 네스트빌딩)"
+          },
+          {
+            "seq": "74",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "국밥",
+            "entrprsNm": "경성국밥",
+            "rdnmadr": " 성산구 마디미로43번길 13 (상남동,1층)"
+          },
+          {
+            "seq": "75",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "돼지고기",
+            "entrprsNm": "성산명가본점",
+            "rdnmadr": " 성산구 마디미로63번길 7, 2층 (상남동)"
+          },
+          {
+            "seq": "76",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "갈비살",
+            "entrprsNm": "왕가옥",
+            "rdnmadr": " 성산구 마디미로64번길 11 (상남동,트윈스빌딩 1층)"
+          },
+          {
+            "seq": "77",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "짜장면",
+            "entrprsNm": "푸와중국관",
+            "rdnmadr": " 성산구 마디미로64번길 7 (상남동,트윈스 투 빌딩 101호)"
+          },
+          {
+            "seq": "78",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "갈비류",
+            "entrprsNm": "대풍삼대육곳간",
+            "rdnmadr": " 성산구 마디미서로 46, 우진빌딩 3층 301호 (상남동)"
+          },
+          {
+            "seq": "79",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "모듬회",
+            "entrprsNm": "대교횟집",
+            "rdnmadr": " 성산구 삼귀로 205, 1층 (귀곡동)"
+          },
+          {
+            "seq": "80",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "한우고기",
+            "entrprsNm": "천지우식당",
+            "rdnmadr": " 성산구 상남로 118, 203호 (상남동, 씨엔엔타워)"
+          },
+          {
+            "seq": "81",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "꽃게장",
+            "entrprsNm": "청기와꽃게장",
+            "rdnmadr": " 성산구 상남로 214 (신월동)"
+          },
+          {
+            "seq": "82",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "초밥.생선회",
+            "entrprsNm": "남해일식",
+            "rdnmadr": " 성산구 상남로 224-1 (신월동)"
+          },
+          {
+            "seq": "83",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "한정식",
+            "entrprsNm": "석정한정식",
+            "rdnmadr": " 성산구 상남로 262 (신월동,2층)"
+          },
+          {
+            "seq": "84",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "추어탕",
+            "entrprsNm": "대성추어탕",
+            "rdnmadr": " 성산구 상남로 67 (상남동,경창상가 4층 1-1호)"
+          },
+          {
+            "seq": "85",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "고기류",
+            "entrprsNm": "장수촌석쇠구이",
+            "rdnmadr": " 성산구 신월로 42 (신월동,토월복합상가 2층 213-1.213-2.213-3호)"
+          },
+          {
+            "seq": "86",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "삼겹살",
+            "entrprsNm": "진미갈비촌",
+            "rdnmadr": " 성산구 신촌로 29 (신촌동,신촌빌딩203호)"
+          },
+          {
+            "seq": "87",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "돼지갈비, 양념갈비",
+            "entrprsNm": "하늘정원",
+            "rdnmadr": " 성산구 안민로117번길 26, 1층 (안민동)"
+          },
+          {
+            "seq": "88",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "쟁반짜장",
+            "entrprsNm": "옛날손짜장 ",
+            "rdnmadr": " 성산구 안민안길 50 (천선동,서광파크빌아파트상가동1층1호)"
+          },
+          {
+            "seq": "89",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "곰탕",
+            "entrprsNm": "서울깍두기",
+            "rdnmadr": " 성산구 연덕로184번길 23, 일성그라미아파트 1층 5,6,7,8호 (내동)"
+          },
+          {
+            "seq": "90",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "갈비",
+            "entrprsNm": "황소관갈비",
+            "rdnmadr": " 성산구 연덕로184번길 48 (내동,공단상가 2층 205호)"
+          },
+          {
+            "seq": "91",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "꽃게탕",
+            "entrprsNm": "원조꽃게탕",
+            "rdnmadr": " 성산구 외동반림로130번길 54, 1,2층 (중앙동)"
+          },
+          {
+            "seq": "92",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "도가니탕",
+            "entrprsNm": "푸주옥",
+            "rdnmadr": " 성산구 용지로 257 (용호동,1층)"
+          },
+          {
+            "seq": "93",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "해물탕",
+            "entrprsNm": "대미해물탕식당",
+            "rdnmadr": " 성산구 용지로 70, 성원오피스텔 3층 308호 (중앙동)"
+          },
+          {
+            "seq": "94",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "다슬기탕",
+            "entrprsNm": "옛날다슬기탕",
+            "rdnmadr": " 성산구 용지로 74 (중앙동,전원상가 2층5호)"
+          },
+          {
+            "seq": "95",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "복요리",
+            "entrprsNm": "삼포복집",
+            "rdnmadr": " 성산구 용지로 78 (중앙동,2층 5호)"
+          },
+          {
+            "seq": "96",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "복요리",
+            "entrprsNm": "남송생복어요리",
+            "rdnmadr": " 성산구 용지로153번길 4-15 (용호동,태화빌딩 2층)"
+          },
+          {
+            "seq": "97",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "초밥",
+            "entrprsNm": "해정식당",
+            "rdnmadr": " 성산구 용지로153번길 4-25 (용호동,2층)"
+          },
+          {
+            "seq": "98",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "감자탕",
+            "entrprsNm": "이바돔감자탕용지호수점",
+            "rdnmadr": " 성산구 용지로169번길 15 (용호동,외1필지 레이크펄스 2층 201,202호)"
+          },
+          {
+            "seq": "99",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "쌈밥",
+            "entrprsNm": "원조쌈밥(창원더시티세븐점)",
+            "rdnmadr": " 성산구 원이대로 320 (대원동, 더시티세븐 G160~162GH)"
+          },
+          {
+            "seq": "100",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "백제계삼탕",
+            "rdnmadr": " 성산구 원이대로579번길 26 (용호동,1층)"
+          },
+          {
+            "seq": "101",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "두루치기 식",
+            "entrprsNm": "물꽁식당",
+            "rdnmadr": " 성산구 중앙대로 33, 대흥인터빌 1층 101,101-1,102,103,104호 (중앙동)"
+          },
+          {
+            "seq": "102",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "고디탕",
+            "entrprsNm": "토담고디탕",
+            "rdnmadr": " 성산구 중앙대로 37 (중앙동,경남오피스텔 301호)"
+          },
+          {
+            "seq": "103",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "한우고기",
+            "entrprsNm": "비원식당",
+            "rdnmadr": " 성산구 중앙대로 37 (중앙동,경남오피스텔 306호)"
+          },
+          {
+            "seq": "104",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "삼겹살",
+            "entrprsNm": "돈앤주",
+            "rdnmadr": " 성산구 중앙대로 56, 1층 101,102호 (상남동, 양지상가)"
+          },
+          {
+            "seq": "105",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "샤브칼국수",
+            "entrprsNm": "등촌생고기",
+            "rdnmadr": " 성산구 중앙대로 95, 2층 210호 (중앙동, 기산파라다이스빌딩)"
+          },
+          {
+            "seq": "106",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "밴댕이,홍어,간장게장",
+            "entrprsNm": "목포밴댕이",
+            "rdnmadr": " 성산구 중앙대로 95, 기산파라다이스 2층 216호,217호 (중앙동)"
+          },
+          {
+            "seq": "107",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "복매운탕",
+            "entrprsNm": "전주복탕",
+            "rdnmadr": " 성산구 중앙대로39번길 6 (중앙동, 제일상가 지하4호)"
+          },
+          {
+            "seq": "108",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "갈비류",
+            "entrprsNm": "목장원",
+            "rdnmadr": " 성산구 창이대로663번길 5 (사파동,미남빌딩202호)"
+          },
+          {
+            "seq": "109",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "생선회",
+            "entrprsNm": "풍년횟집",
+            "rdnmadr": " 성산구 창이대로692번길 5 (사파동,드림캐슬빌딩 2층 205호)"
+          },
+          {
+            "seq": "110",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 성산구",
+            "mainMenu": "추어탕",
+            "entrprsNm": "춘향골남원추어탕",
+            "rdnmadr": " 성산구 창이대로695번길 11 (사파동,1층)"
+          },
+          {
+            "seq": "111",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "한정식",
+            "entrprsNm": "안동명가식당",
+            "rdnmadr": " 의창구 금강로379번길 5 (소계동,1층)"
+          },
+          {
+            "seq": "112",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "오리불고기",
+            "entrprsNm": "자생오리원",
+            "rdnmadr": " 의창구 대봉로26번길 23 (봉림동)"
+          },
+          {
+            "seq": "113",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "부대찌개",
+            "entrprsNm": "놀부부대찌개도계점",
+            "rdnmadr": " 의창구 도계로 67 (도계동,청학상가 빌라 105-106호)"
+          },
+          {
+            "seq": "114",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "갈비류",
+            "entrprsNm": "봉강그린가든",
+            "rdnmadr": " 의창구 동읍 동읍로 1145"
+          },
+          {
+            "seq": "115",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "민물회",
+            "entrprsNm": "해훈식당",
+            "rdnmadr": " 의창구 동읍 주남로 105"
+          },
+          {
+            "seq": "116",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "오리요리",
+            "entrprsNm": "주남오리알",
+            "rdnmadr": " 의창구 동읍 주남로 93-21, 1층"
+          },
+          {
+            "seq": "117",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "오리요리",
+            "entrprsNm": "주남오리궁",
+            "rdnmadr": " 의창구 동읍 주남로17번길 3-10 (1층)"
+          },
+          {
+            "seq": "118",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "감자탕",
+            "entrprsNm": "등뼈감자탕 북면감계점",
+            "rdnmadr": " 의창구 북면 감계로110번길 58, 2층 201호 (다온빌딩)"
+          },
+          {
+            "seq": "119",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "백숙.건강탕",
+            "entrprsNm": "성심농장가든",
+            "rdnmadr": " 의창구 북면 온천로 775-18"
+          },
+          {
+            "seq": "120",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "추어탕,다슬기탕",
+            "entrprsNm": "가마솥추어탕",
+            "rdnmadr": " 의창구 북면 천주로 1019-22 (1층)"
+          },
+          {
+            "seq": "121",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "갈비류",
+            "entrprsNm": "청풍갈비살",
+            "rdnmadr": " 의창구 북면 천주로 1070, 1층"
+          },
+          {
+            "seq": "122",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "소등심",
+            "entrprsNm": "향우본가(식육식당)",
+            "rdnmadr": " 의창구 북면 천주로 1115 (지상1층)"
+          },
+          {
+            "seq": "123",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "순대국밥",
+            "entrprsNm": "전통순대촌",
+            "rdnmadr": " 의창구 북면 천주로 869"
+          },
+          {
+            "seq": "124",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "갈비",
+            "entrprsNm": "설화생고기",
+            "rdnmadr": " 의창구 사림로130번길 10-12, 2층 201호 (사림동)"
+          },
+          {
+            "seq": "125",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "메기매운탕",
+            "entrprsNm": "생초메기탕",
+            "rdnmadr": " 의창구 사화로10번길 4 (팔용동,1층)"
+          },
+          {
+            "seq": "126",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "모듬회",
+            "entrprsNm": "해신식당",
+            "rdnmadr": " 의창구 사화로9번길 9 (팔용동,1층,2층)"
+          },
+          {
+            "seq": "127",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "활어회",
+            "entrprsNm": "회만당",
+            "rdnmadr": " 의창구 소봉로7번길 17 (봉림동)"
+          },
+          {
+            "seq": "128",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "함양옻닭명곡점",
+            "rdnmadr": " 의창구 원이대로 283 (봉곡동,청마빌딩 307호)"
+          },
+          {
+            "seq": "129",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "감자탕",
+            "entrprsNm": "청기와감자탕등뼈찜",
+            "rdnmadr": " 의창구 원이대로261번길 6-30, 2층 201,202호 (봉곡동, 우경프라자)"
+          },
+          {
+            "seq": "130",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "삼겹살",
+            "entrprsNm": "제주옥탑창원봉곡점",
+            "rdnmadr": " 의창구 원이대로279번길 18 (봉곡동)"
+          },
+          {
+            "seq": "131",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "활어회",
+            "entrprsNm": "충무활어횟집",
+            "rdnmadr": " 의창구 원이대로285번길 17 (봉곡동,1층 3호)"
+          },
+          {
+            "seq": "132",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "활어회",
+            "entrprsNm": "자갈치횟집",
+            "rdnmadr": " 의창구 원이대로285번길 19 (봉곡동,1층 101호)"
+          },
+          {
+            "seq": "133",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "갈비류",
+            "entrprsNm": "유정숯불갈비",
+            "rdnmadr": " 의창구 원이대로55번길 7, 1층 (도계동)"
+          },
+          {
+            "seq": "134",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "돼지갈비, 삼겹살",
+            "entrprsNm": "소정숯불갈비",
+            "rdnmadr": " 의창구 원이대로81번길 25 (도계동,번지 1층)"
+          },
+          {
+            "seq": "135",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "중화요리",
+            "entrprsNm": "국일성",
+            "rdnmadr": " 의창구 의안로31번길 26, 1,2층 (중동)"
+          },
+          {
+            "seq": "136",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "해물탕",
+            "entrprsNm": "동해해물탕",
+            "rdnmadr": " 의창구 의안로31번길 6 (중동,1층)"
+          },
+          {
+            "seq": "137",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "생선회",
+            "entrprsNm": "대천항수산",
+            "rdnmadr": " 의창구 의안로32번길 11, 1층 (소답동, 상문빌라)"
+          },
+          {
+            "seq": "138",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "해물찜",
+            "entrprsNm": "중동식당 ",
+            "rdnmadr": " 의창구 의창대로211번길 13 (중동,1층)"
+          },
+          {
+            "seq": "139",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "해장국",
+            "entrprsNm": "가야골뚝배기",
+            "rdnmadr": " 의창구 의창대로54번길 5-13 (팔용동,코코빌딩1층101호)"
+          },
+          {
+            "seq": "140",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "아구찜",
+            "entrprsNm": "전원아구찜",
+            "rdnmadr": " 의창구 의창대로54번길 6-8 (팔용동,대심빌딩 1층)"
+          },
+          {
+            "seq": "141",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "갈비",
+            "entrprsNm": "소반",
+            "rdnmadr": " 의창구 의창대로70번길 1 (팔용동,외1필지 소반빌딩 2층)"
+          },
+          {
+            "seq": "142",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "감자탕",
+            "entrprsNm": "남다른감자탕 명곡광장점",
+            "rdnmadr": " 의창구 지귀로12번길 34 (봉곡동,수정프라자 1층 103.104호)"
+          },
+          {
+            "seq": "143",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "소고기",
+            "entrprsNm": "자연농원 봉림정",
+            "rdnmadr": " 의창구 창원대로363번길 22-17 (팔용동,2층)"
+          },
+          {
+            "seq": "144",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "설렁탕",
+            "entrprsNm": "우리 곰내랑",
+            "rdnmadr": " 의창구 창이대로107번길 7 (명서동,세원빌딩 1층)"
+          },
+          {
+            "seq": "145",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "갈비살",
+            "entrprsNm": "은행식당",
+            "rdnmadr": " 의창구 창이대로113번길 12 (명서동)"
+          },
+          {
+            "seq": "146",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "어탕국수, 메기매운탕",
+            "entrprsNm": "경호강메기탕",
+            "rdnmadr": " 의창구 창이대로85번길 5 (명서동)"
+          },
+          {
+            "seq": "147",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "낙지",
+            "entrprsNm": "무안세발낙지",
+            "rdnmadr": " 의창구 창이대로89번길 5 (명서동)"
+          },
+          {
+            "seq": "148",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "활어회",
+            "entrprsNm": "어시장횟집",
+            "rdnmadr": " 의창구 팔용로 448, 1층 (팔용동, 번지 극동아파트상가 지하 1층 1호, 1-1호~1-10호)"
+          },
+          {
+            "seq": "149",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "한우",
+            "entrprsNm": "목장원명가",
+            "rdnmadr": " 의창구 팔용로 494-20 (서상동)"
+          },
+          {
+            "seq": "150",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "갈비류",
+            "entrprsNm": "목장원무꼬잽비",
+            "rdnmadr": " 의창구 팔용로 494-37 (서상동, 148,155번지)"
+          },
+          {
+            "seq": "151",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "석쇠구이, 국밥",
+            "entrprsNm": "임진각식당",
+            "rdnmadr": " 의창구 팔용로 515, 1, 2층 (팔용동, 외 1필지)"
+          },
+          {
+            "seq": "152",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "모듬회",
+            "entrprsNm": "무진장횟집2호",
+            "rdnmadr": " 의창구 평산로 96 (팔용동,웰빙프라자 2층 214호)"
+          },
+          {
+            "seq": "153",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 의창구",
+            "mainMenu": "돈까스",
+            "entrprsNm": "비비돈가스",
+            "rdnmadr": " 의창구 평산로135번길 21 (중동)"
+          },
+          {
+            "seq": "154",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "생고기",
+            "entrprsNm": "경주골",
+            "rdnmadr": " 진해구 가주로 99 (가주동)"
+          },
+          {
+            "seq": "155",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "단호박오리요리",
+            "entrprsNm": "마당있는집",
+            "rdnmadr": " 진해구 냉천로 149-7, 2,3층 (자은동)"
+          },
+          {
+            "seq": "156",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "냉면",
+            "entrprsNm": "함흥면옥",
+            "rdnmadr": " 진해구 냉천로 29 (이동)"
+          },
+          {
+            "seq": "157",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "갈비",
+            "entrprsNm": "백우숯불갈비",
+            "rdnmadr": " 진해구 백구로 38-1 (통신동)"
+          },
+          {
+            "seq": "158",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "곰탕",
+            "entrprsNm": "용원꼬리곰탕",
+            "rdnmadr": " 진해구 안골로277번길 11 (안골동)"
+          },
+          {
+            "seq": "159",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "생선회",
+            "entrprsNm": "청해횟집",
+            "rdnmadr": " 진해구 용원동로 238-9 (용원동)"
+          },
+          {
+            "seq": "160",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "갈비",
+            "entrprsNm": "송원왕갈비",
+            "rdnmadr": " 진해구 용원동로 310 (용원동)"
+          },
+          {
+            "seq": "161",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "생선회",
+            "entrprsNm": "미락정",
+            "rdnmadr": " 진해구 용원로102번길 9-1"
+          },
+          {
+            "seq": "162",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "복요리",
+            "entrprsNm": "미락정복집",
+            "rdnmadr": " 진해구 용원로102번길 9-1 (용원동)"
+          },
+          {
+            "seq": "163",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "갈비, 쭈꾸미",
+            "entrprsNm": "화로이/바보형제쭈꾸미",
+            "rdnmadr": " 진해구 용재로 26 (용원동,1층,2층)"
+          },
+          {
+            "seq": "164",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "생태탕",
+            "entrprsNm": "대복식당",
+            "rdnmadr": " 진해구 용재로103번길 9 (용원동)"
+          },
+          {
+            "seq": "165",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "갈비",
+            "entrprsNm": "석청",
+            "rdnmadr": " 진해구 이동로40번길 24 (이동)"
+          },
+          {
+            "seq": "166",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "칼국수, 해물탕",
+            "entrprsNm": "섬마을",
+            "rdnmadr": " 진해구 자은로78번길 30, 1층 (자은동)"
+          },
+          {
+            "seq": "167",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "백숙",
+            "entrprsNm": "시루봉가든",
+            "rdnmadr": " 진해구 자은로88번길 5 (자은동)"
+          },
+          {
+            "seq": "168",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "생고기",
+            "entrprsNm": "갈비도사",
+            "rdnmadr": " 진해구 중원동로 60 (중앙동,(102호,104호))"
+          },
+          {
+            "seq": "169",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "족발",
+            "entrprsNm": "삼도왕족발보쌈",
+            "rdnmadr": " 진해구 중원동로 84 (충무동)"
+          },
+          {
+            "seq": "170",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "고기류",
+            "entrprsNm": "담배집",
+            "rdnmadr": " 진해구 진해대로1033번길 5, 1층 (풍호동)"
+          },
+          {
+            "seq": "171",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "돼지모듬",
+            "entrprsNm": "훔친갈비진해점",
+            "rdnmadr": " 진해구 진해대로1046번길 8, 2층 (풍호동)"
+          },
+          {
+            "seq": "172",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "돼지갈비",
+            "entrprsNm": "하늘땅석동본점",
+            "rdnmadr": " 진해구 진해대로728번길 7 (석동)"
+          },
+          {
+            "seq": "173",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "아구찜",
+            "entrprsNm": "신라아구찜",
+            "rdnmadr": " 진해구 진해대로874번길 5-21 (석동)"
+          },
+          {
+            "seq": "174",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "곱창전골",
+            "entrprsNm": "곱창전문곱돌이",
+            "rdnmadr": " 진해구 진해대로874번길 6-2 (석동)"
+          },
+          {
+            "seq": "175",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "돼지국밥",
+            "entrprsNm": "원조소문난밀양돼지국밥",
+            "rdnmadr": " 진해구 진해대로901번길 6-12 (자은동)"
+          },
+          {
+            "seq": "176",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "돼지갈비",
+            "entrprsNm": "우송식당",
+            "rdnmadr": " 진해구 진해대로902번길 6 (자은동)"
+          },
+          {
+            "seq": "177",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "구이, 국밥",
+            "entrprsNm": "임진각",
+            "rdnmadr": " 진해구 진해대로970번길 9 (자은동,1층.2층)"
+          },
+          {
+            "seq": "178",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "소,돼지숯불구이",
+            "entrprsNm": "수제국수",
+            "rdnmadr": " 진해구 진해대로975번길 7-7 (자은동,A동)"
+          },
+          {
+            "seq": "179",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "생갈비",
+            "entrprsNm": "한우마을식육식당",
+            "rdnmadr": " 진해구 진해대로979번길 27 (자은동)"
+          },
+          {
+            "seq": "180",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "보쌈",
+            "entrprsNm": "원할머니보쌈진해석동점",
+            "rdnmadr": " 진해구 충장로445번길 20-1, 2층 (이동)"
+          },
+          {
+            "seq": "181",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "삼겹살",
+            "entrprsNm": "초심",
+            "rdnmadr": " 진해구 충장로575번길 36 (풍호동)"
+          },
+          {
+            "seq": "182",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "샤브샤브(한우, 닭고기 등)",
+            "entrprsNm": "이코이",
+            "rdnmadr": " 진해구 충장로657번길 40 (장천동)"
+          },
+          {
+            "seq": "183",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "중화요리",
+            "entrprsNm": "천안문쌀짜장",
+            "rdnmadr": " 진해구 태평로 103 (태평동,104,105,106호)"
+          },
+          {
+            "seq": "184",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "돼지갈비",
+            "entrprsNm": "팔각정",
+            "rdnmadr": " 진해구 편백로7번길 3 (회현동)"
+          },
+          {
+            "seq": "185",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창원시 진해구",
+            "mainMenu": "생선회,가오리조림",
+            "entrprsNm": "동방횟집",
+            "rdnmadr": " 진해구 해원로 20 (이동)"
+          },
+          {
+            "seq": "186",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "쇠고기구이, 탕",
+            "entrprsNm": "거구장",
+            "rdnmadr": "동충2길 22-3 (항남동)"
+          },
+          {
+            "seq": "187",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "초밥,생선회",
+            "entrprsNm": "경동초밥",
+            "rdnmadr": "무전5길 11-19 (무전동)"
+          },
+          {
+            "seq": "188",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "돼지곱창",
+            "entrprsNm": "고성곱창",
+            "rdnmadr": "무전3길 11-9 (무전동)"
+          },
+          {
+            "seq": "189",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "생선회,매운탕",
+            "entrprsNm": "곤리도 횟집",
+            "rdnmadr": "도남로 280, 지상1층 (도남동)"
+          },
+          {
+            "seq": "190",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "생선회,매운탕",
+            "entrprsNm": "궁전횟집",
+            "rdnmadr": "운하1길 46, 701호 (미수동, 대영유토피아)"
+          },
+          {
+            "seq": "191",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "장어요리",
+            "entrprsNm": "남부숯불장어구이",
+            "rdnmadr": "무전1길 64-9 (무전동)"
+          },
+          {
+            "seq": "192",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "복요리",
+            "entrprsNm": "남옥식당",
+            "rdnmadr": "통영해안로 221 (서호동)"
+          },
+          {
+            "seq": "193",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "생선회,매운탕",
+            "entrprsNm": "늘푸른횟집",
+            "rdnmadr": "욕지면 욕지일주로 95-6"
+          },
+          {
+            "seq": "194",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "소갈비",
+            "entrprsNm": "대가한우촌",
+            "rdnmadr": "무전4길 22-17 (무전동)"
+          },
+          {
+            "seq": "195",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "해물뚝배기",
+            "entrprsNm": "미주뚝배기",
+            "rdnmadr": "통영해안로 227-2, 지상2층 (서호동, 외 1필지(227-3))"
+          },
+          {
+            "seq": "196",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "돼지갈비, 소갈비",
+            "entrprsNm": "박대감",
+            "rdnmadr": "광도면 죽림해안로 152, 지상1층"
+          },
+          {
+            "seq": "197",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "돼지갈비",
+            "entrprsNm": "보성갈비",
+            "rdnmadr": "용남면 달포큰길 20, 1층"
+          },
+          {
+            "seq": "198",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "생선회",
+            "entrprsNm": "새통영횟집",
+            "rdnmadr": "통영해안로 185, 1층 2층 (도천동)"
+          },
+          {
+            "seq": "199",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "굴밥,굴요리",
+            "entrprsNm": "생생굴마을대풍관",
+            "rdnmadr": "해송정2길 29, 1층 (동호동)"
+          },
+          {
+            "seq": "200",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "초밥, 생선회",
+            "entrprsNm": "수향",
+            "rdnmadr": "항남3길 29, 1층 (항남동)"
+          },
+          {
+            "seq": "201",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "한우갈비",
+            "entrprsNm": "은혜갈비",
+            "rdnmadr": "광도면 죽림4로 23-37"
+          },
+          {
+            "seq": "202",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "한정식",
+            "entrprsNm": "자연채한정식",
+            "rdnmadr": "봉수돌샘길 122 (봉평동)"
+          },
+          {
+            "seq": "203",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "장어요리",
+            "entrprsNm": "장어여행",
+            "rdnmadr": "무전2길 34-18 (무전동)"
+          },
+          {
+            "seq": "204",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "감자탕",
+            "entrprsNm": "조마루뼈다귀무전점",
+            "rdnmadr": "무전대로 43 (무전동)"
+          },
+          {
+            "seq": "205",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "추어탕",
+            "entrprsNm": "조바우가마솥추어탕",
+            "rdnmadr": "광도면 죽림4로 37-78"
+          },
+          {
+            "seq": "206",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "돼지갈비",
+            "entrprsNm": "진우숯불갈비",
+            "rdnmadr": "무전5길 11-17 (무전동)"
+          },
+          {
+            "seq": "207",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "굴요리전문",
+            "entrprsNm": "짱어한마리",
+            "rdnmadr": "항남1길 28 (항남동)"
+          },
+          {
+            "seq": "208",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "생선회,매운탕",
+            "entrprsNm": "천지연횟집",
+            "rdnmadr": "운하1길 46, 대영유토피아상가동 201호 (미수동)"
+          },
+          {
+            "seq": "209",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "토속삼계탕",
+            "rdnmadr": "정동4길 65 (정량동)"
+          },
+          {
+            "seq": "210",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "생선구이",
+            "entrprsNm": "통영생선구이",
+            "rdnmadr": "용남면 동달안길 84, 나동"
+          },
+          {
+            "seq": "211",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "복어",
+            "entrprsNm": "통영수정식당",
+            "rdnmadr": "항남5길 12-21 (항남동)"
+          },
+          {
+            "seq": "212",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "고기류",
+            "entrprsNm": "통제원",
+            "rdnmadr": "무전8길 22-5, 클라시스 상가 202호 (무전동)"
+          },
+          {
+            "seq": "213",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "도가니탕",
+            "entrprsNm": "푸주옥",
+            "rdnmadr": "장좌로 55 (동호동)"
+          },
+          {
+            "seq": "214",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "갈비",
+            "entrprsNm": "푸줏간갈비",
+            "rdnmadr": "도천상가안길 73, 123~125호 (도천동, 신한토탈아파트상가)"
+          },
+          {
+            "seq": "215",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "돼지갈비",
+            "entrprsNm": "한려갈비",
+            "rdnmadr": "해방다리1길 11-5 (서호동)"
+          },
+          {
+            "seq": "216",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "소고기, 돼지갈비",
+            "entrprsNm": "한우정식육식당",
+            "rdnmadr": "무전3길 22 (무전동, 외1필지)"
+          },
+          {
+            "seq": "217",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "김치찌개",
+            "entrprsNm": "한일식당",
+            "rdnmadr": "무전5길 8 (무전동)"
+          },
+          {
+            "seq": "218",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "해물탕",
+            "entrprsNm": "항남뚝배기",
+            "rdnmadr": "무전3길 32 (무전동)"
+          },
+          {
+            "seq": "219",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "뷔페",
+            "entrprsNm": "해피데이뷔페",
+            "rdnmadr": "광도면 죽림4로 8, 7층 (해피데이)"
+          },
+          {
+            "seq": "220",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "감자탕",
+            "entrprsNm": "행복추풍령감자탕",
+            "rdnmadr": "운하1길 46 (미수동)"
+          },
+          {
+            "seq": "221",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "굴요리전문",
+            "entrprsNm": "향토집",
+            "rdnmadr": "무전5길 37-41 (무전동)"
+          },
+          {
+            "seq": "222",
+            "ctprvnNm": "경상남도",
+            "signguNm": "통영시",
+            "mainMenu": "복어취급",
+            "entrprsNm": "호동식당",
+            "rdnmadr": "새터길 49 (서호동)"
+          },
+          {
+            "seq": "223",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "월남쌈샤브,해물샤브샤브",
+            "entrprsNm": "샤브향사천점",
+            "rdnmadr": "  사천시 사천읍 사주길 81"
+          },
+          {
+            "seq": "224",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "숯불갈비 및 정식",
+            "entrprsNm": "아리랑",
+            "rdnmadr": "  사천시 사천읍 사주길 41-12"
+          },
+          {
+            "seq": "225",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "냉면,갈비탕",
+            "entrprsNm": "원산면옥",
+            "rdnmadr": "  사천시 사천읍 사천대로 1882"
+          },
+          {
+            "seq": "226",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "흑염소",
+            "entrprsNm": "금강산흑염소전문점",
+            "rdnmadr": "사천시 사천읍 항공로 18"
+          },
+          {
+            "seq": "227",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "물냉면,비빔냉면,육전",
+            "entrprsNm": "원조사천냉면",
+            "rdnmadr": "  사천시 사천읍 사천대로 1852"
+          },
+          {
+            "seq": "228",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "복지리,복수육",
+            "entrprsNm": "진사복집",
+            "rdnmadr": "  사천시 사천읍 평화길 43"
+          },
+          {
+            "seq": "229",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "돼지국밥",
+            "entrprsNm": "봉달국밥",
+            "rdnmadr": "  사천시 사남면 공단5로 5-1"
+          },
+          {
+            "seq": "230",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "오리고기,추어탕",
+            "entrprsNm": "덕수궁",
+            "rdnmadr": "  사천시 사남면 병둔3길 92"
+          },
+          {
+            "seq": "231",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "동태탕,물회,낙지볶음",
+            "entrprsNm": "화곡식당",
+            "rdnmadr": "사천시 용현면 용현로 98"
+          },
+          {
+            "seq": "232",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "한우석쇠불고기,된장찌개",
+            "entrprsNm": "송화관",
+            "rdnmadr": "  사천시 용현면 사천대로 1389"
+          },
+          {
+            "seq": "233",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "오리야채불고기",
+            "entrprsNm": "사남오리하우스",
+            "rdnmadr": "사천시 용현면 진삼로 947"
+          },
+          {
+            "seq": "234",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "메기탕",
+            "entrprsNm": "민물고기식당",
+            "rdnmadr": "  사천시 용현면 진삼로 633-18"
+          },
+          {
+            "seq": "235",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "참게탕,메기탕,민물장어구이",
+            "entrprsNm": "두량할매집",
+            "rdnmadr": "  사천시 용현면 장송1길 25"
+          },
+          {
+            "seq": "236",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "한식",
+            "entrprsNm": "서경타니골프앤리조트 클럽하우스",
+            "rdnmadr": " 사천시 곤양면 흥신로 210"
+          },
+          {
+            "seq": "237",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "오리고기",
+            "entrprsNm": "만수오계",
+            "rdnmadr": " 사천시 곤명면 곤수로 32"
+          },
+          {
+            "seq": "238",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "생선회 ",
+            "entrprsNm": "제주도횟집",
+            "rdnmadr": "  사천시 서포면 구송로 3"
+          },
+          {
+            "seq": "239",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "전복죽,전복물회",
+            "entrprsNm": "해밀",
+            "rdnmadr": "  사천시 사천대로 13 (대방동)"
+          },
+          {
+            "seq": "240",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "복어국",
+            "entrprsNm": "풍년복집",
+            "rdnmadr": "  사천시 수남길 82 (동동)"
+          },
+          {
+            "seq": "241",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "장어구이,장어매운탕",
+            "entrprsNm": "기룡정장어구이",
+            "rdnmadr": "  사천시 노을길 132 (실안동)"
+          },
+          {
+            "seq": "242",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "오리더덕불고기,오리한정식,백숙",
+            "entrprsNm": "산마루",
+            "rdnmadr": "  사천시 새고개길 97-16 (동림동)"
+          },
+          {
+            "seq": "243",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "오리불고기",
+            "entrprsNm": "타짜오리하우스",
+            "rdnmadr": "  사천시 삼천포대교로 628,1층(좌룡동)"
+          },
+          {
+            "seq": "244",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "삼겹살,목살",
+            "entrprsNm": "돈보리",
+            "rdnmadr": "  사천시 남일로 72, 1층(동금동)"
+          },
+          {
+            "seq": "245",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "전복",
+            "entrprsNm": "삼다도전복죽",
+            "rdnmadr": "  사천시 팔포3길 2"
+          },
+          {
+            "seq": "246",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "생선회,매운탕",
+            "entrprsNm": "소문난자연산횟집",
+            "rdnmadr": "  사천시 목섬길 89 (서금동)"
+          },
+          {
+            "seq": "247",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "삼겹살,한우모듬",
+            "entrprsNm": "지리산마천흑돼지",
+            "rdnmadr": "  사천시 벌리7길 15 (벌리동)"
+          },
+          {
+            "seq": "248",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "짬뽕,탕수육",
+            "entrprsNm": "보배반점삼천포점",
+            "rdnmadr": "  사천시 벌리로 18, 1층 (벌리동)"
+          },
+          {
+            "seq": "249",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "삼겹살,가브리살",
+            "entrprsNm": "우리돈",
+            "rdnmadr": "  사천시 숲뫼1길 8 (향촌동)"
+          },
+          {
+            "seq": "250",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "장어구이,돌솥밥",
+            "entrprsNm": "대영장어",
+            "rdnmadr": "  사천시 숲뫼1길 41 (향촌동)"
+          },
+          {
+            "seq": "251",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "코다리찜,통문어해물찜",
+            "entrprsNm": "김영희동태찜앤코다리냉면삼천포점",
+            "rdnmadr": "  사천시 신항로 84 (향촌동)"
+          },
+          {
+            "seq": "252",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "소갈비살양념구이,한우모듬",
+            "entrprsNm": "암소마당",
+            "rdnmadr": "  사천시 숲뫼1길 102 (향촌동)"
+          },
+          {
+            "seq": "253",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "짜장면,짬뽕",
+            "entrprsNm": "금강산",
+            "rdnmadr": "  사천시 남일로 132, 1층 (향촌동)"
+          },
+          {
+            "seq": "254",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "추어탕",
+            "entrprsNm": "삼천포추어탕",
+            "rdnmadr": "  사천시 남일로 128-1 (향촌동)"
+          },
+          {
+            "seq": "255",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "갈비살,오색소고기비빔밥",
+            "entrprsNm": "바다그리고갈비살",
+            "rdnmadr": "  사천시 용현면 석양길 84-2, 1층(노룡동)"
+          },
+          {
+            "seq": "256",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "새우구이",
+            "entrprsNm": "벌떡새우",
+            "rdnmadr": "  사천시 해안관광로 375 (송포동)"
+          },
+          {
+            "seq": "257",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "오리불고기",
+            "entrprsNm": "남양토담오리",
+            "rdnmadr": "  사천시 진삼로 194 (죽림동)"
+          },
+          {
+            "seq": "258",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "오리불고기,오리백숙",
+            "entrprsNm": "청솔오리전문점",
+            "rdnmadr": "  사천시 죽계길 84-22 (죽림동)"
+          },
+          {
+            "seq": "259",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "한우",
+            "entrprsNm": "사천한우마을",
+            "rdnmadr": "사천시 용현면 진삼로944"
+          },
+          {
+            "seq": "260",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "장어구이",
+            "entrprsNm": "풍개참숯장어",
+            "rdnmadr": "사천시 노을길 130-15 (실안동)"
+          },
+          {
+            "seq": "261",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "짬뽕,탕수육",
+            "entrprsNm": "삼천각",
+            "rdnmadr": "사천시 서향안길 90-9(향촌동)"
+          },
+          {
+            "seq": "262",
+            "ctprvnNm": "경상남도",
+            "signguNm": "사천시",
+            "mainMenu": "생선구이",
+            "entrprsNm": "삼천포맛집 정서방",
+            "rdnmadr": "사천시 진삼로 269(신벽동)"
+          },
+          {
+            "seq": "263",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "소갈비, 등심",
+            "entrprsNm": "(주)외식명가 오립스",
+            "rdnmadr": "김해시 김해대로1765번길 14 (삼계동)"
+          },
+          {
+            "seq": "264",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "복국",
+            "entrprsNm": "가람생복",
+            "rdnmadr": "김해시 내덕로108번길 16 (내덕동)"
+          },
+          {
+            "seq": "265",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "한우",
+            "entrprsNm": "가야마루",
+            "rdnmadr": "김해시 인제로51번길 6 (어방동)"
+          },
+          {
+            "seq": "266",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "갑오삼계탕",
+            "rdnmadr": "김해시 삼문로 6, 1,2층 (대청동)"
+          },
+          {
+            "seq": "267",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "장어구이",
+            "entrprsNm": "경포장장어구이",
+            "rdnmadr": "김해시 식만로348번길 31-1 (불암동)"
+          },
+          {
+            "seq": "268",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "장어구이",
+            "entrprsNm": "국보장어구이",
+            "rdnmadr": "김해시 식만로348번길 25 (불암동)"
+          },
+          {
+            "seq": "269",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "중화요리",
+            "entrprsNm": "꽁시파차이",
+            "rdnmadr": "김해시 가야로30번길 5 (삼계동,2층)"
+          },
+          {
+            "seq": "270",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "돼지국밥",
+            "entrprsNm": "밀양돼지국밥",
+            "rdnmadr": "김해시 인제로 91 (어방동)"
+          },
+          {
+            "seq": "271",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "소,돼지갈비",
+            "entrprsNm": "백프로갈비",
+            "rdnmadr": "김해시 활천로186번길 28 (어방동)"
+          },
+          {
+            "seq": "272",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "장어구이",
+            "entrprsNm": "불암정",
+            "rdnmadr": "김해시 식만로348번길 33 (불암동)"
+          },
+          {
+            "seq": "273",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "사헌",
+            "rdnmadr": "김해시 활천로255번길 6-12 (삼방동)"
+          },
+          {
+            "seq": "274",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "등심",
+            "entrprsNm": "생우림",
+            "rdnmadr": "김해시 활천로36번길 34-8 (삼정동)"
+          },
+          {
+            "seq": "275",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "소,돼지갈비",
+            "entrprsNm": "석정숯불갈비",
+            "rdnmadr": "김해시 분성로 297-7 (서상동)"
+          },
+          {
+            "seq": "276",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "생선회,초밥",
+            "entrprsNm": "석정일식",
+            "rdnmadr": "김해시 내외중앙로 72 (내동)"
+          },
+          {
+            "seq": "277",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "제첩국",
+            "entrprsNm": "섬진강제첩국",
+            "rdnmadr": "김해시 인제로65번길 13 (어방동)"
+          },
+          {
+            "seq": "278",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "오리구이",
+            "entrprsNm": "솔향오리농원",
+            "rdnmadr": "김해시 김해대로 1894-33 (구산동)"
+          },
+          {
+            "seq": "279",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "한정식",
+            "entrprsNm": "수라상",
+            "rdnmadr": "김해시 강동로 51(강동)"
+          },
+          {
+            "seq": "280",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "불고기,백숙",
+            "entrprsNm": "신라농원식당펜션",
+            "rdnmadr": "김해시 상동면 장척로 492"
+          },
+          {
+            "seq": "281",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "족발, 보쌈",
+            "entrprsNm": "오가네",
+            "rdnmadr": "김해시 내외중앙로 98, 2층 (내동)"
+          },
+          {
+            "seq": "282",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "오리고기",
+            "entrprsNm": "원지농원",
+            "rdnmadr": "김해시 주촌면 서부로1637번길 99 "
+          },
+          {
+            "seq": "283",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "생선회",
+            "entrprsNm": "장보고횟집",
+            "rdnmadr": "김해시 인제로65번길 7 (어방동)"
+          },
+          {
+            "seq": "284",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "약선한정식",
+            "entrprsNm": "정림한정식(한옥체험관점)",
+            "rdnmadr": "김해시 가락로93번길 40 (봉황동)"
+          },
+          {
+            "seq": "285",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "곰탕",
+            "entrprsNm": "푸주옥",
+            "rdnmadr": "김해시 분성로 545 (어방동)"
+          },
+          {
+            "seq": "286",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "소, 돼지갈비",
+            "entrprsNm": "풍전갈비",
+            "rdnmadr": "김해시 가락로30번길 20 (부원동)"
+          },
+          {
+            "seq": "287",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "장어구이",
+            "entrprsNm": "풍천숯불장어",
+            "rdnmadr": "김해시 식만로348번길 48 (불암동)"
+          },
+          {
+            "seq": "288",
+            "ctprvnNm": "경상남도",
+            "signguNm": "김해시",
+            "mainMenu": "낙지전골",
+            "entrprsNm": "홍가낙지",
+            "rdnmadr": "김해시 인제로51번길 4 (어방동)"
+          },
+          {
+            "seq": "289",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "소갈비,돼지갈비",
+            "entrprsNm": "대감이동갈비",
+            "rdnmadr": "밀양시 시청서길 53 (내이동)"
+          },
+          {
+            "seq": "290",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "일식코스요리",
+            "entrprsNm": "동경일식",
+            "rdnmadr": "밀양시 시청서1길 5-9 (내이동)"
+          },
+          {
+            "seq": "291",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "중화요리, 해물요리",
+            "entrprsNm": "동화반점",
+            "rdnmadr": "밀양시 중앙로 408 (내이동)"
+          },
+          {
+            "seq": "292",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "아구찜, 해물찜",
+            "entrprsNm": "등대아구찜&환영찜,곱창전골",
+            "rdnmadr": "밀양시 밀성로3길 15 (내이동)"
+          },
+          {
+            "seq": "293",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "밀면, 칼국수, 왕만두",
+            "entrprsNm": "부산밀면",
+            "rdnmadr": "밀양시 미리벌중앙로7길 6, 1층 (삼문동)"
+          },
+          {
+            "seq": "294",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "오리백숙, 닭백숙",
+            "entrprsNm": "산촌농원",
+            "rdnmadr": "밀양시 상동면 금산5길 18"
+          },
+          {
+            "seq": "295",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "곰탕",
+            "entrprsNm": "송광가든",
+            "rdnmadr": "밀양시 삼랑진읍 천태로 60 (,79)"
+          },
+          {
+            "seq": "296",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "내장탕, 해장국, 갈비",
+            "entrprsNm": "신라해장국",
+            "rdnmadr": "밀양시 백민로 79 (내이동)"
+          },
+          {
+            "seq": "297",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "아구찜",
+            "entrprsNm": "신사동아구찜",
+            "rdnmadr": "밀양시 중앙로 238-11 (삼문동)"
+          },
+          {
+            "seq": "298",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "찜닭",
+            "entrprsNm": "안동돌판찜닭&백세삼계탕",
+            "rdnmadr": "밀양시 백민로 54 (내이동)"
+          },
+          {
+            "seq": "299",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "구이류, 버섯전골",
+            "entrprsNm": "안태숯불갈비",
+            "rdnmadr": "밀양시 삼랑진읍 천태로 421-1"
+          },
+          {
+            "seq": "300",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "염소구이",
+            "entrprsNm": "약산가든",
+            "rdnmadr": "밀양시 단장면 시전2길 9-5"
+          },
+          {
+            "seq": "301",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "복매운탕, 복지리",
+            "entrprsNm": "오복식당",
+            "rdnmadr": "밀양시 터미널2길 23-1 (내이동)"
+          },
+          {
+            "seq": "302",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "메기탕, 백숙",
+            "entrprsNm": "옥수정가든",
+            "rdnmadr": "밀양시 산외면 남기동길 193"
+          },
+          {
+            "seq": "303",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "돼지갈비, 갈비살",
+            "entrprsNm": "일품각 본점",
+            "rdnmadr": "밀양시 석정로 75 (내일동)"
+          },
+          {
+            "seq": "304",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "순두부찌개",
+            "entrprsNm": "입소문 맷돌 순두부",
+            "rdnmadr": "밀양시 단장면 시전2길 9-11"
+          },
+          {
+            "seq": "305",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "회",
+            "entrprsNm": "자연배달횟집",
+            "rdnmadr": "밀양시 중앙로 105 (가곡동)"
+          },
+          {
+            "seq": "306",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "구이류 (삼겹살, 목살)",
+            "entrprsNm": "제일식육식당",
+            "rdnmadr": "밀양시 무안면 동부1길 7-4"
+          },
+          {
+            "seq": "307",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "생선회, 매운탕",
+            "entrprsNm": "제주바당횟집",
+            "rdnmadr": "밀양시 삼문로 13 (삼문동)"
+          },
+          {
+            "seq": "308",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "추어탕",
+            "entrprsNm": "진미추어탕",
+            "rdnmadr": "밀양시 중앙로 66-5 (가곡동)"
+          },
+          {
+            "seq": "309",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "닭백숙, 꿩샤브샤브, 옻닭",
+            "entrprsNm": "천태산장",
+            "rdnmadr": "밀양시 삼랑진읍 행곡로 388-10"
+          },
+          {
+            "seq": "310",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "매기탕, 장어구이",
+            "entrprsNm": "청수정",
+            "rdnmadr": "밀양시 초동면 초하로 627"
+          },
+          {
+            "seq": "311",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "해물탕, 해물찜",
+            "entrprsNm": "청해 해물탕찜",
+            "rdnmadr": "밀양시 시청로1길 20 (내이동)"
+          },
+          {
+            "seq": "312",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "큰손명가삼계탕",
+            "rdnmadr": "밀양시 내이1길 32 (내이동)"
+          },
+          {
+            "seq": "313",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "삼계탕, 삼겹살구이",
+            "entrprsNm": "함양가든",
+            "rdnmadr": "밀양시 시청로 61 (내이동)"
+          },
+          {
+            "seq": "314",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "회초밥, 매운탕",
+            "entrprsNm": "해오미 일식",
+            "rdnmadr": "밀양시 시청서1길 9-13 (내이동)"
+          },
+          {
+            "seq": "315",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "갈비",
+            "entrprsNm": "향촌식당",
+            "rdnmadr": "밀양시 내일상가1길 12 (내일동)"
+          },
+          {
+            "seq": "316",
+            "ctprvnNm": "경상남도",
+            "signguNm": "밀양시",
+            "mainMenu": "오리불고기, 백숙",
+            "entrprsNm": "황토",
+            "rdnmadr": "밀양시 밀양대로 2269-10 (교동)"
+          },
+          {
+            "seq": "317",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "돼지국밥",
+            "entrprsNm": "가마솥국밥",
+            "rdnmadr": "거제시 동부면 동부로 2, 1층"
+          },
+          {
+            "seq": "318",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "보리밥",
+            "entrprsNm": "가마솥보리밥",
+            "rdnmadr": "거제시 거제중앙로5길 18 (고현동,(1층))"
+          },
+          {
+            "seq": "319",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "돼지갈비,삼겹살",
+            "entrprsNm": "각산숯불갈비",
+            "rdnmadr": "거제시 거제면 거제남서로 3471 ((1층))"
+          },
+          {
+            "seq": "320",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "게장정식",
+            "entrprsNm": "거제도 싱싱게장",
+            "rdnmadr": "거제시 장승포로 10 (장승포동)"
+          },
+          {
+            "seq": "321",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회",
+            "entrprsNm": "고구려횟집",
+            "rdnmadr": "거제시 동부면 학동6길 18-1"
+          },
+          {
+            "seq": "322",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "한우생고기, 갈비살",
+            "entrprsNm": "고궁식육식당",
+            "rdnmadr": "거제시 사등면 두동로 162-20"
+          },
+          {
+            "seq": "323",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "꽃등심, 갈비살",
+            "entrprsNm": "금농숯불갈비",
+            "rdnmadr": "거제시 옥포로9길 6 (옥포동,(1,2층))"
+          },
+          {
+            "seq": "324",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "돼지갈비, 삼겹살",
+            "entrprsNm": "다미정숯불갈비",
+            "rdnmadr": "거제시 중곡2로5길 10 (고현동,(1층))"
+          },
+          {
+            "seq": "325",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "소고기, 돼지고기",
+            "entrprsNm": "대가한우촌",
+            "rdnmadr": "거제시 서문로5길 24 (고현동)"
+          },
+          {
+            "seq": "326",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "대게찜",
+            "entrprsNm": "대성수산",
+            "rdnmadr": "거제시 서문로 15 (고현동,외2필지(2층))"
+          },
+          {
+            "seq": "327",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "소고기, 돼지고기",
+            "entrprsNm": "대원군숯불갈비",
+            "rdnmadr": "거제시 거제중앙로31길 32-1, 1층 (고현동)"
+          },
+          {
+            "seq": "328",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "갈비찜, 밀면",
+            "entrprsNm": "동원갈비찜밀면",
+            "rdnmadr": "거제시 옥포중앙로 50 (옥포동)"
+          },
+          {
+            "seq": "329",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "꽃등심, 갈비살",
+            "entrprsNm": "두리원",
+            "rdnmadr": "거제시 거제대로 4943-8, 1~2층 (장평동)"
+          },
+          {
+            "seq": "330",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "오리탕, 불고기",
+            "entrprsNm": "둥굴관",
+            "rdnmadr": "거제시 계룡로 178 (고현동)"
+          },
+          {
+            "seq": "331",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "삼겹살, 한우뚝배기",
+            "entrprsNm": "맛찬들왕소금구이 옥포점",
+            "rdnmadr": "거제시 옥포로4길 17 (옥포동,(102호))"
+          },
+          {
+            "seq": "332",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "순두부,보쌈",
+            "entrprsNm": "명가순두부",
+            "rdnmadr": "거제시 사등면 거제대로 5189-9 ((1,2층))"
+          },
+          {
+            "seq": "333",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "삼겹살",
+            "entrprsNm": "명륜진사갈비 거제아주점",
+            "rdnmadr": "거제시 아주1로2길 50 (아주동, 1층)"
+          },
+          {
+            "seq": "334",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회, 매운탕",
+            "entrprsNm": "명승횟집",
+            "rdnmadr": "거제시 남부면 해금강로 124-1, 1층"
+          },
+          {
+            "seq": "335",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "게장정식",
+            "entrprsNm": "박정현게장백반",
+            "rdnmadr": "거제시 장승포로 2 (장승포동)"
+          },
+          {
+            "seq": "336",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "돈까스,칼국수",
+            "entrprsNm": "별난",
+            "rdnmadr": "거제시 동부면 거제대로 938, 1층"
+          },
+          {
+            "seq": "337",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회",
+            "entrprsNm": "보람회장어구이",
+            "rdnmadr": "거제시 거제중앙로23길 16 (고현동)"
+          },
+          {
+            "seq": "338",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "돼지고기갈비",
+            "entrprsNm": "보리네생고깃간(고현점)",
+            "rdnmadr": "거제시 중곡로3길 39, 1층 (고현동)"
+          },
+          {
+            "seq": "339",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "복어회,복어지리",
+            "entrprsNm": "복어촌",
+            "rdnmadr": "거제시 계룡로 134 (고현동,.5(지층))"
+          },
+          {
+            "seq": "340",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회, 매운탕",
+            "entrprsNm": "부일횟집",
+            "rdnmadr": "거제시 장승포로 109 (장승포동)"
+          },
+          {
+            "seq": "341",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회",
+            "entrprsNm": "삼송횟집",
+            "rdnmadr": "거제시 중곡로3길 40-3 (고현동,(1층))"
+          },
+          {
+            "seq": "342",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회",
+            "entrprsNm": "소라횟집",
+            "rdnmadr": "거제시 남부면 다대5길 49"
+          },
+          {
+            "seq": "343",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "주꾸미볶음",
+            "entrprsNm": "수월애 주꾸미",
+            "rdnmadr": "거제시 수양로 454-6, 1층 (수월동)"
+          },
+          {
+            "seq": "344",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "한우생고기,돼지불고기",
+            "entrprsNm": "신정불고기",
+            "rdnmadr": "거제시 장평1로1길 24-11 (장평동,(1, 2층))"
+          },
+          {
+            "seq": "345",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "게장정식",
+            "entrprsNm": "싱싱게장 거제대명점",
+            "rdnmadr": "거제시 일운면 소동6길 15, 지하2층 B202호"
+          },
+          {
+            "seq": "346",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회, 매운탕",
+            "entrprsNm": "썬바다횟집",
+            "rdnmadr": "거제시 남부면 해금강3길 15, 1층"
+          },
+          {
+            "seq": "347",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "설렁탕, 갈비탕, 육계장",
+            "entrprsNm": "아주설렁탕",
+            "rdnmadr": "거제시 아주1로1길 17 (아주동, 1층)"
+          },
+          {
+            "seq": "348",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회,매운탕",
+            "entrprsNm": "어촌횟집",
+            "rdnmadr": "거제시 중곡로3길 30 (고현동,1층)"
+          },
+          {
+            "seq": "349",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "한정식",
+            "entrprsNm": "예가",
+            "rdnmadr": "거제시 일운면 와현해변길 24-5"
+          },
+          {
+            "seq": "350",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회, 매운탕",
+            "entrprsNm": "오가횟집",
+            "rdnmadr": "거제시 장목면 신촌길 11, 2층"
+          },
+          {
+            "seq": "351",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회, 매운탕, 대구탕",
+            "entrprsNm": "외포9번횟집",
+            "rdnmadr": "거제시 장목면 외포5길 64"
+          },
+          {
+            "seq": "352",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회, 매운탕, 대구탕",
+            "entrprsNm": "외포등대횟집",
+            "rdnmadr": "거제시 장목면 외포5길 68 ((1층))"
+          },
+          {
+            "seq": "353",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회, 매운탕",
+            "entrprsNm": "용화횟집",
+            "rdnmadr": "거제시 사등면 성포로 73, 다동 1층"
+          },
+          {
+            "seq": "354",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "뷔페",
+            "entrprsNm": "웨딩블랑",
+            "rdnmadr": "거제시 거제중앙로31길 19 (고현동,(2층))"
+          },
+          {
+            "seq": "355",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "중화요리",
+            "entrprsNm": "장춘향",
+            "rdnmadr": "거제시 중곡로1길 22 (고현동,(1층))"
+          },
+          {
+            "seq": "356",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회, 매운탕",
+            "entrprsNm": "지심도횟집&수산",
+            "rdnmadr": "거제시 장승포로2길 23 (장승포동, 2층)"
+          },
+          {
+            "seq": "357",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "냉면,갈비탕",
+            "entrprsNm": "진주면옥",
+            "rdnmadr": "거제시 해명로 31, 부1동, 1층 (수월동)"
+          },
+          {
+            "seq": "358",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "등심,돼지왕갈비",
+            "entrprsNm": "착한고기(거제점)",
+            "rdnmadr": "거제시 계룡로 31 (상동동)"
+          },
+          {
+            "seq": "359",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회",
+            "entrprsNm": "청기와횟집",
+            "rdnmadr": "거제시 거제중앙로27길 15 (고현동)"
+          },
+          {
+            "seq": "360",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회, 볼락구이",
+            "entrprsNm": "청화횟집",
+            "rdnmadr": "거제시 거제중앙로13길 19 (고현동)"
+          },
+          {
+            "seq": "361",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회, 매운탕",
+            "entrprsNm": "평화횟집",
+            "rdnmadr": "거제시 사등면 성포로3길 12"
+          },
+          {
+            "seq": "362",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "오리백숙",
+            "entrprsNm": "하원",
+            "rdnmadr": "거제시 아주1로2길 47 (아주동, 2층)"
+          },
+          {
+            "seq": "363",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회, 매운탕",
+            "entrprsNm": "학동해송횟집",
+            "rdnmadr": "거제시 동부면 학동6길 32"
+          },
+          {
+            "seq": "364",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회, 매운탕",
+            "entrprsNm": "해금강천년송횟집",
+            "rdnmadr": "거제시 남부면 해금강3길 17 ((2.3층))"
+          },
+          {
+            "seq": "365",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "다슬기탕",
+            "entrprsNm": "황금고디탕",
+            "rdnmadr": "거제시 장승포로1길 11 (장승포동)"
+          },
+          {
+            "seq": "366",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거제시",
+            "mainMenu": "생선회, 매운탕, 대구탕",
+            "entrprsNm": "효진수산횟집",
+            "rdnmadr": "거제시 장목면 외포5길 58 (외2필지)"
+          },
+          {
+            "seq": "367",
+            "ctprvnNm": "경상남도",
+            "signguNm": "양산시",
+            "mainMenu": "쌈밥",
+            "entrprsNm": "동보식당",
+            "rdnmadr": "경상남도 양산시 북안북3길 20(북부동)"
+          },
+          {
+            "seq": "368",
+            "ctprvnNm": "경상남도",
+            "signguNm": "양산시",
+            "mainMenu": "민물매운탕",
+            "entrprsNm": "송강민물매운탕",
+            "rdnmadr": "경상남도 양산시 용암길 17-8"
+          },
+          {
+            "seq": "369",
+            "ctprvnNm": "경상남도",
+            "signguNm": "양산시",
+            "mainMenu": "양곱창",
+            "entrprsNm": "수영양곱창",
+            "rdnmadr": "경상남도 양산시 북안남3길 42(북부동)"
+          },
+          {
+            "seq": "370",
+            "ctprvnNm": "경상남도",
+            "signguNm": "양산시",
+            "mainMenu": "복매운탕",
+            "entrprsNm": "영광식당",
+            "rdnmadr": "경상남도 양산시 상북면 어곡터널로 207"
+          },
+          {
+            "seq": "371",
+            "ctprvnNm": "경상남도",
+            "signguNm": "양산시",
+            "mainMenu": "한방쑥면",
+            "entrprsNm": "윤동균한방쑥면본점",
+            "rdnmadr": "경상남도 양산시 덕계5길 8(덕계동)"
+          },
+          {
+            "seq": "372",
+            "ctprvnNm": "경상남도",
+            "signguNm": "양산시",
+            "mainMenu": "추어탕",
+            "entrprsNm": "진송추어탕",
+            "rdnmadr": "경상남도 양산시 중앙로 293-1, 1층(북정동)"
+          },
+          {
+            "seq": "373",
+            "ctprvnNm": "경상남도",
+            "signguNm": "양산시",
+            "mainMenu": "복매운탕",
+            "entrprsNm": "청해대복",
+            "rdnmadr": "경상남도 양산시 북안남1길 31(북부동)"
+          },
+          {
+            "seq": "374",
+            "ctprvnNm": "경상남도",
+            "signguNm": "의령군",
+            "mainMenu": "해장국, 내장탕",
+            "entrprsNm": "양평해장국",
+            "rdnmadr": "경상남도 의령군 의령읍 충익로 16-5"
+          },
+          {
+            "seq": "375",
+            "ctprvnNm": "경상남도",
+            "signguNm": "의령군",
+            "mainMenu": "소바",
+            "entrprsNm": "의령소바",
+            "rdnmadr": "경상남도 의령군 의령읍 의병로18길 3-5"
+          },
+          {
+            "seq": "376",
+            "ctprvnNm": "경상남도",
+            "signguNm": "의령군",
+            "mainMenu": "오리불고기, 오리로스구이",
+            "entrprsNm": "오리궁",
+            "rdnmadr": "경상남도 의령군 의령읍 벽화로 565"
+          },
+          {
+            "seq": "377",
+            "ctprvnNm": "경상남도",
+            "signguNm": "의령군",
+            "mainMenu": "오리불고기",
+            "entrprsNm": "산마루",
+            "rdnmadr": "경상남도 의령군 대의면 의령대로 241-30"
+          },
+          {
+            "seq": "378",
+            "ctprvnNm": "경상남도",
+            "signguNm": "의령군",
+            "mainMenu": "돼지갈비, 삼겹살",
+            "entrprsNm": "6.3숯불촌",
+            "rdnmadr": "경상남도 의령군 의령읍 의병로 260-1"
+          },
+          {
+            "seq": "379",
+            "ctprvnNm": "경상남도",
+            "signguNm": "의령군",
+            "mainMenu": "쇠고기갈비살, 등심",
+            "entrprsNm": "금오암소한마당",
+            "rdnmadr": "경상남도 의령군 대의면 대의로 53-7"
+          },
+          {
+            "seq": "380",
+            "ctprvnNm": "경상남도",
+            "signguNm": "의령군",
+            "mainMenu": "해물탕, 오리불고기",
+            "entrprsNm": "대백해물마을",
+            "rdnmadr": "경상남도 의령군 유곡면 함의로 2256"
+          },
+          {
+            "seq": "381",
+            "ctprvnNm": "경상남도",
+            "signguNm": "의령군",
+            "mainMenu": "돼지족발",
+            "entrprsNm": "돼지사랑",
+            "rdnmadr": "경상남도 의령군 의령읍 충익로 34-1"
+          },
+          {
+            "seq": "382",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "소.돼지고기",
+            "entrprsNm": "가야정",
+            "rdnmadr": "경상남도 함안군 가야읍 말산2길 29"
+          },
+          {
+            "seq": "383",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "한식",
+            "entrprsNm": "강촌",
+            "rdnmadr": "경상남도 함안군 가야읍 성내남길 31-19, 1호"
+          },
+          {
+            "seq": "384",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "영양돌솥밥, 소고기스페셜",
+            "entrprsNm": "검암산천 은하수생고기",
+            "rdnmadr": "경상남도 함안군 가야읍 중검길 75"
+          },
+          {
+            "seq": "385",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "국보삼계탕",
+            "entrprsNm": "국보삼계탕",
+            "rdnmadr": "경상남도 함안군 산인면 산인로 333 (외 1필지)"
+          },
+          {
+            "seq": "386",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "한식",
+            "entrprsNm": "너와촌",
+            "rdnmadr": "경상남도 함안군 칠서면 공단상가3길 40"
+          },
+          {
+            "seq": "387",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "정식",
+            "entrprsNm": "맛고을한우마당",
+            "rdnmadr": "경상남도 함안군 산인면 함마대로 1814"
+          },
+          {
+            "seq": "388",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "영양돌솥밥",
+            "entrprsNm": "명문가든",
+            "rdnmadr": "경상남도 함안군 군북면 월촌로 210, 1,2동 1층"
+          },
+          {
+            "seq": "389",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "추어탕",
+            "entrprsNm": "법성가든 함안감자탕",
+            "rdnmadr": "경상남도 함안군 법수면 법수로 593"
+          },
+          {
+            "seq": "390",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "본가삼계탕",
+            "rdnmadr": "경상남도 함안군 산인면 신산로 224"
+          },
+          {
+            "seq": "391",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "불고기",
+            "entrprsNm": "부경갈비",
+            "rdnmadr": "경상남도 함안군 칠북면 온천로 47"
+          },
+          {
+            "seq": "392",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "냉면, 두루치기, 된장찌개",
+            "entrprsNm": "사철박경순 냉면",
+            "rdnmadr": "경남 함안군 칠원읍 용산2길 65, 2층"
+          },
+          {
+            "seq": "393",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "불고기",
+            "entrprsNm": "솔밭가든",
+            "rdnmadr": "경상남도 함안군 법수면 법수로 492"
+          },
+          {
+            "seq": "394",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "유황녹차오리구이",
+            "entrprsNm": "식객",
+            "rdnmadr": "경상남도 함안군 여항면 내곡3길 47"
+          },
+          {
+            "seq": "395",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "족발",
+            "entrprsNm": "신강호맛족(함안점)",
+            "rdnmadr": "경상남도 함안군 가야읍 가야로 109"
+          },
+          {
+            "seq": "396",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "곰탕",
+            "entrprsNm": "아라곰탕",
+            "rdnmadr": "경상남도 함안군 가야읍 말산로 101"
+          },
+          {
+            "seq": "397",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "김밥, 국수, 비빔밥",
+            "entrprsNm": "아라분식",
+            "rdnmadr": "경남 함안군 군북면 중암6길 11-16"
+          },
+          {
+            "seq": "398",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "소불고기",
+            "entrprsNm": "아라정",
+            "rdnmadr": "경상남도 함안군 가야읍 가야로 60"
+          },
+          {
+            "seq": "399",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "추어탕",
+            "entrprsNm": "야촌원두막",
+            "rdnmadr": "경상남도 함안군 칠원읍 야촌1길 16"
+          },
+          {
+            "seq": "400",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "해장국",
+            "entrprsNm": "양평해장국",
+            "rdnmadr": "경상남도 함안군 산인면 함마대로 2280"
+          },
+          {
+            "seq": "401",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "해장국",
+            "entrprsNm": "양평해장국(군북점)",
+            "rdnmadr": "경상남도 함안군 군북면 함마대로 850"
+          },
+          {
+            "seq": "402",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "언양석쇠불고기",
+            "entrprsNm": "언양석쇠 불고기",
+            "rdnmadr": "경상남도 함안군 가야읍 중앙남3길 30, 1층"
+          },
+          {
+            "seq": "403",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "일식",
+            "entrprsNm": "전원초밥",
+            "rdnmadr": "경상남도 함안군 칠원읍 경남대로 1823"
+          },
+          {
+            "seq": "404",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "소고기 구이",
+            "entrprsNm": "참하누",
+            "rdnmadr": "경상남도 함안군 칠원읍 송평로 480"
+          },
+          {
+            "seq": "405",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "장어, 향어",
+            "entrprsNm": "처음본 명품민물장어 함안점",
+            "rdnmadr": "경상남도 함안군 칠원읍 경남대로 1763"
+          },
+          {
+            "seq": "406",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "활어회",
+            "entrprsNm": "철따라 횟집",
+            "rdnmadr": "경상남도 함안군 가야읍 중앙북길 34"
+          },
+          {
+            "seq": "407",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "활어",
+            "entrprsNm": "큰섬",
+            "rdnmadr": "경상남도 함안군 가야읍 성내남길 192, 4층, 5층 501호"
+          },
+          {
+            "seq": "408",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "돼지숯불갈비",
+            "entrprsNm": "판문점숯불갈비",
+            "rdnmadr": "경상남도 함안군 칠서면 공단상가3길 24 (1층)"
+          },
+          {
+            "seq": "409",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "한식",
+            "entrprsNm": "한식",
+            "rdnmadr": "경상남도 함안군 칠서면 계룡로 122-1"
+          },
+          {
+            "seq": "410",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "순두부찌게",
+            "entrprsNm": "함안(부산방향)휴게소",
+            "rdnmadr": "경상남도 함안군 군북면 현포로 205"
+          },
+          {
+            "seq": "411",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "한식",
+            "entrprsNm": "함안(순천방향)휴게소",
+            "rdnmadr": "경상남도 함안군 군북면 현포로 205-1"
+          },
+          {
+            "seq": "412",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함안군",
+            "mainMenu": "복국",
+            "entrprsNm": "황토복집",
+            "rdnmadr": "경상남도 함안군 군북면 지두3길 6"
+          },
+          {
+            "seq": "413",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "감자탕",
+            "entrprsNm": "가얏골감자탕",
+            "rdnmadr": "경상남도 창녕군 창녕읍 화왕산1로 69"
+          },
+          {
+            "seq": "414",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "한우생고기, 불고기전골, 육회비빔밥",
+            "entrprsNm": "가현한우생고기전문점",
+            "rdnmadr": "경상남도 창녕군 대지면 경남대로 4897-51"
+          },
+          {
+            "seq": "415",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "오리불고기, 오리탕, 한방백숙",
+            "entrprsNm": "고궁",
+            "rdnmadr": "경상남도 창녕군 창녕읍 탑금당길 16"
+          },
+          {
+            "seq": "416",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "물냉면, 비빔냉면, 굴국밥",
+            "entrprsNm": "금성칡냉면",
+            "rdnmadr": "경상남도 창녕군 창녕읍 술정동탑길 9"
+          },
+          {
+            "seq": "417",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "양념돼지갈비",
+            "entrprsNm": "달맞이",
+            "rdnmadr": "경상남도 창녕군 도천면 영산도천로 18-7 (외1필지)"
+          },
+          {
+            "seq": "418",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "장아찌정식",
+            "entrprsNm": "도리원",
+            "rdnmadr": "경상남도 창녕군 영산면 온천로 103-25"
+          },
+          {
+            "seq": "419",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "순대전골, 모듬순대",
+            "entrprsNm": "도천진짜순대창녕점",
+            "rdnmadr": "경상남도 창녕군 창녕읍 화왕산로 71"
+          },
+          {
+            "seq": "420",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "물밀면, 비빔밀면 등",
+            "entrprsNm": "부생밀면고기집",
+            "rdnmadr": "경상남도 창녕군 창녕읍 군청길 26, 2동 1층"
+          },
+          {
+            "seq": "421",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "오리불고기, 오리탕",
+            "entrprsNm": "북면자연농원",
+            "rdnmadr": "경상남도 창녕군 계성면 영산계성로 397-5"
+          },
+          {
+            "seq": "422",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "소갈비살, 꽃등심, 버섯전골, 소고기전골, 꼬리곰탕",
+            "entrprsNm": "서울식육식당",
+            "rdnmadr": "경상남도 창녕군 부곡면 온천1길 65"
+          },
+          {
+            "seq": "423",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "숯불갈비",
+            "entrprsNm": "석정숯불갈비",
+            "rdnmadr": "경상남도 창녕군 창녕읍 명덕로 84-11"
+          },
+          {
+            "seq": "424",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "활어회, 매운탕, 회덮밥",
+            "entrprsNm": "선하축산",
+            "rdnmadr": "경상남도 창녕군 창녕읍 술정중앙길 18-6 (신우프라자(106,107,108호))"
+          },
+          {
+            "seq": "425",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "청국장 전문점",
+            "entrprsNm": "양반청국장",
+            "rdnmadr": "경상남도 창녕군 창녕읍 화왕산로 64"
+          },
+          {
+            "seq": "426",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "해장국, 소내장탕",
+            "entrprsNm": "양평해장국",
+            "rdnmadr": "경상남도 창녕군 도천면 낙동로 811"
+          },
+          {
+            "seq": "427",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "모듬회, 광어회 등",
+            "entrprsNm": "연안바다횟집",
+            "rdnmadr": "경상남도 창녕군 남지읍 남포1길 2"
+          },
+          {
+            "seq": "428",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "잉어찜, 붕어찜, 메기찜, 논고동무침, 메기탕",
+            "entrprsNm": "우포늪식당",
+            "rdnmadr": "경상남도 창녕군 유어면 우포늪길 187"
+          },
+          {
+            "seq": "429",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "한우숯불구이, 갈비탕",
+            "entrprsNm": "우포한우프라자",
+            "rdnmadr": "경상남도 창녕군 계성면 영산계성로 457"
+          },
+          {
+            "seq": "430",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "한우생고기, 돼지고기",
+            "entrprsNm": "월남쌈샤브이야기",
+            "rdnmadr": "경상남도 창녕군 남지읍 남지중앙로 83-1"
+          },
+          {
+            "seq": "431",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "조선옥삼계탕",
+            "rdnmadr": "경상남도 창녕군 남지읍 동포7길 19-1"
+          },
+          {
+            "seq": "432",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "특수갈비살, 불고기, 육회",
+            "entrprsNm": "조은집애인동초한우식육식당",
+            "rdnmadr": "경상남도 창녕군 영산면 원다리길 23"
+          },
+          {
+            "seq": "433",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "순대전골, 모듬순대",
+            "entrprsNm": "진짜순대집",
+            "rdnmadr": "경상남도 창녕군 도천면 일리새긴길 8"
+          },
+          {
+            "seq": "434",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "한우스페셜구이, 한우모듬, 육회",
+            "entrprsNm": "창녕대가",
+            "rdnmadr": "경상남도 창녕군 창녕읍 화왕산로 66"
+          },
+          {
+            "seq": "435",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "한우생고기 등",
+            "entrprsNm": "창녕한우",
+            "rdnmadr": "경상남도 창녕군 창녕읍 우포2로 1200, 1층"
+          },
+          {
+            "seq": "436",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "냉면, 갈비탕, 갈비찜",
+            "entrprsNm": "통일냉면",
+            "rdnmadr": "경상남도 창녕군 도천면 개울길 29-8"
+          },
+          {
+            "seq": "437",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "장터국밥, 김치찌개",
+            "entrprsNm": "풀무원식품(주)영산휴게소 한식당",
+            "rdnmadr": "경상남도 창녕군 영산면 장척호수길 56-110"
+          },
+          {
+            "seq": "438",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "우동정식, 모밀정식, 생선초밥, 일식코스요리",
+            "entrprsNm": "하나비",
+            "rdnmadr": "경상남도 창녕군 창녕읍 화왕산로 88"
+          },
+          {
+            "seq": "439",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "돼지갈비, 삼겹살, 등심",
+            "entrprsNm": "화왕산갈비마을",
+            "rdnmadr": "경상남도 창녕군 창녕읍 화왕산로 18"
+          },
+          {
+            "seq": "440",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "양념돼지갈비",
+            "entrprsNm": "황부자숯불갈비",
+            "rdnmadr": "경상남도 창녕군 부곡면 원앙로 49 (외1필지)"
+          },
+          {
+            "seq": "441",
+            "ctprvnNm": "경상남도",
+            "signguNm": "창녕군",
+            "mainMenu": "버섯전골, 불고기전골, 돼지갈비, 삼겹살",
+            "entrprsNm": "흥부네전골",
+            "rdnmadr": "경상남도 창녕군 부곡면 온천2길 42 ((같은번지내 변경))"
+          },
+          {
+            "seq": "442",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "곰탕, 설렁탕",
+            "entrprsNm": "이황가",
+            "rdnmadr": "경상남도 고성군 개천면 연화산1로 594"
+          },
+          {
+            "seq": "443",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "가브리살,쭈꾸미",
+            "entrprsNm": "해밀",
+            "rdnmadr": "경상남도 고성군 거류면 당동6길 17, 102호"
+          },
+          {
+            "seq": "444",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "모듬회",
+            "entrprsNm": "해변횟집",
+            "rdnmadr": "경상남도 고성군 거류면 당동해안길 38"
+          },
+          {
+            "seq": "445",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "생선회",
+            "entrprsNm": "공룡알",
+            "rdnmadr": "경상남도 고성군 고성읍 공룡로 3078"
+          },
+          {
+            "seq": "446",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "생선회",
+            "entrprsNm": "바닷길",
+            "rdnmadr": "경상남도 고성군 고성읍 공룡로 3078"
+          },
+          {
+            "seq": "447",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "장어구이, 한정식",
+            "entrprsNm": "정든집",
+            "rdnmadr": "경상남도 고성군 고성읍 남해안대로 2226 (1층)"
+          },
+          {
+            "seq": "448",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "한정식",
+            "entrprsNm": "수라한정식",
+            "rdnmadr": "경상남도 고성군 고성읍 동외로 148-13"
+          },
+          {
+            "seq": "449",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "염소, 한방오리불고기",
+            "entrprsNm": "천왕산가든",
+            "rdnmadr": "경상남도 고성군 고성읍 상정대로 532-88"
+          },
+          {
+            "seq": "450",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "오리불고기",
+            "entrprsNm": "주남오리궁",
+            "rdnmadr": "경상남도 고성군 고성읍 성내로 76, 1,2층"
+          },
+          {
+            "seq": "451",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "쌈밥정식",
+            "entrprsNm": "참그맛이향쌈밥",
+            "rdnmadr": "경상남도 고성군 고성읍 성내로143번길 6"
+          },
+          {
+            "seq": "452",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "숯불갈비",
+            "entrprsNm": "우성갈비",
+            "rdnmadr": "경상남도 고성군 고성읍 성내로151번길 4"
+          },
+          {
+            "seq": "453",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "오리훈제, 오리백숙",
+            "entrprsNm": "늘봄가든",
+            "rdnmadr": "경상남도 고성군 고성읍 송학고분로 21-40"
+          },
+          {
+            "seq": "454",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "쇠고기 구이",
+            "entrprsNm": "한우사랑",
+            "rdnmadr": "경상남도 고성군 고성읍 신월4길 5-26"
+          },
+          {
+            "seq": "455",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "돈까스, 파스타",
+            "entrprsNm": "바닷가에햇살한스푼",
+            "rdnmadr": "경상남도 고성군 고성읍 신월로 157"
+          },
+          {
+            "seq": "456",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "와인통삼겹",
+            "entrprsNm": "소몰이돈사랑",
+            "rdnmadr": "경상남도 고성군 고성읍 중앙로 32-8"
+          },
+          {
+            "seq": "457",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "멸치회, 쌈밥",
+            "entrprsNm": "봄",
+            "rdnmadr": "경상남도 고성군 동해면 내산4길 26-4"
+          },
+          {
+            "seq": "458",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "칼국수",
+            "entrprsNm": "팔송정식당",
+            "rdnmadr": "경상남도 고성군 상리면 무선4길 3"
+          },
+          {
+            "seq": "459",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "쟁반짜장, 짬뽕",
+            "entrprsNm": "짜장박사",
+            "rdnmadr": "경상남도 고성군 상리면 상정대로 949"
+          },
+          {
+            "seq": "460",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "장어구이",
+            "entrprsNm": "우정장어",
+            "rdnmadr": "경상남도 고성군 영오면 오서1길 31"
+          },
+          {
+            "seq": "461",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "모듬회, 매운탕",
+            "entrprsNm": "용골횟집",
+            "rdnmadr": "경상남도 고성군 하이면 덕명5길 44"
+          },
+          {
+            "seq": "462",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "한정식",
+            "entrprsNm": "금시루가든",
+            "rdnmadr": "경상남도 고성군 하이면 사곡3길 48"
+          },
+          {
+            "seq": "463",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "돼지갈비, 갈비탕",
+            "entrprsNm": "고성축산농협 한우프라자2호점",
+            "rdnmadr": "경상남도 고성군 회화면 남해안대로 3762, 1, 2층"
+          },
+          {
+            "seq": "464",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "모듬회, 매운탕",
+            "entrprsNm": "강바다횟집",
+            "rdnmadr": "경상남도 고성군 회화면 당항길 34-43"
+          },
+          {
+            "seq": "465",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "생선회",
+            "entrprsNm": "당항포그린횟집",
+            "rdnmadr": "경상남도 고성군 회화면 당항만로 967"
+          },
+          {
+            "seq": "466",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "냉면, 갈비탕",
+            "entrprsNm": "새로운통일냉면",
+            "rdnmadr": "경상남도 고성군 회화면 배둔로 105-4"
+          },
+          {
+            "seq": "467",
+            "ctprvnNm": "경상남도",
+            "signguNm": "고성군",
+            "mainMenu": "오리고기",
+            "entrprsNm": "오리랑",
+            "rdnmadr": "경상남도 고성군 회화면 영회로 2209-39"
+          },
+          {
+            "seq": "468",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "닭볶음탕",
+            "entrprsNm": "스포츠파크 뷔페",
+            "rdnmadr": "경상남도 남해군 서면 남서대로 1659-1"
+          },
+          {
+            "seq": "469",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "멸치회, 쌈밥",
+            "entrprsNm": "공주식당",
+            "rdnmadr": "경상남도 남해군 미조면 미조로 230"
+          },
+          {
+            "seq": "470",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "멸치쌈밥, 멸치회",
+            "entrprsNm": "나들길",
+            "rdnmadr": "경상남도 남해군 삼동면 동부대로 1868"
+          },
+          {
+            "seq": "471",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "멸치쌈밥",
+            "entrprsNm": "남해 사랑채",
+            "rdnmadr": "경상남도 남해군 이동면 남해대로1567번길 12, 2층"
+          },
+          {
+            "seq": "472",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "멸치쌈밥",
+            "entrprsNm": "남해 어부림",
+            "rdnmadr": "경상남도 남해군 삼동면 동부대로 1126 (1동(2층),2동(1층))"
+          },
+          {
+            "seq": "473",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "전복해물찜, 아구찜",
+            "entrprsNm": "남해찜나라",
+            "rdnmadr": "경상남도 남해군 남면 남면로 1827, 2층"
+          },
+          {
+            "seq": "474",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "보쌈,생선구이",
+            "entrprsNm": "미소담",
+            "rdnmadr": "경상남도 남해군 남해읍 화전로 152"
+          },
+          {
+            "seq": "475",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "부대찌개",
+            "entrprsNm": "박가부대찌개",
+            "rdnmadr": "경상남도 남해군 남해읍 남해대로 2770"
+          },
+          {
+            "seq": "476",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "생선구이, 장어탕",
+            "entrprsNm": "산성정",
+            "rdnmadr": "경상남도 남해군 설천면 노량로183번길 22-10"
+          },
+          {
+            "seq": "477",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "갈치조림, 멸치쌈밥",
+            "entrprsNm": "앵강만식당",
+            "rdnmadr": "경상남도 남해군 이동면 남해대로 1553"
+          },
+          {
+            "seq": "478",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "곰탕",
+            "entrprsNm": "유가네 한우 곰탕",
+            "rdnmadr": "경상남도 남해군 남해읍 망운로20번길 3"
+          },
+          {
+            "seq": "479",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "소바",
+            "entrprsNm": "의령소바 남해점",
+            "rdnmadr": "경상남도 남해군 남해읍 망운로 27, 1동 1층"
+          },
+          {
+            "seq": "480",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "정식",
+            "entrprsNm": "재두식당",
+            "rdnmadr": "경상남도 남해군 상주면 남해대로 918-6"
+          },
+          {
+            "seq": "481",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "생선회",
+            "entrprsNm": "청정횟집",
+            "rdnmadr": "경상남도 남해군 설천면 노량로183번길 18"
+          },
+          {
+            "seq": "482",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "전복죽, 해물전골",
+            "entrprsNm": "팔도 전복죽· 해물",
+            "rdnmadr": "경상남도 남해군 미조면 미송로 54"
+          },
+          {
+            "seq": "483",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "피자, 파스타",
+            "entrprsNm": "할로브리즈",
+            "rdnmadr": "경상남도 남해군 삼동면 동부대로1122번길 131-6"
+          },
+          {
+            "seq": "484",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "전복죽",
+            "entrprsNm": "해사랑전복마을",
+            "rdnmadr": "경상남도 남해군 미조면 미송로 193"
+          },
+          {
+            "seq": "485",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "정식",
+            "entrprsNm": "화전별곡",
+            "rdnmadr": "경상남도 남해군 남해읍 오동로 94-1"
+          },
+          {
+            "seq": "486",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "짬뽕",
+            "entrprsNm": "아라원",
+            "rdnmadr": "경상남도 남해군 이동면 무림로 93"
+          },
+          {
+            "seq": "487",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "탕수육, 짜장면, 짬뽕",
+            "entrprsNm": "이화원",
+            "rdnmadr": "경상남도 남해군 상주면 상주로74번길 3-4"
+          },
+          {
+            "seq": "488",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "중화요리",
+            "entrprsNm": "화통중화요리",
+            "rdnmadr": "경상남도 남해군 남해읍 망운로 27, 2층"
+          },
+          {
+            "seq": "489",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "생선회, 초밥",
+            "entrprsNm": "만복초밥",
+            "rdnmadr": "경상남도 남해군 남해읍 화전로38번길 25-1"
+          },
+          {
+            "seq": "490",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "스테이크, 파스타, 피자",
+            "entrprsNm": "골든앵커",
+            "rdnmadr": "경상남도 남해군 삼동면 동부대로1122번길 74-19, 3동"
+          },
+          {
+            "seq": "491",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "독일 소시지, 피자",
+            "entrprsNm": "도이처파크",
+            "rdnmadr": "경상남도 남해군 삼동면 예술길 4-1"
+          },
+          {
+            "seq": "492",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "양식",
+            "entrprsNm": "완벽한인생 브루어리",
+            "rdnmadr": "경상남도 남해군 삼동면 독일로 30 (1층),(2층)"
+          },
+          {
+            "seq": "493",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "멸치쌈밥, 아귀찜, 코다리찜, 갈치조림",
+            "entrprsNm": "뻘",
+            "rdnmadr": "경상남도 남해군 삼동면 삼이로 32, 2층"
+          },
+          {
+            "seq": "494",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "돈가스, 칼국수",
+            "entrprsNm": "좋은인연",
+            "rdnmadr": "경상남도 남해군 남해읍 망운로 7"
+          },
+          {
+            "seq": "495",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "멸치쌈밥, 생선회",
+            "entrprsNm": "곰바우횟집",
+            "rdnmadr": "경상남도 남해군 설천면 노량로 187"
+          },
+          {
+            "seq": "496",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "생선회,매운탕",
+            "entrprsNm": "대구횟집",
+            "rdnmadr": "경상남도 남해군 설천면 노량로183번길 20"
+          },
+          {
+            "seq": "497",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "생선회,물회",
+            "entrprsNm": "보물성횟집",
+            "rdnmadr": "경상남도 남해군 미조면 미송로 40 (외1필지(105-22) 1층)"
+          },
+          {
+            "seq": "498",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "생선회",
+            "entrprsNm": "상주바다횟집",
+            "rdnmadr": "경상남도 남해군 상주면 남해대로675번길 75"
+          },
+          {
+            "seq": "499",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "생선회, 매운탕",
+            "entrprsNm": "생선횟집",
+            "rdnmadr": "경상남도 남해군 설천면 노량로183번길 22"
+          },
+          {
+            "seq": "500",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "생선회",
+            "entrprsNm": "어부촌",
+            "rdnmadr": "경상남도 남해군 설천면 강진로 723"
+          },
+          {
+            "seq": "501",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "생선회",
+            "entrprsNm": "오륙도회센타",
+            "rdnmadr": "경상남도 남해군 미조면 미송로 38"
+          },
+          {
+            "seq": "502",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "생선회,회덮밥",
+            "entrprsNm": "제일횟집",
+            "rdnmadr": "경상남도 남해군 설천면 노량로183번길 10"
+          },
+          {
+            "seq": "503",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "생선회, 매운탕",
+            "entrprsNm": "파도횟집",
+            "rdnmadr": "경상남도 남해군 이동면 남해대로 1588"
+          },
+          {
+            "seq": "504",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "한정식, 영양돌솥밥, 창선고사리 육개장",
+            "entrprsNm": "수정숯불갈비",
+            "rdnmadr": "경상남도 남해군 창선면 창선로66번길 6-11"
+          },
+          {
+            "seq": "505",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "생고기, 돼지갈비",
+            "entrprsNm": "용궁정숯불갈비",
+            "rdnmadr": "경상남도 남해군 이동면 무림로 89-12"
+          },
+          {
+            "seq": "506",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "쫄복탕, 복국",
+            "entrprsNm": "햇살복집",
+            "rdnmadr": "경상남도 남해군 삼동면 동부대로 1043"
+          },
+          {
+            "seq": "507",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "모듬회, 회덮밥, 물회",
+            "entrprsNm": "선소횟집",
+            "rdnmadr": "경상남도 남해군 남해읍 선소로 176, 1층"
+          },
+          {
+            "seq": "508",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "파스타, 스테이크",
+            "entrprsNm": "이태리회관",
+            "rdnmadr": "경상남도 남해군 삼동면 동부대로1876번다길 7"
+          },
+          {
+            "seq": "509",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "멸치쌈밥, 갈치조림",
+            "entrprsNm": "촌놈밥상",
+            "rdnmadr": "경상남도 남해군 삼동면 동부대로 1235"
+          },
+          {
+            "seq": "510",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "오리고기",
+            "entrprsNm": "황금오리하우스",
+            "rdnmadr": "경상남도 남해군 창선면 서부로 1539, 1,2층"
+          },
+          {
+            "seq": "511",
+            "ctprvnNm": "경상남도",
+            "signguNm": "남해군",
+            "mainMenu": "솥밥",
+            "entrprsNm": "힙한식",
+            "rdnmadr": "경상남도 남해군 미조면 동부대로 2, 2층"
+          },
+          {
+            "seq": "512",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "회, 매운탕",
+            "entrprsNm": "덕원회센타",
+            "rdnmadr": "경상남도 하동군 금남면 노량해안길 37"
+          },
+          {
+            "seq": "513",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "옻닭,닭백숙",
+            "entrprsNm": "범바구집",
+            "rdnmadr": "경상남도 하동군 하동읍 범바위길 1"
+          },
+          {
+            "seq": "514",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "회, 매운탕",
+            "entrprsNm": "부두횟집",
+            "rdnmadr": "경상남도 하동군 하동읍 부두길 29, 부두횟집 1층"
+          },
+          {
+            "seq": "515",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "산채정식, 된장찌개, 정식",
+            "entrprsNm": "쉬어가기 좋은 날",
+            "rdnmadr": "경상남도 하동군 화개면 쌍계사길 6"
+          },
+          {
+            "seq": "516",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "대구탕, 정식, 찜",
+            "entrprsNm": "용궁식당",
+            "rdnmadr": "경상남도 하동군 하동읍 굴다리2길 49"
+          },
+          {
+            "seq": "517",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "재첩정식, 재첩회",
+            "entrprsNm": "원조강변할매재첩국식당",
+            "rdnmadr": "경상남도 하동군 고전면 재첩길 286-1"
+          },
+          {
+            "seq": "518",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "재첩국, 재첩회",
+            "entrprsNm": "원조재첩국나루터식당",
+            "rdnmadr": "경상남도 하동군 고전면 재첩길 286"
+          },
+          {
+            "seq": "519",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "참게가리장, 재첩국",
+            "entrprsNm": "이화가든",
+            "rdnmadr": "경상남도 하동군 하동읍 섬진강대로 2507"
+          },
+          {
+            "seq": "520",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "회, 매운탕",
+            "entrprsNm": "제일회센타",
+            "rdnmadr": "경상남도 하동군 금남면 노량해안길 217"
+          },
+          {
+            "seq": "521",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "정식, 된장찌개. 김치찌개",
+            "entrprsNm": "청운식당",
+            "rdnmadr": "경상남도 하동군 화개면 쌍계사길 6"
+          },
+          {
+            "seq": "522",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "정식, 삼겹살 김치찌개",
+            "entrprsNm": "하동솔잎돼지",
+            "rdnmadr": "경상남도 하동군 횡천면 횡보길 2-6"
+          },
+          {
+            "seq": "523",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "돼지고기, 소고기, 정식, 소면",
+            "entrprsNm": "하동솔잎한우프라자",
+            "rdnmadr": "경상남도 하동군 고전면 하동읍성로 9"
+          },
+          {
+            "seq": "524",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "회, 매운탕",
+            "entrprsNm": "섬진강횟집",
+            "rdnmadr": "경상남도 하동군 하동읍 섬진강대로 2539-8"
+          },
+          {
+            "seq": "525",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "참게가리장, 재첩국",
+            "entrprsNm": "돌팀이횟집",
+            "rdnmadr": "경상남도 하동군 하동읍 섬진강대로 2576"
+          },
+          {
+            "seq": "526",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "은어밥, 참게탕",
+            "entrprsNm": "혜성식당",
+            "rdnmadr": "경상남도 하동군 화개면 화개로 48"
+          },
+          {
+            "seq": "527",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "비빔밥, 재첩국, 국밥",
+            "entrprsNm": "장터국밥",
+            "rdnmadr": "경상남도 하동군 화개면 쌍계로 17"
+          },
+          {
+            "seq": "528",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "재첩국, 참게가리장, 재첩회",
+            "entrprsNm": "하옹",
+            "rdnmadr": "경상남도 하동군 하동읍 섬진강대로 2578"
+          },
+          {
+            "seq": "529",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "참게탕, 재첩국, 백숙",
+            "entrprsNm": "늘봄식당",
+            "rdnmadr": "경상남도 하동군 화개면 화개로 239"
+          },
+          {
+            "seq": "530",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "짬뽕, 자장면",
+            "entrprsNm": "오.짬.땡.오늘은 짬뽕 땡기는 날",
+            "rdnmadr": "경상남도 하동군 적량면 경서대로 356"
+          },
+          {
+            "seq": "531",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "갈비탕, 전골, 정식",
+            "entrprsNm": "옥종명가",
+            "rdnmadr": "경상남도 하동군 옥종면 은행나무길 74-2, 주2동 1층"
+          },
+          {
+            "seq": "532",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "복어요리",
+            "entrprsNm": "천금복집",
+            "rdnmadr": "경상남도 하동군 진교면 경충로 1015"
+          },
+          {
+            "seq": "533",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "구이류, 정식",
+            "entrprsNm": "하동집참숯불구이",
+            "rdnmadr": "경상남도 하동군 하동읍 중앙2길 10-7"
+          },
+          {
+            "seq": "534",
+            "ctprvnNm": "경상남도",
+            "signguNm": "하동군",
+            "mainMenu": "구이류, 정식",
+            "entrprsNm": "합천삼가한우라예",
+            "rdnmadr": "경상남도 하동군 진교면 진교중앙길 15, 1층"
+          },
+          {
+            "seq": "535",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "메기찜,자라탕",
+            "entrprsNm": "강변식당",
+            "rdnmadr": "산청읍 꽃봉산로 30-5"
+          },
+          {
+            "seq": "536",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "쏘가리탕",
+            "entrprsNm": "남원식당",
+            "rdnmadr": "생초면 산수로 1018"
+          },
+          {
+            "seq": "537",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "중화요리(짜장면,우동",
+            "entrprsNm": "아리산반점",
+            "rdnmadr": "산청읍 친환경로 2655"
+          },
+          {
+            "seq": "538",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "산채한정식",
+            "entrprsNm": "보현갈비식육식당",
+            "rdnmadr": "시천면 남명로 223"
+          },
+          {
+            "seq": "539",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "복국, 족발, 복수육",
+            "entrprsNm": "한양왕족발복어",
+            "rdnmadr": "신안면 원지강변로 105-1"
+          },
+          {
+            "seq": "540",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "한방오리백숙, 닭백숙",
+            "entrprsNm": "갑을가든",
+            "rdnmadr": "삼장면 평촌유평로 572"
+          },
+          {
+            "seq": "541",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "다슬기탕, 백숙, 메기탕",
+            "entrprsNm": "조개골산장",
+            "rdnmadr": "삼장면 평촌유평로 943"
+          },
+          {
+            "seq": "542",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "홍화특미, 영양돌솥밥",
+            "entrprsNm": "홍화원식당",
+            "rdnmadr": "신안면 둔철산로 39"
+          },
+          {
+            "seq": "543",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "소고기 구이",
+            "entrprsNm": "물장구식육식당",
+            "rdnmadr": "생비량면 지리산대로 4285"
+          },
+          {
+            "seq": "544",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "육류구이,한방갈비곰",
+            "entrprsNm": "영도숯불갈비",
+            "rdnmadr": "신안면 원지강변로63번길 6"
+          },
+          {
+            "seq": "545",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "우럭찜",
+            "entrprsNm": "만포정횟집",
+            "rdnmadr": "신안면 원지강변로 67-15"
+          },
+          {
+            "seq": "546",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "약초사슴요리. 유황오리",
+            "entrprsNm": "개미정산장식당",
+            "rdnmadr": "시천면 지리산대로 1387"
+          },
+          {
+            "seq": "547",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "홍화새싹비빔밥, 홍화칼국수",
+            "entrprsNm": "홍화약초식당",
+            "rdnmadr": "신안면 둔철산로 39"
+          },
+          {
+            "seq": "548",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "오리불고기, 흑돼지구이",
+            "entrprsNm": "지리산장당계곡식당",
+            "rdnmadr": "삼장면 덕산대포로245번길 152"
+          },
+          {
+            "seq": "549",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "오리불고기",
+            "entrprsNm": "타짜 오리하우스",
+            "rdnmadr": "신안면 원지로 178"
+          },
+          {
+            "seq": "550",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "영실한우명품스페셜,영실한우명품모둠,영실한우꽃등심",
+            "entrprsNm": "영실한우프라자",
+            "rdnmadr": "단성면 목화로 912"
+          },
+          {
+            "seq": "551",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "약선한상,약선코스요리,약선특반상,약선수라반상",
+            "entrprsNm": "동의약선관",
+            "rdnmadr": "금서면 동의보감로555번길 150"
+          },
+          {
+            "seq": "552",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "한식뷔페",
+            "entrprsNm": "열매랑 뿌리랑 약초산나물 뷔페",
+            "rdnmadr": "시천면 남명로 228"
+          },
+          {
+            "seq": "553",
+            "ctprvnNm": "경상남도",
+            "signguNm": "산청군",
+            "mainMenu": "버섯전골, 소고기해장국, 황태해장국, 순두부, 한식뷔페",
+            "entrprsNm": "오감원 레스토랑",
+            "rdnmadr": "금서면 동의보감로479번길 43"
+          },
+          {
+            "seq": "554",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "한우숯불갈비",
+            "entrprsNm": "1004 화로구이",
+            "rdnmadr": "경상남도 함양군 함양읍 필봉산길 63"
+          },
+          {
+            "seq": "555",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "곱창전골, 불고기백반",
+            "entrprsNm": "갑을식당",
+            "rdnmadr": "경상남도 함양군 함양읍 함양로 1106"
+          },
+          {
+            "seq": "556",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "돼지갈비, 냉면",
+            "entrprsNm": "노가면옥",
+            "rdnmadr": "경상남도 함양군 함양읍 용평길 35"
+          },
+          {
+            "seq": "557",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "초계막국수, 궁중한방오리",
+            "entrprsNm": "농월초계탕",
+            "rdnmadr": "경상남도 함양군 안의면 육십령로 3102"
+          },
+          {
+            "seq": "558",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "오곡정식",
+            "entrprsNm": "늘봄가든",
+            "rdnmadr": "경상남도 함양군 함양읍 필봉산길 65"
+          },
+          {
+            "seq": "559",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "육류구이, 갈비탕",
+            "entrprsNm": "대가집",
+            "rdnmadr": "경상남도 함양군 서상면 칠형정뒷길 24"
+          },
+          {
+            "seq": "560",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "소고기 구이, 버섯전골",
+            "entrprsNm": "대웅",
+            "rdnmadr": "경상남도 함양군 함양읍 용평중앙길 11-2"
+          },
+          {
+            "seq": "561",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "낙지전골, 낙지해물칼국수",
+            "entrprsNm": "도야낙지",
+            "rdnmadr": "경상남도 함양군 함양읍 용평길 11-11"
+          },
+          {
+            "seq": "562",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "흑삼겹, 갈비",
+            "entrprsNm": "바우석쇠",
+            "rdnmadr": "경상남도 함양군 함양읍 용평1길 9"
+          },
+          {
+            "seq": "563",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "아구찜.탕, 해물찜.탕, 복탕,복찜",
+            "entrprsNm": "삼순이네 돌판아구찜 복어요리",
+            "rdnmadr": "경상남도 함양군 함양읍 용평길 31-3"
+          },
+          {
+            "seq": "564",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "샤브샤브",
+            "entrprsNm": "샤브향함양점",
+            "rdnmadr": "경상남도 함양군 함양읍 동위천1길 5"
+          },
+          {
+            "seq": "565",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "버섯전골, 백숙",
+            "entrprsNm": "송정원",
+            "rdnmadr": "경상남도 함양군 백전면 함양남서로 2774"
+          },
+          {
+            "seq": "566",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "메기메운탕, 메기찜",
+            "entrprsNm": "수동메기매운탕 주식회사",
+            "rdnmadr": "경상남도 함양군 수동면 거함대로 621"
+          },
+          {
+            "seq": "567",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "갈비탕, 갈비찜",
+            "entrprsNm": "안의갈비탕",
+            "rdnmadr": "경상남도 함양군 안의면 강변로 317"
+          },
+          {
+            "seq": "568",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "갈비탕",
+            "entrprsNm": "안의원조갈비집",
+            "rdnmadr": "경상남도 함양군 안의면 광풍로 127-2"
+          },
+          {
+            "seq": "569",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "삼겹살",
+            "entrprsNm": "연밭식육식당",
+            "rdnmadr": "경상남도 함양군 함양읍 학사루1길 1"
+          },
+          {
+            "seq": "570",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "훈제스페셜정식",
+            "entrprsNm": "예다믄",
+            "rdnmadr": "경상남도 함양군 함양읍 필봉산길 60"
+          },
+          {
+            "seq": "571",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "샤브샤브",
+            "entrprsNm": "지리정원",
+            "rdnmadr": "경상남도 함양군 함양읍 학사루3길 18-1"
+          },
+          {
+            "seq": "572",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "바다회, 물메기탕, 대구탕",
+            "entrprsNm": "청정해역",
+            "rdnmadr": "경상남도 함양군 함양읍 중앙시장길 2-16"
+          },
+          {
+            "seq": "573",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "한정식",
+            "entrprsNm": "청학산",
+            "rdnmadr": "경상남도 함양군 함양읍 함양로 619-6"
+          },
+          {
+            "seq": "574",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "바다회, 생대구탕",
+            "entrprsNm": "청해수산",
+            "rdnmadr": "경상남도 함양군 함양읍 용평길 12-4"
+          },
+          {
+            "seq": "575",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "바다회, 복어요리",
+            "entrprsNm": "해원복국",
+            "rdnmadr": "경상남도 함양군 함양읍 함양로 1257"
+          },
+          {
+            "seq": "576",
+            "ctprvnNm": "경상남도",
+            "signguNm": "함양군",
+            "mainMenu": "오리고기",
+            "entrprsNm": "화림골",
+            "rdnmadr": "경상남도 함양군 서상면 칠형정뒷길 6"
+          },
+          {
+            "seq": "577",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "갈비찜",
+            "entrprsNm": "삼산이수",
+            "rdnmadr": "경상남도 거창군 거창읍 내학길 35-4"
+          },
+          {
+            "seq": "578",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "복매운탕",
+            "entrprsNm": "풍전복집",
+            "rdnmadr": "경상남도 거창군 거창읍 상동2길 9"
+          },
+          {
+            "seq": "579",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "복매운탕",
+            "entrprsNm": "거창복어",
+            "rdnmadr": "경상남도 거창군 거창읍 공수들1길 23"
+          },
+          {
+            "seq": "580",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "족발보쌈",
+            "entrprsNm": "장충동왕족발보쌈",
+            "rdnmadr": "경상남도 거창군 거창읍 거창대로 34"
+          },
+          {
+            "seq": "581",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "한방백숙",
+            "entrprsNm": "옥계촌",
+            "rdnmadr": "경상남도 거창군 북상면 덕유월성로 1968"
+          },
+          {
+            "seq": "582",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "산나물정식",
+            "entrprsNm": "남덕유산대표산나물집",
+            "rdnmadr": "경상남도 거창군 북상면 덕유월성로 1173"
+          },
+          {
+            "seq": "583",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "굴뚝배기",
+            "entrprsNm": "모려촌24시생굴뚝배기전문점",
+            "rdnmadr": "경상남도 거창군 거창읍 상동길 50"
+          },
+          {
+            "seq": "584",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "송어회",
+            "entrprsNm": "월성횟집",
+            "rdnmadr": "경상남도 거창군 북상면 깊은골길 23"
+          },
+          {
+            "seq": "585",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "한우생고기",
+            "entrprsNm": "동막골한우숯불촌",
+            "rdnmadr": "경상남도 거창군 거창읍 대평3길 58"
+          },
+          {
+            "seq": "586",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "우렁쌈밥",
+            "entrprsNm": "왕우렁쌈밥",
+            "rdnmadr": "경상남도 거창군 거창읍 거함대로5길 71"
+          },
+          {
+            "seq": "587",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "스테이크,스파게티",
+            "entrprsNm": "레아모",
+            "rdnmadr": "경상남도 거창군 거창읍 아림로 32-1"
+          },
+          {
+            "seq": "588",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "애우생고기",
+            "entrprsNm": "애우전문점 거창축협한우팰리스",
+            "rdnmadr": "경상남도 거창군 거창읍 거함대로 3178 (외 1필지)"
+          },
+          {
+            "seq": "589",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "해물닭찜",
+            "entrprsNm": "건계정",
+            "rdnmadr": "경상남도 거창군 거창읍 거안로 1173-21"
+          },
+          {
+            "seq": "590",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "바다모듬회",
+            "entrprsNm": "사량도",
+            "rdnmadr": "경상남도 거창군 거창읍 거열로4길 7-24"
+          },
+          {
+            "seq": "591",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "한우꽃등심, 암돼지삼겹살",
+            "entrprsNm": "수승대임정은가든",
+            "rdnmadr": "경상남도 거창군 위천면 송계로 363"
+          },
+          {
+            "seq": "592",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "추어탕",
+            "entrprsNm": "금호추어탕",
+            "rdnmadr": "경상남도 거창군 거창읍 강남로1길 196-6"
+          },
+          {
+            "seq": "593",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "복지리, 생지리",
+            "entrprsNm": "대성복·찜전문점",
+            "rdnmadr": "경상남도 거창군 거창읍 소만2길 28-4"
+          },
+          {
+            "seq": "594",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "생삼겹살",
+            "entrprsNm": "쌍쌍식육식당",
+            "rdnmadr": "경상남도 거창군 가조면 가조가야로 1096"
+          },
+          {
+            "seq": "595",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "소고기모듬. 소고기특선",
+            "entrprsNm": "푸줏간",
+            "rdnmadr": "경상남도 거창군 거창읍 소만2길 53"
+          },
+          {
+            "seq": "596",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "황태구이",
+            "entrprsNm": "우성댓잎",
+            "rdnmadr": "경상남도 거창군 거창읍 상동길 31"
+          },
+          {
+            "seq": "597",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "생삼겹살",
+            "entrprsNm": "원미정",
+            "rdnmadr": "경상남도 거창군 거창읍 소만3길 38"
+          },
+          {
+            "seq": "598",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "생오리숯불구이",
+            "entrprsNm": "팔공산오리",
+            "rdnmadr": "경상남도 거창군 거창읍 창동로 81"
+          },
+          {
+            "seq": "599",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "불고기뚝배기",
+            "entrprsNm": "거창상휴게소-한·양식",
+            "rdnmadr": "경상남도 거창군 가조면 가조가야로 1523"
+          },
+          {
+            "seq": "600",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "불고기뚝배기",
+            "entrprsNm": "거창하휴게소-한·양식",
+            "rdnmadr": "경상남도 거창군 가조면 가조가야로 1543-81"
+          },
+          {
+            "seq": "601",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "생삽겹살",
+            "entrprsNm": "흑돈",
+            "rdnmadr": "경상남도 거창군 거창읍 공수들1길 56"
+          },
+          {
+            "seq": "602",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "참숯바베큐치킨",
+            "entrprsNm": "훌랄라치킨",
+            "rdnmadr": "경상남도 거창군 거창읍 강변로 123"
+          },
+          {
+            "seq": "603",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "소고기샤브",
+            "entrprsNm": "꽃마름거창점",
+            "rdnmadr": "경상남도 거창군 거창읍 거창대로 77, 3층"
+          },
+          {
+            "seq": "604",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "누룽지백숙",
+            "entrprsNm": "운정골",
+            "rdnmadr": "경상남도 거창군 거창읍 운정1길 114"
+          },
+          {
+            "seq": "605",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "돼지갈비",
+            "entrprsNm": "항아리왕갈비",
+            "rdnmadr": "경상남도 거창군 거창읍 강변로 285"
+          },
+          {
+            "seq": "606",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "모듬회",
+            "entrprsNm": "미가도",
+            "rdnmadr": "경상남도 거창군 거창읍 소만3길 35-20"
+          },
+          {
+            "seq": "607",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "스테이크",
+            "entrprsNm": "블루마리",
+            "rdnmadr": "경상남도 거창군 마리면 거안로 1084, 1층"
+          },
+          {
+            "seq": "608",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "고르곤졸라피자",
+            "entrprsNm": "실로암",
+            "rdnmadr": "경상남도 거창군 거창읍 중앙로 63"
+          },
+          {
+            "seq": "609",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "냉면",
+            "entrprsNm": "제주냉면",
+            "rdnmadr": "경상남도 거창군 거창읍 강남로 54"
+          },
+          {
+            "seq": "610",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "모듬회",
+            "entrprsNm": "동해횟집",
+            "rdnmadr": "경상남도 거창군 거창읍 강변로 301"
+          },
+          {
+            "seq": "611",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "갈비탕",
+            "entrprsNm": "마리갈비탕",
+            "rdnmadr": "경상남도 거창군 마리면 거안로 837"
+          },
+          {
+            "seq": "612",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "오리불고기",
+            "entrprsNm": "명동오리",
+            "rdnmadr": "경상남도 거창군 거창읍 대평3길 16"
+          },
+          {
+            "seq": "613",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "월남쌈샤브",
+            "entrprsNm": "샤브향거창점",
+            "rdnmadr": "경상남도 거창군 거창읍 송정1길 12-8, 2층"
+          },
+          {
+            "seq": "614",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "스페셜한우",
+            "entrprsNm": "석백산한우전문점",
+            "rdnmadr": "경상남도 거창군 거창읍 거열로4길 140"
+          },
+          {
+            "seq": "615",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "명품한우",
+            "entrprsNm": "외양간구시",
+            "rdnmadr": "경상남도 거창군 거창읍 상동2길 70"
+          },
+          {
+            "seq": "616",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "삼계탕",
+            "entrprsNm": "지호한방삼계탕 거창점",
+            "rdnmadr": "경상남도 거창군 거창읍 소만1길 31"
+          },
+          {
+            "seq": "617",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "참치코스(실버)",
+            "entrprsNm": "참치본가",
+            "rdnmadr": "경상남도 거창군 거창읍 상동길 4"
+          },
+          {
+            "seq": "618",
+            "ctprvnNm": "경상남도",
+            "signguNm": "거창군",
+            "mainMenu": "뼈다귀해장국",
+            "entrprsNm": "홍천뚝배기",
+            "rdnmadr": "경상남도 거창군 거창읍 거열로3길 16-22"
+          },
+          {
+            "seq": "619",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "돼지국밥",
+            "entrprsNm": "3.3 국밥전문점",
+            "rdnmadr": "경상남도 합천군 합천읍 문화로 7"
+          },
+          {
+            "seq": "620",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "산채한정식",
+            "entrprsNm": "고바우식당",
+            "rdnmadr": "경상남도 합천군 가야면 치인1길 13-5"
+          },
+          {
+            "seq": "621",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "산채비빔밥,해물전골",
+            "entrprsNm": "금호관",
+            "rdnmadr": "경상남도 합천군 가야면 가야산로 1183"
+          },
+          {
+            "seq": "622",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "한우요리",
+            "entrprsNm": "대가식당1호점",
+            "rdnmadr": "경상남도 합천군 삼가면 일부3길 8"
+          },
+          {
+            "seq": "623",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "쇠고기",
+            "entrprsNm": "대식한우명가",
+            "rdnmadr": "경상남도 합천군 용주면 합천호수로 873"
+          },
+          {
+            "seq": "624",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "소등심,돼지갈비",
+            "entrprsNm": "동원가든",
+            "rdnmadr": "경상남도 합천군 초계면 초계중앙로 75"
+          },
+          {
+            "seq": "625",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "황태구이",
+            "entrprsNm": "로우풀",
+            "rdnmadr": "경상남도 합천군 대병면 회양관광단지길 28-10"
+          },
+          {
+            "seq": "626",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "산채한정식",
+            "entrprsNm": "백운식당",
+            "rdnmadr": "경상남도 합천군 가야면 치인1길 13-23"
+          },
+          {
+            "seq": "627",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "산채한정식, 산채비빔밥",
+            "entrprsNm": "부산식당",
+            "rdnmadr": "경상남도 합천군 가야면 치인1길 8 (1층)"
+          },
+          {
+            "seq": "628",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "삼겹살",
+            "entrprsNm": "부자돼지",
+            "rdnmadr": "경상남도 합천군 합천읍 옥산로 84"
+          },
+          {
+            "seq": "629",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "북어요리",
+            "entrprsNm": "북어마을",
+            "rdnmadr": "경상남도 합천군 대병면 회양관광단지길 34"
+          },
+          {
+            "seq": "630",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "중화요리",
+            "entrprsNm": "비룡요리왕",
+            "rdnmadr": "경상남도 합천군 삼가면 삼가로 161"
+          },
+          {
+            "seq": "631",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "한우모듬",
+            "entrprsNm": "삼가명품한우",
+            "rdnmadr": "경상남도 합천군 삼가면 서부로 39"
+          },
+          {
+            "seq": "632",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "민물매운탕",
+            "entrprsNm": "석수정",
+            "rdnmadr": "경상남도 합천군 삼가면 합천대로 463"
+          },
+          {
+            "seq": "633",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "돼지국밥",
+            "entrprsNm": "수미정식당",
+            "rdnmadr": "경상남도 합천군 가야면 가조가야로 2880"
+          },
+          {
+            "seq": "634",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "메기매운탕",
+            "entrprsNm": "약천메기탕",
+            "rdnmadr": "경상남도 합천군 합천읍 강변로 35"
+          },
+          {
+            "seq": "635",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "돼지국밥",
+            "entrprsNm": "연하정",
+            "rdnmadr": "경상남도 합천군 쌍책면 성산큰길 19"
+          },
+          {
+            "seq": "636",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "오리요리",
+            "entrprsNm": "오리와 장어",
+            "rdnmadr": "경상남도 합천군 합천읍 동서로 159"
+          },
+          {
+            "seq": "637",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "돼지국밥",
+            "entrprsNm": "옥산식육식당",
+            "rdnmadr": "경상남도 합천군 합천읍 옥산로 43-9"
+          },
+          {
+            "seq": "638",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "메기매운탕",
+            "entrprsNm": "유성가든",
+            "rdnmadr": "경상남도 합천군 대병면 서부로 2081"
+          },
+          {
+            "seq": "639",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "삼겹살, 돼지갈비",
+            "entrprsNm": "참숯골",
+            "rdnmadr": "경상남도 합천군 합천읍 옥산로 31"
+          },
+          {
+            "seq": "640",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "갈비찜,청국장",
+            "entrprsNm": "청마루",
+            "rdnmadr": "경상남도 합천군 대양면 동부로 21"
+          },
+          {
+            "seq": "641",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "한식,추어탕,된장찌개",
+            "entrprsNm": "청솔음식마을",
+            "rdnmadr": "경상남도 합천군 청덕면 동부로 2488-6"
+          },
+          {
+            "seq": "642",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "청국장,보리밥",
+            "entrprsNm": "토속식당",
+            "rdnmadr": "경상남도 합천군 대병면 회양관광단지길 36-1"
+          },
+          {
+            "seq": "643",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "오리요리",
+            "entrprsNm": "합천가든",
+            "rdnmadr": "경상남도 합천군 합천읍 옥산로 26"
+          },
+          {
+            "seq": "644",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "돼지국밥",
+            "entrprsNm": "합천돼지국밥",
+            "rdnmadr": "경상남도 합천군 합천읍 문화로 9"
+          },
+          {
+            "seq": "645",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "돼지갈비찜",
+            "entrprsNm": "합천명품돼지",
+            "rdnmadr": "경상남도 합천군 합천읍 남정길 82"
+          },
+          {
+            "seq": "646",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "돼지갈비,돼지구이",
+            "entrprsNm": "합천명품토종돼지",
+            "rdnmadr": "경상남도 합천군 묘산면 묘산로 215"
+          },
+          {
+            "seq": "647",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "돼지고기",
+            "entrprsNm": "합천명품토종흑돼지",
+            "rdnmadr": "경상남도 합천군 가야면 가야시장로 106"
+          },
+          {
+            "seq": "648",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "산채한정식",
+            "entrprsNm": "해인사 맛집 감로식당",
+            "rdnmadr": "경상남도 합천군 가야면 치인1길 8-1"
+          },
+          {
+            "seq": "649",
+            "ctprvnNm": "경상남도",
+            "signguNm": "합천군",
+            "mainMenu": "돼지갈비, 한우모듬",
+            "entrprsNm": "황금나무숯불갈비",
+            "rdnmadr": "경상남도 합천군 합천읍 옥산로 15"
+          }
+        ]
+      },
+      "numOfRows": 649,
+      "pageNo": 1,
+      "totalCount": 1225
+    }
+  }
+}

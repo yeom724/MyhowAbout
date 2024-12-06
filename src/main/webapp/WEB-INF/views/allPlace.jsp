@@ -65,6 +65,7 @@
 			</select>
 			<select id="foodCategory" name="foodsub" style="display: none;">
 			    <option value="" disabled selected>세부 카테고리</option>
+			    <option value="3500">모범음식점</option>
 			    <option value="3900">음식점</option>
 			    <option value="4000">한식</option>
 			    <option value="4400">일식</option>

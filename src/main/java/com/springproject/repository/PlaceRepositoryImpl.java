@@ -1,9 +1,6 @@
 package com.springproject.repository;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -18,6 +15,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.springproject.Jackson.*;
 import com.springproject.domain.Member;
 import com.springproject.domain.Place;
 
@@ -85,6 +84,48 @@ public class PlaceRepositoryImpl implements PlaceRepository{
             e.printStackTrace();
         }
     }
+    
+
+	@Override
+	public void runmobum(){
+		//잭슨 사용
+		ObjectMapper objectMapper = new ObjectMapper();
+		String filePath = "json/mobum.json";
+		
+		try {
+            
+			InputStream inputStream = PlaceRepositoryImpl.class.getClassLoader().getResourceAsStream(filePath);
+            if (inputStream == null) {
+                System.out.println("파일을 찾을 수 없습니다: " + filePath);
+                return;
+            }
+			
+			//json을 java로 파싱중...
+            MobumResultSet mobumResultSet = objectMapper.readValue(inputStream, MobumResultSet.class);
+            // 아이템 리스트 가져오기
+            List<Item> items = mobumResultSet.getGyeongnamGoodRestaurantList().getBody().getItems().getItem();
+            
+            for(int i=0; i<items.size(); i++) {
+            	Item item = items.get(i);
+            	Place place = new Place();
+            	place.setFoodCategory(item.getMainMenu());
+            	place.setTitle(item.getEntrprsNm());
+            	place.setJuso(item.getRdnmadr());
+            	
+            	try { jacksonDB(place); }
+            	catch (Exception e) {
+                    System.out.println("정보를 가져오는 데 실패했습니다");
+                    e.printStackTrace();
+                }
+            	
+            }
+   
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+		
+		
+	}
 
     public void getCoordinates(Place obj) throws Exception {
         String address = obj.getJibun();
@@ -112,14 +153,73 @@ public class PlaceRepositoryImpl implements PlaceRepository{
             JSONObject location = documents.getJSONObject(0);
             double latitude = location.getDouble("y"); // 위도
             double longitude = location.getDouble("x"); // 경도
+            
             System.out.println("위도: " + latitude + ", 경도: " + longitude);
 
             // SQL 쿼리 실행
-            String sql = "INSERT INTO aboutPlace VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO aboutPlace VALUES (?, ?, ?, ?, ?, ?, ?, ?, null)";
             temp.update(sql, obj.getJuso(), obj.getJibun(), obj.getCategory(), obj.getTitle(), obj.getStatus(), obj.getFoodCategory(), latitude, longitude);
         } else {
+        	
             System.out.println("주소: " + address + " - 결과가 없습니다.");
+            
         }
+    }
+    
+    public void jacksonDB(Place obj) throws Exception{
+    	
+    	sql = "select count(*) from aboutPlace where juso LIKE ? and title=?";
+    	int row = temp.queryForObject(sql, Integer.class, '%'+obj.getJuso()+'%', obj.getTitle());
+    	
+    	if(row == 1) {
+    		
+    		sql = "update aboutPlace set category='모범음식점' where juso LIKE ? and title=?";
+    		temp.update(sql, '%'+obj.getJuso()+'%', obj.getTitle());
+    		
+    	} else if (row > 1) {
+    		
+    		System.out.println("중복된 데이터가 존재합니다. 업데이트를 할 수 없습니다.");
+    		
+    	} else if (row == 0) {
+    		
+        	String address = obj.getJuso();
+            
+            String urlStr = "https://dapi.kakao.com/v2/local/search/address.json?query=" + URLEncoder.encode(address, "UTF-8");
+            URL url = new URL(urlStr);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Authorization", "KakaoAK " + API_KEY);
+
+            // 응답 읽기
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            StringBuilder response = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null) {
+                response.append(line);
+            }
+            br.close();
+
+            // JSON 파싱
+            JSONObject jsonResponse = new JSONObject(response.toString());
+            JSONArray documents = jsonResponse.getJSONArray("documents");
+
+            if (documents.length() > 0) {
+                JSONObject location = documents.getJSONObject(0);
+                double latitude = location.getDouble("y"); // 위도
+                double longitude = location.getDouble("x"); // 경도
+                JSONObject jsonAddr = location.getJSONObject("address");
+                System.out.println("위도: " + latitude + ", 경도: " + longitude);
+
+                // SQL 쿼리 실행
+                String sql = "INSERT INTO aboutPlace VALUES (?, ?, ?, ?, ?, ?, ?, ?, null)";
+                temp.update(sql, obj.getJuso(), jsonAddr.getString("address_name"), "모범음식점", obj.getTitle(), "영업/정상", obj.getFoodCategory(), latitude, longitude);
+            } else {
+                System.out.println("주소: " + address + " - 결과가 없습니다.");
+            }
+    		
+    	}
+    	
+
     }
 
 	@Override
@@ -136,14 +236,21 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 
 	@Override
 	public Place getPlace(String updateNum) {
-		// TODO Auto-generated method stub
-		return null;
+		Place place = null;
+		
+		sql = "select * from aboutPlace where updateNum=?";
+		place = temp.queryForObject(sql, new PlaceRowMapper(), updateNum);
+		
+		return place;
 	}
 
 	@Override
 	public void updatePlace(Place place) {
-		// TODO Auto-generated method stub
 		
+		sql = "update aboutPlace set juso=?, jibun=?, category=?, title=?, status=?, foodCategory=?, latitude=?, longitude=? where updateNum=?";
+		temp.update(sql, place.getJuso(), place.getJibun(), place.getCategory(), place.getTitle(), place.getStatus(), place.getFoodCategory(), place.getLatitude(), place.getLongitude(), place.getUpdateNum());
+		System.out.println("시설 업데이트가 완료되었습니다.");
+	
 	}
 
 	@Override
@@ -192,6 +299,22 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 		
 		return result;
 	}
+	
+	@Override
+	public boolean updateMatchPlace(Place place) {
+		boolean result = false;
+		
+		Place oldPlace = getPlace(String.valueOf(place.getUpdateNum()));
+		
+		if(oldPlace.getJuso().equals(place.getJuso())) {
+			
+			
+			
+		}
+		
+		return result;
+	}
+	
 
 	@Override
 	public List<Place> getAllPlace(Model model) {
@@ -304,16 +427,25 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 						
 						sql = "select count(*) from aboutPlace where juso Like ? and category IN ("+foodCategory+") and foodCategory IN ("+subfood+")";
 						
+						if(foodsub.equals("3500")) { 
+							sql = "select count(*) from aboutPlace where juso Like ? and category='모범음식점'";
+						}
+						
 					}
 
 					count = temp.queryForObject(sql, Integer.class, '%'+city+'%');
-					System.out.println(count);
+					System.out.println("너니?"+count);
 					model.addAttribute("Count",count);
 					
 					sql = "select * from aboutPlace where juso Like ? and category IN ("+foodCategory+") limit 20 offset ?";
 					
 					if(foodsub != null) {
 						sql = "select * from aboutPlace where juso Like ? and category IN ("+foodCategory+") and foodCategory IN ("+subfood+") limit 20 offset ?";
+						
+						if(foodsub.equals("3500")) {
+							sql = "select * from aboutPlace where juso Like ? and category='모범음식점' limit 20 offset ?";
+						}
+						
 					}
 					
 					place_list = temp.query(sql, new PlaceRowMapper(), '%'+city+'%', offset);
@@ -326,5 +458,8 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 	    
 		return place_list;
 	}
+
+
+
     
 }

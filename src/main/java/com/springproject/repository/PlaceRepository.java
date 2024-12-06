@@ -19,9 +19,12 @@ public interface PlaceRepository {
 	void deletePlace(Place place);
 	
 	void run();
+	void runmobum();
 	
 	void getCoordinates(Place obj) throws Exception;
 	
 	boolean matchPlace(Place place);
+	
+	boolean updateMatchPlace(Place place);
 	
 }

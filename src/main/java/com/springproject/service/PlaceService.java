@@ -19,4 +19,6 @@ public interface PlaceService {
 	void deletePlace(Place place);
 	
 	boolean matchPlace(Place place);
+	
+	boolean updateMatchPlace(Place place);
 }

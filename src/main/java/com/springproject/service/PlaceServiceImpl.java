@@ -53,4 +53,10 @@ public class PlaceServiceImpl implements PlaceService{
 		return placeRepository.getAllPlace(model);
 	}
 
+	@Override
+	public boolean updateMatchPlace(Place place) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
