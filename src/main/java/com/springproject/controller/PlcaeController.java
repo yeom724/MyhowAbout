@@ -181,33 +181,40 @@ public class PlcaeController {
 		Place place = new Place();
 		
 		String jusoPattern = (String)map.get("juso");
-		if(jusoPattern.contains("경남")) {
-			jusoPattern = jusoPattern.replace("경남", "경상남도");
+		if(jusoPattern.substring(0, 4).contains("경남")) {
+			jusoPattern = jusoPattern.replaceFirst("경남", "경상남도");
 		}
 		
 		place.setJuso(jusoPattern);
 		
 		String jibunPattern = (String)map.get("jibun");
-		if(jibunPattern.contains("경남")) {
-			jibunPattern = jibunPattern.replace("경남", "경상남도");
+		if(jibunPattern.substring(0, 4).contains("경남")) {
+			jibunPattern = jibunPattern.replaceFirst("경남", "경상남도");
 		}
 		
 		place.setJibun(jibunPattern);
 		place.setTitle((String)map.get("title"));
 		DecimalFormat df = new DecimalFormat("#.####");
-		String lax = df.format(Double.parseDouble((String)map.get("latitude")));
-		String loy = df.format(Double.parseDouble((String)map.get("longitude")));
-		place.setLatitude(Double.parseDouble(lax));
-		place.setLongitude(Double.parseDouble(loy));
+		double lax =  Math.floor((Double.parseDouble((String)map.get("latitude"))) * 10000) / 10000;
+		double loy = Math.floor((Double.parseDouble((String)map.get("longitude"))) * 10000) / 10000;
+		place.setLatitude(lax);
+		place.setLongitude(loy);
 		
 		
 		if(map.get("update").equals("ok")) {
+			System.out.println("시설 업데이트 함수로 이동합니다.");
+			place.setUpdateNum(Integer.parseInt((String)map.get("updateNum")));
+			place.setCategory((String)map.get("category"));
+			place.setStatus((String)map.get("status"));
+			place.setFoodCategory((String)map.get("foodCategory"));
+			result = placeService.updateMatchPlace(place);
 			
-			code = placeService.updateMatchPlace(place);
-			
-		} else { code = placeService.matchPlace(place); }
+		} else {
+			code = placeService.matchPlace(place);
+			result.put("status", code);
+		}
 		
-		result.put("status", code);
+		
 		
 		return result;
 	}
@@ -297,10 +304,26 @@ public class PlcaeController {
 	public String updatePlace(@PathVariable String updateNum, @ModelAttribute Place place) {
 		System.out.println("업데이트 정보를 받아왔습니다.");
 		
+		if(place.getJuso().substring(0,4).contains("경남")) {
+			place.setJuso(place.getJuso().replaceFirst("경남", "경상남도"));
+		}
 		
+		if(place.getJibun().substring(0,4).contains("경남")) {
+			place.setJibun(place.getJibun().replaceFirst("경남", "경상남도"));
+		}
 		
-		return "redirect:/home";
+		placeService.updatePlace(place);
+		System.out.println("업데이트가 완료되었습니다.");
+		
+		return "redirect:/user/home";
 	}
 	
-	
+	@GetMapping("/delete/{updateNum}")
+	public String deletePlace(@PathVariable String updateNum) {
+		System.out.println("삭제를 진행합니다.");
+		
+		placeService.deletePlace(updateNum);
+		
+		return "redirect:/user/home";
+	}
 }

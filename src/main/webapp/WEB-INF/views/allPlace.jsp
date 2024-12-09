@@ -131,7 +131,7 @@
 	    
 	    if(category.equals("all")){
 	    	
-	    	if(endPage>15){
+	    	if(endPage>1){
 	 %>
 			<a href="/howAbout/place/allPlace/<%=category%>/<%=nowPage-1%>"> [ ◀ ]</a>
 	 <%

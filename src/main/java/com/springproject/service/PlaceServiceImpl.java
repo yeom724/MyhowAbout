@@ -1,5 +1,6 @@
 package com.springproject.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +30,15 @@ public class PlaceServiceImpl implements PlaceService{
 
 	@Override
 	public void updatePlace(Place place) {
-		// TODO Auto-generated method stub
+		System.out.println("updatePlace 도착");
+		placeRepository.updatePlace(place);
 		
 	}
 
 	@Override
-	public void deletePlace(Place place) {
-		// TODO Auto-generated method stub
+	public void deletePlace(String updateNum) {
+		System.out.println("deletePlace 도착");
+		placeRepository.deletePlace(updateNum);
 		
 	}
 
@@ -54,9 +57,9 @@ public class PlaceServiceImpl implements PlaceService{
 	}
 
 	@Override
-	public boolean updateMatchPlace(Place place) {
-		// TODO Auto-generated method stub
-		return false;
+	public HashMap<String,Boolean> updateMatchPlace(Place place) {
+		System.out.println("updateMatchPlace 서비스 도착");
+		return placeRepository.updateMatchPlace(place);
 	}
 
 }

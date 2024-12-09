@@ -53,8 +53,8 @@
 	%>
 		<p>관리자 시설 변경 페이지</p>
 		<form:form id="placeForm" modelAttribute="place" method="post">
-			도로명주소 : <form:input value="<%= place.getJuso() %>" id="juso" path="juso" /> <button type="button" id="placeSerch1" >위도/경도 조회</button> <br>
-			지번주소 : <form:input value="<%= place.getJibun() %>" id="jibun" path="jibun" /> <button type="button" id="placeSerch2" >위도/경도 조회</button> <br>
+			도로명주소 : <form:input value="<%= place.getJuso() %>" id="juso" path="juso" /> <button type="button" id="placeSerch1" >위도/경도 조회</button> <button type="button" id="placeUpdate1" >중복 주소 조회</button> <br>
+			지번주소 : <form:input value="<%= place.getJibun() %>" id="jibun" path="jibun" /> <button type="button" id="placeSerch2" >위도/경도 조회</button> <button type="button" id="placeUpdate2" >중복 주소 조회</button> <br>
 			업태구분 :<form:select id="category" path="category">
 						<form:option value="숙박업"></form:option>
 						<form:option value="일반야영장업"></form:option>
@@ -71,8 +71,8 @@
 						<form:option value="관광식당"></form:option>
 					</form:select>
 			사업장명 : <form:input value="<%= place.getTitle() %>" id="title" path="title" /><br>
-			영업상태 : <form:input path="status" value="<%= place.getStatus() %>"/><br>
-			음식점 구분 : <form:input value="<%= place.getFoodCategory() %>" path="foodCategory" placeholder="업태가 음식점인 곳만 작성해주세요" /><br>
+			영업상태 : <form:input id="status" path="status" value="<%= place.getStatus() %>"/><br>
+			음식점 구분 : <form:input id="foodCategory" value="<%= place.getFoodCategory() %>" path="foodCategory" placeholder="업태가 음식점인 곳만 작성해주세요" /><br>
 			위도(X) : <form:input value="<%= place.getLatitude() %>" id="latitude" path="latitude"/>
 			경도(Y) : <form:input value="<%= place.getLongitude() %>" id="longitude" path="longitude"/><br>
 			<button type="button" id="updatePlace">수정</button>
@@ -101,12 +101,16 @@
 						var title = document.querySelector("#title").value;
 						var latitude = document.querySelector("#latitude").value;
 						var longitude = document.querySelector("#longitude").value;
-						var updateNum = "<%= place.getUpdateNum() %>"
+						var category = document.querySelector("#category").value;
+						var status = document.querySelector("#status").value;
+						var foodCategory = document.querySelector("#foodCategory").value;
+						var updateNum = "<%= place.getUpdateNum() %>";
+						
 						
 						$.ajax({
 							url : "/howAbout/place/placeAPIserch",
 							type : "POST",
-							data : JSON.stringify({"juso" : juso, "jibun" : jibun, "title" : title, "latitude" : latitude, "longitude" : longitude, "update" : "ok", "updateNum" : updateNum}),
+							data : JSON.stringify({"juso" : juso, "jibun" : jibun, "title" : title, "latitude" : latitude, "longitude" : longitude, "update" : "ok", "updateNum" : updateNum, "category" : category, "status" : status, "foodCategory" : foodCategory}),
 							contentType: 'application/json',
 							success : function(data){
 								
@@ -115,7 +119,26 @@
 										document.getElementById('placeForm').submit();
 									} else { return false; }
 								} else {
-									alert("이미 등록된 주소지 입니다. 삭제 후 다시 진행해주십시오.");
+									
+									if('error01' in data){
+										if(data.error01){
+											alert("변경 사항이 없습니다. 다시 확인해주세요.");
+										}
+									}
+									
+									if('error02' in data){
+										if(data.error02){
+											alert("위도 경도를 다시 확인해주세요. 직접 입력하지 마시고 조회 버튼으로 기입해주시길 바랍니다.");
+										}
+									}
+									
+									if('error03' in data){
+										if(data.error03){
+											alert("해당 주소지에 같은 상호명이 존재합니다.");
+										}
+									}
+									
+									alert("업데이트에 실패했습니다.");
 								}
 						},
 							error : function(errorThrown){ alert("처리에 실패했습니다.."); }

@@ -1,5 +1,6 @@
 package com.springproject.repository;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.ui.Model;
@@ -16,7 +17,7 @@ public interface PlaceRepository {
 	
 	void updatePlace(Place place);
 	
-	void deletePlace(Place place);
+	void deletePlace(String updateNum);
 	
 	void run();
 	void runmobum();
@@ -25,6 +26,6 @@ public interface PlaceRepository {
 	
 	boolean matchPlace(Place place);
 	
-	boolean updateMatchPlace(Place place);
+	HashMap<String,Boolean> updateMatchPlace(Place place);
 	
 }

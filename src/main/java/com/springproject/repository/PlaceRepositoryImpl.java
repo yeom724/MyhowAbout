@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -236,6 +237,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 
 	@Override
 	public Place getPlace(String updateNum) {
+		System.out.println("주소지 조회중... : "+updateNum);
 		Place place = null;
 		
 		sql = "select * from aboutPlace where updateNum=?";
@@ -246,6 +248,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 
 	@Override
 	public void updatePlace(Place place) {
+		System.out.println("시설 정보 업데이트를 시작합니다.");
 		
 		sql = "update aboutPlace set juso=?, jibun=?, category=?, title=?, status=?, foodCategory=?, latitude=?, longitude=? where updateNum=?";
 		temp.update(sql, place.getJuso(), place.getJibun(), place.getCategory(), place.getTitle(), place.getStatus(), place.getFoodCategory(), place.getLatitude(), place.getLongitude(), place.getUpdateNum());
@@ -254,8 +257,11 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 	}
 
 	@Override
-	public void deletePlace(Place place) {
-		// TODO Auto-generated method stub
+	public void deletePlace(String updateNum) {
+		System.out.println("시설 정보 삭제를 시작합니다.");
+		
+		sql = "delete from aboutPlace where updateNum=?";
+		temp.update(sql, updateNum);
 		
 	}
 
@@ -301,14 +307,85 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 	}
 	
 	@Override
-	public boolean updateMatchPlace(Place place) {
-		boolean result = false;
+	public HashMap<String,Boolean> updateMatchPlace(Place place) {
+		System.out.println("업데이트 유효성 도착");
+		
+		HashMap<String,Boolean> result = new HashMap<String, Boolean>();
+		result.put("status", false);
 		
 		Place oldPlace = getPlace(String.valueOf(place.getUpdateNum()));
+		System.out.println("기존주소 " + oldPlace.getJuso());
+		System.out.println("수정주소 " + place.getJuso());
 		
 		if(oldPlace.getJuso().equals(place.getJuso())) {
+			System.out.println("도로명 주소 유지 확인");
 			
+			if(oldPlace.getJibun().equals(place.getJibun())) {
+				System.out.println("지번 주소 유지 확인");
+				
+				sql ="select count(*) from aboutPlace where title=? and juso Like ?";
+				int rowTitle = temp.queryForObject(sql, Integer.class, place.getTitle(), '%'+place.getJuso()+'%');
+				
+				if(rowTitle == 0) {
+					result.put("status", true);
+					System.out.println("상호명을 변경합니다.");
+				} else {
+					
+					System.out.println("같은 장소에 동일한 상호명이 존재합니다.");
+					
+					if( !(oldPlace.getCategory().equals(place.getCategory()))||
+						!(oldPlace.getStatus().equals(place.getStatus()))||
+						!(oldPlace.getFoodCategory().equals(place.getFoodCategory()))) {
+						System.out.println("수정된 카테고리"+place.getCategory()+" 기존 카테고리 : "+oldPlace.getCategory());
+						System.out.println("수정된 영업상태"+place.getStatus()+" 기존 영업상태 : "+oldPlace.getStatus());
+						System.out.println("수정된 푸드카테고리"+place.getFoodCategory()+" 기존 푸드카테고리 : "+oldPlace.getFoodCategory());
+						
+						System.out.println("수정 사항이 존재합니다.");
+						result.put("status", true);
+					} else {
+						System.out.println("변동 사항이 없습니다.");
+						result.put("status", false);
+						result.put("error01", true);
+					}
+				}
+				
+				System.out.println("위도"+place.getLatitude());
+				System.out.println("위도"+place.getLongitude());
+				String rowX = String.valueOf(place.getLatitude());
+				String rowY = String.valueOf(place.getLongitude());
+				
+				sql = "select count(*) from aboutPlace where latitude Like ? and longitude Like ? and updateNum=?";
+				int rowXY = temp.queryForObject(sql, Integer.class, rowX+'%', rowY+'%', place.getUpdateNum());
+				if(rowXY != 0) {
+					System.out.println("위도 경도 유지 확인");
+				} else {
+					System.out.println("위도 경도가 잘못되었습니다.");
+					result.put("status", false);
+					result.put("error02", true);
+				}
+				
+			}
 			
+		} else {
+			
+			sql = "select count(*) from aboutPlace where jibun Like ?";
+			int rowJibun = temp.queryForObject(sql, Integer.class, '%'+place.getJibun()+'%');
+			
+			if(rowJibun != 0) {
+				sql ="select count(*) from aboutPlace where title=?";
+				int rowTitle = temp.queryForObject(sql, Integer.class, place.getTitle());
+				
+				if(rowTitle != 0) {
+					System.out.println("같은 장소에 동일한 상호명이 존재합니다. 수정할 수 없습니다.");
+					result.put("error03", true);
+				} else {
+					result.put("status", true);
+					System.out.println("장소는 같지만 상호명이 다릅니다. 수정합니다.");
+				}
+			} else {
+				result.put("status", true);
+				System.out.println("동일한 주소가 존재하지 않습니다. 수정합니다.");
+			}
 			
 		}
 		

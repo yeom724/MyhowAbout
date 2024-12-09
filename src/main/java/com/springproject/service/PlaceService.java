@@ -1,5 +1,6 @@
 package com.springproject.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.ui.Model;
@@ -16,9 +17,9 @@ public interface PlaceService {
 	
 	void updatePlace(Place place);
 	
-	void deletePlace(Place place);
+	void deletePlace(String updateNum);
 	
 	boolean matchPlace(Place place);
 	
-	boolean updateMatchPlace(Place place);
+	HashMap<String,Boolean> updateMatchPlace(Place place);
 }
