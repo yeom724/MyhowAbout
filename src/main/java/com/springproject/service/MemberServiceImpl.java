@@ -55,6 +55,12 @@ public class MemberServiceImpl implements MemberService{
 		return member;
 	}
 
+	@Override
+	public void emailUpdate(String email) {
+		System.out.println("emailUpdate 서비스 도착");
+		memberRepository.emailUpdate(email);
+	}
+
 
 
 }

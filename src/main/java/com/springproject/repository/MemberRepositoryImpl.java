@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
 
 import com.springproject.domain.Member;
 
@@ -27,8 +28,8 @@ public class MemberRepositoryImpl implements MemberRepository{
 	public void addMember(Member member) {
 		System.out.println("addMember 레파지토리 도착");
 		
-		sql = "insert into aboutMember values(?,?,?,?,?,?)";
-		temp.update(sql, member.getUserName(), member.getUserId(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getUserDate());
+		sql = "insert into aboutMember values(?,?,?,?,?,?,?,?)";
+		temp.update(sql, member.getUserName(), member.getUserId(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getUserDate(), member.getUserEmail(), false);
 		
 		System.out.println("aboutMember 테이블에 새 멤버 정보를 입력했습니다.");
 	}
@@ -108,12 +109,24 @@ public class MemberRepositoryImpl implements MemberRepository{
 			if(session.getUserPw().equals(userPw)) {
 				System.out.println("비밀번호가 일치합니다.");
 				member = session;
-				
+
 			} else { System.out.println("비밀번호가 일치하지 않습니다."); }
 
 		} else { System.out.println("아이디가 일치하지 않습니다."); }
 		
 		return member;
+	}
+
+
+	@Override
+	public void emailUpdate(String email) {
+		System.out.println("이메일 인증 완료 페이지 진입");
+		
+		sql = "update aboutMember set enabled=true where userEmail=?";
+		temp.update(sql, email);
+		
+		System.out.println("이메일 인증이 완료되었습니다.");
+		
 	}
 
 }

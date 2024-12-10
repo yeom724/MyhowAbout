@@ -88,6 +88,7 @@
 				<th>업종</th>
 				<th>상호명</th>
 				<th>분류</th>
+				<th>지도</th>
 				<th>수정 및 삭제</th>
 			</tr>
 	<%
@@ -100,6 +101,7 @@
 				<td> <%=place.getCategory() %> </td>
 				<td> <%=place.getTitle() %> </td>
 				<td> <%=place.getFoodCategory() %> </td>
+				<td> <a href="/howAbout/place/getOne/<%=place.getUpdateNum()%>">자세히보기</a> </td>
 	<%
 				if(session != null){
 					member = (Member)session.getAttribute("userStatus");

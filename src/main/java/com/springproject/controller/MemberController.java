@@ -1,17 +1,26 @@
 package com.springproject.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailSender;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,10 +35,25 @@ public class MemberController {
 	@Autowired
 	MemberService memberService;
 	
-	@GetMapping("/home")
-	public String defalutHome() {
-		System.out.println("HOME으로 진입합니다.");
-		return "home";
+	@Autowired
+	MailSender sender;
+	
+	//선택적 경로
+	@GetMapping({"/home", "/home/{email}"})
+	public String defalutHome(@PathVariable(required = false) String email, Model model) {
+		
+		String returnString = "home";
+		
+		if(email == null) {
+			System.out.println("HOME으로 진입합니다.");
+		} else {
+			
+			System.out.println("회원가입 안내 페이지로 진입합니다.");
+			model.addAttribute("email", email);
+			
+		}
+		
+		return returnString;
 	}
 	
 	@GetMapping("/create")
@@ -44,18 +68,37 @@ public class MemberController {
 		SimpleDateFormat today = new SimpleDateFormat("yyyy-MM-dd");
 		member.setUserDate(today.format(new Date()));
 		//데이터 형식 지정
-		
-		System.out.println(member.getUserName());
-		System.out.println(member.getUserId());
-		System.out.println(member.getUserPw());
-		System.out.println(member.getUserTel());
-		System.out.println(member.getUserAddr());
-		System.out.println(member.getUserDate());
-		
+
 		memberService.addMember(member);
 		System.out.println("멤버 추가가 완료되었습니다.");
+		System.out.println("이메일전송 프로세스 시작");
+
+		String host = "http://localhost:8080/howAbout/user/emailcheck";
+		String from = "itedunet@naver.com";
+		String to = member.getUserEmail();
 		
-		return "redirect:home";
+		String content = "클릭하여 이메일 인증을 완료해주십시오\n" + host+"?userEmail="+to;
+		System.out.println(content);
+		
+		SimpleMailMessage message = new SimpleMailMessage();
+		message.setTo(to);
+		message.setSubject("전달메시지");
+		message.setText(content);
+		message.setFrom(from);
+		sender.send(message);
+		System.out.println("전송완료");
+		
+		return "redirect:home/"+member.getUserEmail();
+	}
+	
+	@GetMapping("/emailcheck")
+	public String emailCheck(@RequestParam String userEmail, Model model) {
+		System.out.println("이메일 인증 컨트롤러 도착");
+		
+		memberService.emailUpdate(userEmail);
+		model.addAttribute("enabled", true);
+		
+		return "option";
 	}
 	
 	@GetMapping("/read")

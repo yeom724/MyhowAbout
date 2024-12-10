@@ -1,7 +1,10 @@
 package com.springproject.controller;
 
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -11,11 +14,13 @@ import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -27,6 +32,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.client.RestTemplate;
 
 import com.springproject.domain.Member;
 import com.springproject.domain.Place;
@@ -38,6 +44,9 @@ import com.springproject.service.PlaceService;
 public class PlcaeController {
 	
 	private static final String API_KEY = "20643075f94a998f4e14a1853f11935c";
+	
+	 @Value("fc7be1941eb9e2a48429965c1db39c7e&libraries=services")
+	 private String KAKAO_MAP_API_KEY;
 	
 	@Autowired
 	PlaceRepository placeRepository;
@@ -213,9 +222,7 @@ public class PlcaeController {
 			code = placeService.matchPlace(place);
 			result.put("status", code);
 		}
-		
-		
-		
+
 		return result;
 	}
 	
@@ -326,4 +333,41 @@ public class PlcaeController {
 		
 		return "redirect:/user/home";
 	}
+	
+	@GetMapping("/getOne/{updateNum}")
+	public String getOnePlaceView(@PathVariable String updateNum, Model model) {
+		
+		Place place = placeService.getPlace(updateNum);
+		model.addAttribute("place",place);
+		model.addAttribute("apiKey", KAKAO_MAP_API_KEY);
+
+		return "onePlace";
+	}
+	
+	
+	@GetMapping("/api/map/static")
+    public void getStaticMap(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		double latitude = Double.parseDouble(request.getParameter("latitude"));
+        double longitude = Double.parseDouble(request.getParameter("longitude"));
+        String title = request.getParameter("title");
+
+        String apiKey = KAKAO_MAP_API_KEY; // 서버에서만 사용
+        String staticMapUrl = "https://dapi.kakao.com/v2/maps/staticmap?size=640x480&level=2&marker=location|" + latitude + "," + longitude + "|title:" + title + "&appkey=" + apiKey;
+
+        response.setContentType("image/png");
+        URL url = new URL(staticMapUrl);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+
+        // 이미지 데이터를 클라이언트로 전송
+        try (InputStream is = conn.getInputStream(); OutputStream os = response.getOutputStream()) {
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = is.read(buffer)) != -1) {
+                os.write(buffer, 0, bytesRead);
+            }
+        }
+
+    }
 }

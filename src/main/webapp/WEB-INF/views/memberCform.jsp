@@ -15,7 +15,13 @@
 		유저 비밀번호 : <form:input path="userPw"/><br>
 		유저 전화번호 : <form:input path="userTel"/><br>
 		유저 주소 : <form:input path="userAddr"/><br>
+		유저 이메일 : <form:input path="userEmail"/><br>
 		<input type="submit" value="전송">
 	</form:form>
 </body>
+
+<script type="text/javascript">
+	
+</script>
+
 </html>

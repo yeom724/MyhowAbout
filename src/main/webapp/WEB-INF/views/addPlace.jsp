@@ -53,8 +53,8 @@
 	%>
 		<p>관리자 시설 변경 페이지</p>
 		<form:form id="placeForm" modelAttribute="place" method="post">
-			도로명주소 : <form:input value="<%= place.getJuso() %>" id="juso" path="juso" /> <button type="button" id="placeSerch1" >위도/경도 조회</button> <button type="button" id="placeUpdate1" >중복 주소 조회</button> <br>
-			지번주소 : <form:input value="<%= place.getJibun() %>" id="jibun" path="jibun" /> <button type="button" id="placeSerch2" >위도/경도 조회</button> <button type="button" id="placeUpdate2" >중복 주소 조회</button> <br>
+			도로명주소 : <form:input value="<%= place.getJuso() %>" id="juso" path="juso" /> <button type="button" id="placeSerch1" >위도/경도 조회</button><br>
+			지번주소 : <form:input value="<%= place.getJibun() %>" id="jibun" path="jibun" /> <button type="button" id="placeSerch2" >위도/경도 조회</button><br>
 			업태구분 :<form:select id="category" path="category">
 						<form:option value="숙박업"></form:option>
 						<form:option value="일반야영장업"></form:option>
@@ -233,10 +233,7 @@
 					error : function(errorThrown){ alert("처리에 실패했습니다.."); }
 				})
 				
-			}
-			
-
-			
+			}	
 
 	</script>
 </body>

@@ -11,6 +11,8 @@ public interface MemberService {
 	
 	Member getMember(String userId);
 	
+	void emailUpdate(String email);
+	
 	List<Member> getAllMember();
 	
 	void updateMember(Member member);

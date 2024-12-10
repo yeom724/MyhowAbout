@@ -43,6 +43,27 @@
 		<beans:property name="dataSource" ref="dataSource"></beans:property>
 	</beans:bean>
 	
+	
+    <!-- 이메일 전송 객체 -->
+    <beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <beans:property name="host" value="smtp.gmail.com" />
+        <beans:property name="port" value="587" />
+        <beans:property name="username" value="itedunet945@gmail.com" /> <!-- e-mail 계정 입력 -->
+        <beans:property name="password" value="wjgn pbgm rlxg xvyn" /> <!-- 앱 비밀번호 입력 -->
+        <beans:property name="defaultEncoding" value="utf-8" />
+        <beans:property name="javaMailProperties">
+            <beans:props>
+                <beans:prop key="mail.transport.protocol">smtp</beans:prop>
+                <beans:prop key="mail.smtp.auth">true</beans:prop>
+                <beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
+                <beans:prop key="mail.smtp.ssl.enable">false</beans:prop>
+                <beans:prop key="mail.debug">true</beans:prop>
+                <beans:prop key="mail.smtp.ssl.trust">smtp.gmail.com</beans:prop>
+                <beans:prop key="mail.smtp.ssl.protocols">TLSv1.2</beans:prop>
+            </beans:props>
+        </beans:property>   
+    </beans:bean>
+	
 	<!-- com.springmvc.* 이라고 표시하면 해당 패키지의 모든 클래스의 객체를 만들어서 보관 중 -->
 	<context:component-scan base-package="com.springproject.*" />
 

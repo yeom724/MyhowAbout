@@ -12,6 +12,8 @@ public class Member {
 	private String userTel;				//유저 전화번호
 	private String userAddr;			//유저 주소
 	private String userDate;			//유저 가입일
+	private String userEmail;			//유저 이메일
+	private boolean enabled;			//이메일 인증여부
 	private MultipartFile userIcon;		//유저 이미지 파일
 	private String iconName;
 	
@@ -63,6 +65,18 @@ public class Member {
 	}
 	public void setIconName(String iconName) {
 		this.iconName = iconName;
+	}
+	public String getUserEmail() {
+		return userEmail;
+	}
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	

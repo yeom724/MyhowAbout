@@ -334,12 +334,15 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 					System.out.println("같은 장소에 동일한 상호명이 존재합니다.");
 					
 					if( !(oldPlace.getCategory().equals(place.getCategory()))||
-						!(oldPlace.getStatus().equals(place.getStatus()))||
-						!(oldPlace.getFoodCategory().equals(place.getFoodCategory()))) {
+						!(oldPlace.getStatus().equals(place.getStatus()))) {
 						System.out.println("수정된 카테고리"+place.getCategory()+" 기존 카테고리 : "+oldPlace.getCategory());
 						System.out.println("수정된 영업상태"+place.getStatus()+" 기존 영업상태 : "+oldPlace.getStatus());
-						System.out.println("수정된 푸드카테고리"+place.getFoodCategory()+" 기존 푸드카테고리 : "+oldPlace.getFoodCategory());
-						
+						if(place.getFoodCategory() != null) {
+							if(!(oldPlace.getFoodCategory().equals(place.getFoodCategory()))) {
+								System.out.println("수정된 푸드카테고리"+place.getFoodCategory()+" 기존 푸드카테고리 : "+oldPlace.getFoodCategory());
+							}
+						}
+
 						System.out.println("수정 사항이 존재합니다.");
 						result.put("status", true);
 					} else {
