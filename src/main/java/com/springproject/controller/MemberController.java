@@ -300,13 +300,13 @@ public class MemberController{
 	}
 	
 	@GetMapping("/update")
-	public String updateMember(@ModelAttribute Member member) {
+	public String updateMemberForm(@ModelAttribute Member member) {
 		System.out.println("회원 정보 업데이트 화면으로 이동합니다.");
 		return "memberUpdate";
 	}
 	
 	@PostMapping("/update")
-	public String updateMemberStatus(@ModelAttribute Member member) {
+	public String updateMember(@ModelAttribute Member member) {
 		System.out.println("회원 정보를 수정합니다.");
 		
 		memberService.updateMember(member);
