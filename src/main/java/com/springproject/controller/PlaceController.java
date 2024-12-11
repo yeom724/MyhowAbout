@@ -12,6 +12,7 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,12 +42,9 @@ import com.springproject.service.PlaceService;
 
 @Controller
 @RequestMapping("/place")
-public class PlcaeController {
+public class PlaceController {
 	
 	private static final String API_KEY = "20643075f94a998f4e14a1853f11935c";
-	
-	 @Value("fc7be1941eb9e2a48429965c1db39c7e&libraries=services")
-	 private String KAKAO_MAP_API_KEY;
 	
 	@Autowired
 	PlaceRepository placeRepository;
@@ -338,36 +336,28 @@ public class PlcaeController {
 	public String getOnePlaceView(@PathVariable String updateNum, Model model) {
 		
 		Place place = placeService.getPlace(updateNum);
-		model.addAttribute("place",place);
-		model.addAttribute("apiKey", KAKAO_MAP_API_KEY);
+		model.addAttribute("place", place);
+		
+		Properties properties = new Properties();
+        
+		//파일 위치를 알기 위해서 src/main/java 에 속하는 클래스면 아무거나 가져와도 된다.
+        try (InputStream input = PlaceController.class.getClassLoader().getResourceAsStream("properties/application-API-KEY.properties")) {
+            if (input == null) {
+                System.out.println("죄송합니다, 파일을 찾을 수 없습니다.");
+            }
+            
+            properties.load(input);
+            
+            // 데이터 가져오기
+            String value1 = properties.getProperty("kakao-javaScript-key");
+            model.addAttribute("apiKey", value1);
+            
+            System.out.println("key1: " + value1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 		return "onePlace";
 	}
 	
-	
-	@GetMapping("/api/map/static")
-    public void getStaticMap(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		
-		double latitude = Double.parseDouble(request.getParameter("latitude"));
-        double longitude = Double.parseDouble(request.getParameter("longitude"));
-        String title = request.getParameter("title");
-
-        String apiKey = KAKAO_MAP_API_KEY; // 서버에서만 사용
-        String staticMapUrl = "https://dapi.kakao.com/v2/maps/staticmap?size=640x480&level=2&marker=location|" + latitude + "," + longitude + "|title:" + title + "&appkey=" + apiKey;
-
-        response.setContentType("image/png");
-        URL url = new URL(staticMapUrl);
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("GET");
-
-        // 이미지 데이터를 클라이언트로 전송
-        try (InputStream is = conn.getInputStream(); OutputStream os = response.getOutputStream()) {
-            byte[] buffer = new byte[1024];
-            int bytesRead;
-            while ((bytesRead = is.read(buffer)) != -1) {
-                os.write(buffer, 0, bytesRead);
-            }
-        }
-
-    }
 }

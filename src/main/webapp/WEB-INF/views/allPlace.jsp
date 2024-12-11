@@ -106,9 +106,12 @@
 				if(session != null){
 					member = (Member)session.getAttribute("userStatus");
 					if(member != null){
+						
+						if(member.getUserId().equals("admin")){
 	%>
 				<td> <a href="/howAbout/place/update/<%=place.getUpdateNum()%>">수정</a> | <a href="/howAbout/place/delete/<%=place.getUpdateNum()%>">삭제</a></td>
 	<%
+						}
 					}
 				}
 	%>

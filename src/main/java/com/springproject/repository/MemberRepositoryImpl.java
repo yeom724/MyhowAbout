@@ -29,7 +29,16 @@ public class MemberRepositoryImpl implements MemberRepository{
 		System.out.println("addMember 레파지토리 도착");
 		
 		sql = "insert into aboutMember values(?,?,?,?,?,?,?,?)";
-		temp.update(sql, member.getUserName(), member.getUserId(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getUserDate(), member.getUserEmail(), false);
+		
+		if(member.isEnabled()) {
+			System.out.println("이메일 인증이 완료된 계정입니다. (카카오)");
+			temp.update(sql, member.getUserName(), member.getUserId(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getUserDate(), member.getUserEmail(), true);
+		} else {
+			System.out.println("이메일 인증이 필요한 계정입니다.");
+			temp.update(sql, member.getUserName(), member.getUserId(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getUserDate(), member.getUserEmail(), false);
+		}
+		
+		
 		
 		System.out.println("aboutMember 테이블에 새 멤버 정보를 입력했습니다.");
 	}

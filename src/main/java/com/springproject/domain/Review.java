@@ -1,9 +1,9 @@
 package com.springproject.domain;
 
 public class Review {
-	String userId;
-	String reviewText;
-	String reviewDate;
+	private String userId;
+	private String reviewText;
+	private String reviewDate;
 	long millisId;		//작성일의 밀리초가 고유의 아이디가 됨
 
 	public String getUserId() {

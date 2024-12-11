@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey }"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}"></script>
 <head>
 <meta charset="UTF-8">
 	<%
@@ -29,29 +29,21 @@
     <div id="map"></div>
 	
 	<script type="text/javascript">
-		$(document).ready(function() {
-	        var latitude = <%= place.getLatitude() %>;
-	        var longitude = <%= place.getLongitude() %>;
-	        var title = encodeURIComponent("<%= place.getTitle() %>"); // 제목 인코딩
+		// 이미지 지도에 표시할 마커입니다
+		var marker = {
+		    position: new kakao.maps.LatLng(<%= place.getLatitude()%>, <%= place.getLongitude()%>), 
+		    text: "<%= place.getTitle() %>"
+		};
 	
-	        // AJAX 요청
-	        $.ajax({
-	            url: '/howAbout/place/api/map/static',
-	            type: 'GET',
-	            data: {
-	                latitude: latitude,
-	                longitude: longitude,
-	                title: title
-	            },
-	            success: function(data) {
-	                // 받은 이미지를 img 태그의 src로 설정
-	                $('#map').attr('src', URL.createObjectURL(data));
-	            },
-	            error: function(jqXHR, textStatus, errorThrown) {
-	                console.error("Error fetching the static map:", textStatus, errorThrown);
-	            }
-	        });
-	    });
+		var staticMapContainer  = document.getElementById('map'), // 이미지 지도를 표시할 div
+		    staticMapOption = { 
+		        center: new kakao.maps.LatLng(<%= place.getLatitude()%>, <%= place.getLongitude()%>), // 이미지 지도의 중심좌표
+		        level: 2, // 이미지 지도의 확대 레벨
+		        marker: marker // 이미지 지도에 표시할 마커
+		    };
+	
+		// 이미지 지도를 생성합니다
+		var staticMap = new kakao.maps.StaticMap(staticMapContainer, staticMapOption);
 	</script>
 
     

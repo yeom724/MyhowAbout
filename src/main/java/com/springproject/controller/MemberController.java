@@ -8,14 +8,24 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,20 +34,32 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.view.RedirectView;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springproject.domain.Member;
 import com.springproject.service.MemberService;
 
 @Controller
 @RequestMapping("/user")
-public class MemberController {
+public class MemberController{
 	
 	@Autowired
-	MemberService memberService;
+	private MemberService memberService;
 	
 	@Autowired
-	MailSender sender;
+	private MailSender sender;
 	
+	private final RestTemplate restTemplate = new RestTemplate();
+	
+	@Value("20643075f94a998f4e14a1853f11935c")
+    private String restApiKey;
+
+    @Value("http://172.16.6.80:8080/howAbout/user/kakao/callback")
+    private String redirectUri;
+
 	//선택적 경로
 	@GetMapping({"/home", "/home/{email}"})
 	public String defalutHome(@PathVariable(required = false) String email, Model model) {
@@ -102,7 +124,7 @@ public class MemberController {
 	}
 	
 	@GetMapping("/read")
-	public String readOneMember() {
+	public String readMemberPage() {
 		System.out.println("멤버 조회 페이지 진입");
 		return "memberR";
 	}
@@ -113,8 +135,116 @@ public class MemberController {
 		return "memberLogin";
 	}
 	
+	
+	@GetMapping("/kakao/login")
+	public String kakaoLogin() {
+		System.out.println("카카오 로그인 페이지로 이동합니다.");
+		String kakaoLoginUrl = "https://kauth.kakao.com/oauth/authorize?client_id=" + restApiKey +
+							   "&redirect_uri=" + redirectUri +
+							   "&response_type=code";
+		
+		return "redirect:"+kakaoLoginUrl;
+	}
+	
+	// 카카오 콜백 처리
+    @GetMapping("/kakao/callback")
+    public String kakaoCallback(@RequestParam String code, Model model, HttpServletRequest req) {
+        String accessToken = getAccessToken(code); // 액세스 토큰 요청
+        return getUserInfo(accessToken, model, req); // 사용자 정보 요청 및 모델에 추가
+    }
+
+    // 액세스 토큰 요청 메서드
+    private String getAccessToken(String code) {
+        String tokenUrl = "https://kauth.kakao.com/oauth/token";
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Content-Type", "application/x-www-form-urlencoded");
+
+        // 요청 본문 생성
+        String requestBody = "grant_type=authorization_code" +
+                             "&client_id=" + restApiKey +
+                             "&redirect_uri=" + redirectUri +
+                             "&code=" + code;
+
+        HttpEntity<String> request = new HttpEntity<>(requestBody, headers);
+        ResponseEntity<String> response = restTemplate.exchange(tokenUrl, HttpMethod.POST, request, String.class);
+
+        return extractAccessToken(response.getBody()); // JSON 응답에서 액세스 토큰 추출
+    }
+
+    // JSON에서 액세스 토큰 추출하는 메서드
+    private String extractAccessToken(String jsonResponse) {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode jsonNode = mapper.readTree(jsonResponse);
+            return jsonNode.get("access_token").asText();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // 사용자 정보 요청 메서드
+    private String getUserInfo(String accessToken, Model model, HttpServletRequest req) {
+        String userInfoUrl = "https://kapi.kakao.com/v2/user/me";
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Bearer " + accessToken); // 액세스 토큰 설정
+
+        HttpEntity<String> request = new HttpEntity<>(headers);
+        ResponseEntity<String> response = restTemplate.exchange(userInfoUrl, HttpMethod.GET, request, String.class);
+
+        // 사용자 정보를 모델에 추가
+        addUserToModel(response.getBody(), model, req);
+
+        return "redirect:/user/home"; // 사용자 정보를 보여줄 뷰 이름
+    }
+
+    // 모델에 사용자 정보를 추가하는 메서드
+    private void addUserToModel(String jsonResponse, Model model, HttpServletRequest req) {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode jsonNode = mapper.readTree(jsonResponse);
+            HttpSession session = null;
+            
+            String id = jsonNode.get("id").asText(); // 사용자 ID 추출
+            String name = jsonNode.get("properties").get("nickname").asText();
+            
+            Member member = memberService.getMember("kakaouser"+id);
+            
+            if(member == null) {
+            	System.out.println("새로운 멤버 정보를 생성합니다. (카카오)");
+            	
+            	Random random = new Random();
+                int pwNum = 100000+random.nextInt(900000);
+                String pwStr = String.valueOf(pwNum);
+                
+                member = new Member();
+                member.setUserName(name);
+                member.setUserId("kakaouser"+id);
+                member.setUserPw(pwStr);
+                SimpleDateFormat today = new SimpleDateFormat("yyyy-MM-dd");
+        		member.setUserDate(today.format(new Date()));
+        		member.setEnabled(true);
+        		memberService.addMember(member);
+            }
+            
+            Member user = memberService.loginMember(member.getUserId(), member.getUserPw());
+            
+            if(user != null) {
+    			System.out.println("세션 생성을 시작합니다.");
+    			session = req.getSession(true);
+    			session.setAttribute("userStatus", user);
+    		}
+    
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+	
 	@PostMapping("/login")
-	public String userGetSession(HttpServletRequest req, Model model) {
+	public String userGetSession(HttpServletRequest req) {
 		System.out.println("로그인 확인 중...");
 		HttpSession session = null;
 		
