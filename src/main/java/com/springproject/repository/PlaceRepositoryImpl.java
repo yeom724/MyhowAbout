@@ -47,7 +47,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
     }
     
     public void run() {
-        String filePath = "json/food.json"; // JSON 파일 경로
+        String filePath = "json/restaurant.json"; // JSON 파일 경로
 
         try {
             // 리소스 폴더에서 JSON 파일 읽기
@@ -70,28 +70,34 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 
             // 도로명주소 추출 및 API 호출
             for (int i = 0; i < jsonArray.length(); i++) {
-                Place obj = new Place();
+                Restaurant obj = new Restaurant();
                 JSONObject place = jsonArray.getJSONObject(i);
+                System.out.println(place);
                 
-                obj.setJuso(place.getString("도로명주소"));
-                obj.setCategory(place.getString("음식점 구분"));
-                obj.setJibun(place.getString("지번주소"));
-                obj.setTitle(place.getString("사업장명"));
-                obj.setStatus(place.getString("영업상태"));
-                obj.setFoodCategory(place.getString("업태구분"));
+                obj.setAddressName(place.getString("address_name"));
+                obj.setRoadAddress(place.getString("road_address_name"));
+                obj.setPlaceName(place.getString("place_name"));
+                obj.setCategory(place.getString("category_group_name"));
+                obj.setCategoryAll(place.getString("category_name"));
+                obj.setPhone(place.getString("phone"));
+                obj.setPlaceUrl(place.getString("place_url"));
+                obj.setPlaceID(place.getString("id"));
+                obj.setLongitude(place.getString("x"));
+                obj.setLatitude(place.getString("y"));
                 
-                String address = place.getString("지번주소");
-                System.out.println("주소: " + address);
+                sql = "INSERT INTO Place VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                temp.update(sql, obj.getAddressName(), obj.getRoadAddress(), obj.getPlaceName(), obj.getCategory(), obj.getCategoryAll(), obj.getPhone(), obj.getPlaceUrl(), obj.getPlaceID(), obj.getLongitude(), obj.getLatitude());
+                System.out.println(i+"번째 저장완료");
 
                 // Kakao API로 위도와 경도 받아오기
-                try {
-                	
-                    getCoordinates(obj);
-                    
-                } catch (Exception e) {
-                    System.out.println("위치 정보를 가져오는 데 실패했습니다: " + address);
-                    e.printStackTrace();
-                }
+//                try {
+//                	
+//                    //getCoordinates(obj);
+//                    
+//                } catch (Exception e) {
+//                    System.out.println("정보를 가져오는 데 실패했습니다");
+//                    e.printStackTrace();
+//                }
             }
 
         } catch (IOException e) {
@@ -644,7 +650,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 		
 		List<Restaurant> dataList = null;
 
-        sql = "SELECT * from place limit 11905"; // 필요한 컬럼 선택
+        sql = "SELECT * from place limit 21000"; // 필요한 컬럼 선택
         dataList = temp.query(sql, new RestaurantRowMapper());
         
         ObjectMapper objectMapper = new ObjectMapper();
