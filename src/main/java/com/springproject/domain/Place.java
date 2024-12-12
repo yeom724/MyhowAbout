@@ -1,7 +1,10 @@
 package com.springproject.domain;
 
+import com.springproject.Jackson.GyeongnamGoodRestaurantList;
 
 public class Place {
+	
+	private Restaurant restaurant;
 	
 	String juso;
 	String jibun;
@@ -66,6 +69,12 @@ public class Place {
 	}
 	public void setUpdateNum(int updateNum) {
 		this.updateNum = updateNum;
+	}
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 	
 	

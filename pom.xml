@@ -120,6 +120,14 @@
 		    <artifactId>selenium-java</artifactId>
 		    <version>4.14.0</version> <!-- 최신 버전 확인 후 변경 -->
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v131 -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-devtools-v131</artifactId>
+		    <version>4.27.0</version>
+		</dependency>
+
 	
 	<!-- 잭슨 (Json파일을 보다 쉽게 자바객체로 변환) -->
 	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->

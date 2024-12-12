@@ -32,6 +32,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -45,8 +46,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springproject.domain.Member;
 import com.springproject.domain.Place;
+import com.springproject.domain.Restaurant;
 import com.springproject.repository.PlaceRepository;
 import com.springproject.service.PlaceService;
 
@@ -76,112 +79,34 @@ public class PlaceController {
 	
 	@GetMapping("/scrap")
 	public String startScrap() {
-		System.out.println("스크래핑 시작");
-		return "scrapMap";
-	}
-	
-	@GetMapping("/map")
-	private void testMapURL() {
-		 try {
-	            // API 키 설정
-	            String apiKey = API_KEY; // 본인의 REST API 키로 변경
-	            String searchQuery = "한일장여관"; // 상호명
-	            String address = "경상남도 거창군 거창읍 대동리 698-4 "; // 지번 주소를 입력하세요
-
-	            // API URL 생성
-	            String apiUrl = String.format(
-	                    "https://dapi.kakao.com/v2/local/search/keyword.json?query=%s&size=10",
-	                    java.net.URLEncoder.encode(searchQuery + " " + address, "UTF-8") // 상호명과 주소를 함께 URL 인코딩
-	                );
-
-	            // API 요청
-	            URL url = new URL(apiUrl);
-	            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-	            conn.setRequestMethod("GET");
-	            conn.setRequestProperty("Authorization", "KakaoAK" +" "+ apiKey); // Authorization 헤더 설정
-	            conn.connect();
-	            System.out.println(conn);
-
-	            // 응답 읽기
-	            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-	            StringBuilder response = new StringBuilder();
-	            String line;
-	            while ((line = reader.readLine()) != null) {
-	                response.append(line);
-	            }
-	            reader.close();
-
-	            // JSON 파싱
-	            JSONObject jsonResponse = new JSONObject(response.toString());
-	            JSONArray documents = jsonResponse.getJSONArray("documents");
-
-	            if (documents.length() > 0) {
-	                // 첫 번째 장소 정보 가져오기
-	                JSONObject place = documents.getJSONObject(0);
-	                String placeId = place.getString("id"); // 장소 ID
-	                String placeUrl = "https://place.map.kakao.com/" + placeId; // 카카오맵 URL
-
-	                // 결과 출력
-	                System.out.println("카카오맵 URL: " + placeUrl);
-	            } else {
-	                System.out.println("장소를 찾을 수 없습니다.");
-	            }
-
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	        }
-	}
-	
-	
-	private void testWebScrap() {
 		
-		 // ChromeDriver 경로 설정
-        System.setProperty("webdriver.chrome.driver", "C:/chromedriver-win64/chromedriver.exe"); // 경로 수정
+		return "placeex";
+	}
+	
+	@GetMapping("/json/rest")
+	public void jsonRest() {
+		
+		placeRepository.fetchDataFromDatabase();
+		
+	}
 
-        // ChromeOptions 설정 (옵션 필요시)
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // 브라우저를 GUI 없이 실행 (선택 사항)
+	
+	@PostMapping("/DBconn")
+	public ResponseEntity<String> testWebScrap(@RequestBody List<Restaurant> restaurants) {
+		
+		for(Restaurant rest: restaurants) {
+			
+			try {
+				placeRepository.addRestaurant(rest);
+			} catch(Exception e) {
+				System.out.println("중복데이터가 있으므로 넘어갑니다.");
+			}
+			
+			
+		}
 
-        // WebDriver 초기화
-        WebDriver driver = new ChromeDriver(options);
+        return ResponseEntity.ok("데이터가 성공적으로 저장되었습니다.");
         
-        try {
-            // 웹 페이지 열기
-            driver.get("https://place.map.kakao.com/1346301870"); // 실제 URL로 변경하세요.
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // 페이지 로드 대기
-
-            // div#kakaoContent 선택
-            WebElement contentDiv = driver.findElement(By.id("kakaoContent"));
-            
-            // outerDiv 안의 innerDiv 선택
-            WebElement innerDiv = contentDiv.findElement(By.id("mArticle"));
-            
-            WebElement menuDiv = innerDiv.findElement(By.className("cont_menu"));
-
-            // innerDiv 안의 ul 선택
-            WebElement ulElement = menuDiv.findElement(By.tagName("ul"));
-
-            // ul 안의 li 요소들 선택
-            List<WebElement> listItems = ulElement.findElements(By.tagName("li"));
-
-            // 각 li의 텍스트 출력
-            for (WebElement item : listItems) {
-                System.out.println("추출된 항목: " + item.getText()); // 각 항목의 텍스트 출력
-            }
-            
-            String fourthListItem = (String)listItems.get(3).getText(); // 인덱스는 0부터 시작하므로 3이 4번째
-            
-            System.out.println("4번째 태그 : "+fourthListItem);
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            // 브라우저 닫기
-            driver.quit();
-        }
-    
-
 	}
 	
 	@GetMapping("/addPlaceForm")

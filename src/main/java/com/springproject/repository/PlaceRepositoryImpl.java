@@ -4,13 +4,25 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.time.Duration;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.sql.DataSource;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -20,6 +32,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springproject.Jackson.*;
 import com.springproject.domain.Member;
 import com.springproject.domain.Place;
+import com.springproject.domain.Restaurant;
 
 @Repository
 public class PlaceRepositoryImpl implements PlaceRepository{
@@ -222,6 +235,93 @@ public class PlaceRepositoryImpl implements PlaceRepository{
     	
 
     }
+    
+
+	@Override
+	public void addRestaurant(Restaurant restaurant) {
+		
+		sql = "insert into Place values(?,?,?,?,?,?,?,?,?,?)";
+		temp.update(sql, restaurant.getAddressName(), restaurant.getRoadAddress(), restaurant.getPlaceName(), restaurant.getCategory(), restaurant.getCategoryAll() ,restaurant.getPhone(), restaurant.getPlaceUrl(), restaurant.getPlaceID(), restaurant.getLongitude(), restaurant.getLatitude());
+		
+//		// ChromeDriver 경로 설정
+//        System.setProperty("webdriver.chrome.driver", "C:/chromedriver-win64/chromedriver.exe"); // 경로 수정
+//
+//        // ChromeOptions 설정 (옵션 필요시)
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--headless"); // 브라우저를 GUI 없이 실행 (선택 사항)
+//
+//        // WebDriver 초기화
+//        WebDriver driver = new ChromeDriver(options);
+//        
+//        try {
+//            // 웹 페이지 열기
+//            driver.get(restaurant.getPlaceUrl());
+//            
+//            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // 페이지 로드 대기
+//            WebElement moreButton = driver.findElement(By.cssSelector("a.link_more:nth-of-type(1)"));
+//            WebElement moreButton2 = driver.findElement(By.cssSelector("a.btn_more:nth-of-type(1)"));
+//            
+//            // 클릭 시도
+//            try {
+//                moreButton.click();
+//            } catch (ElementClickInterceptedException e) {
+//                // JavaScript로 클릭 시도
+//            	System.out.println("클릭 실패");
+//                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", moreButton);
+//            }
+//            
+//            // 클릭 시도
+//            try {
+//                moreButton.click();
+//            } catch (ElementClickInterceptedException e) {
+//                // JavaScript로 클릭 시도
+//                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", moreButton2);
+//            }
+//            
+//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("ul.list_operation:nth-of-type(2)")));
+//
+//            // div#kakaoContent 선택
+//            WebElement contentDiv = driver.findElement(By.id("kakaoContent"));
+//            WebElement innerDiv = contentDiv.findElement(By.id("mArticle"));
+//            WebElement menuDiv = innerDiv.findElement(By.className("cont_menu"));
+//            
+//            WebElement ulElement = menuDiv.findElement(By.tagName("ul"));
+//            List<WebElement> listItems = ulElement.findElements(By.tagName("li"));
+//  
+//            WebElement foldDiv = driver.findElement(By.cssSelector("div.fold_floor"));
+//            List<WebElement> timeItems = foldDiv.findElements(By.cssSelector("ul.list_operation > li"));
+//
+//            // 각 li의 텍스트 출력
+//            for (WebElement item : listItems) {
+//            	System.out.println("메뉴 저장중");
+//            	
+//            	//메뉴저장
+//                sql = "insert into PlaceMenu values(?,null,?,?)";
+//                temp.update(sql, restaurant.getPlaceID(),item.findElement(By.className("loss_word")).getText(), item.findElement(By.className("price_menu")).getText());
+//                
+//            }
+//            
+//            for(WebElement time : timeItems) {
+//            	System.out.println("시간 저장중");
+//            	
+//            	//시간저장
+//            	sql = "insert into PlaceTime values(?,null,?)";
+//            	temp.update(sql, restaurant.getPlaceID(),time.getText());
+//            	
+//            	
+//            }
+//
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            // 브라우저 닫기
+//            driver.quit();
+//        }
+		
+	}
+    
 
 	@Override
 	public void addPlace(Place place) {
@@ -538,6 +638,25 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 	    
 		return place_list;
 	}
+
+	@Override
+	public void fetchDataFromDatabase() {
+		
+		List<Restaurant> dataList = null;
+
+        sql = "SELECT * from place limit 11905"; // 필요한 컬럼 선택
+        dataList = temp.query(sql, new RestaurantRowMapper());
+        
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            objectMapper.writeValue(new File("C:/logs/data.json"), dataList); // data.json 파일로 저장
+            System.out.println("데이터가 JSON 파일로 저장되었습니다.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+	}
+
 
 
 
