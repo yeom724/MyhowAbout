@@ -27,6 +27,7 @@
 	<p><%= place.getJuso() %></p>
 	<p><%= place.getCategory() %></p>
     <div id="map"></div>
+    
 	
 	<script type="text/javascript">
 		// 이미지 지도에 표시할 마커입니다

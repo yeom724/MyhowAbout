@@ -14,23 +14,16 @@ public interface PlaceRepository {
 	
 	void addRestaurant(Restaurant restaurant);
 	
-	Place getPlace(String updateNum);
+	Object getPlace(String placeID);
 	
-	List<Place> getAllPlace(Model model);
+	List<? extends Object> getAllPlace(Model model);
 	
 	void updatePlace(Place place);
 	
-	void deletePlace(String updateNum);
-	
-	void run();
-	void runmobum();
-	
-	void getCoordinates(Place obj) throws Exception;
+	void deletePlace(String placeID);
 	
 	boolean matchPlace(Place place);
 	
 	HashMap<String,Boolean> updateMatchPlace(Place place);
-	
-	void fetchDataFromDatabase();
 	
 }
