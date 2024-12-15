@@ -10,9 +10,11 @@ public interface MemberRepository {
 	
 	void addMember(Member member);
 	
+	void certification(String email);
+	
 	Member getMember(String userId);
 	
-	void emailUpdate(String email);
+	Member getMemberEmail(String email);
 	
 	List<Member> getAllMember();
 	

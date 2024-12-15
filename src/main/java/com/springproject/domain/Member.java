@@ -15,7 +15,7 @@ public class Member {
 	private String userEmail;			//유저 이메일
 	private boolean enabled;			//이메일 인증여부
 	private MultipartFile userIcon;		//유저 이미지 파일
-	private String iconName;
+	private String iconName;			//유저 이미지 파일 이름
 	
 	
 	public String getUserName() {
@@ -78,6 +78,5 @@ public class Member {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-
 	
 }

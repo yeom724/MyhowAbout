@@ -1,5 +1,7 @@
 package com.springproject.repository;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -24,18 +26,39 @@ public class ReviewRepositoryImpl implements ReviewRepository{
 
 	@Override
 	public void addReview(Review review) {
-		System.out.println("리뷰 등록을 시작합니다.");
-		
-		sql = "insert into aboutReview values(?,?,?,?)";
-		temp.update(sql, review.getUserId(), review.getReviewText(), review.getReviewDate(), review.getMillisId());
-		
-		System.out.println("리뷰를 남겼습니다.");
+
+		sql = "insert into aboutReview values(?,?,?,?,?,?)";
+		temp.update(sql, review.getUserId(), review.getReviewText(), review.getReviewDate(), review.getMillisId(), review.getPlaceID(), review.getIconName());
+
 	}
 
 	@Override
-	public Review getReviewByMillis(long millis) {
-		System.out.println(millis + "해당 리뷰 정보를 조회합니다.");
+	public void updateReview(String millisID, String reviewText) {
 		
+		sql = "select count(*) from aboutReview where millisId=?";
+		int row = temp.queryForObject(sql, Integer.class, millisID);
+		
+		if(row != 0) {
+			
+			try { reviewText = URLDecoder.decode(reviewText, StandardCharsets.UTF_8.toString()); }
+			catch (Exception e) { e.printStackTrace(); }
+			
+			sql = "update aboutReview set reviewText=? where millisId=?";
+			temp.update(sql, reviewText, millisID);
+		}		
+	}
+
+	@Override
+	public void deleteReview(long millis) {
+
+		sql = "delete from aboutReview where millisId=?";
+		temp.update(sql, millis);
+
+	}
+	
+	@Override
+	public Review getReviewByMillis(long millis) {
+
 		Review review = null;
 		
 		sql="select count(*) from aboutReview where millisId=?";
@@ -67,40 +90,18 @@ public class ReviewRepositoryImpl implements ReviewRepository{
 	}
 
 	@Override
-	public List<Review> getAllReview() {
-		System.out.println("전체 리뷰 조회를 시작합니다.");
-		
-		sql = "select * from aboutReview";
-		List<Review> rev_list = temp.query(sql, new ReviewRowMapper());
+	public List<Review> getPlaceAllReview(String placeID) {
+
+		sql = "select * from aboutReview where placeID=?";
+		List<Review> rev_list = temp.query(sql, new ReviewRowMapper(), placeID);
 		
 		if(rev_list.isEmpty() || rev_list == null) {
-			System.out.println("리뷰가 존재하지 않습니다.");
 			rev_list = null;
 		}
-		
-		System.out.println("전체 리뷰 조회가 끝났습니다.");
 		
 		return rev_list;
 	}
 
-	@Override
-	public void updateReview(Review review) {
-		System.out.println("리뷰 수정을 진행합니다.");
-		
-		sql = "update aboutReview set reviewText=? where millisId=?";
-		temp.update(sql, review.getReviewText(), review.getMillisId());
-		
-		System.out.println("리뷰 수정을 완료했습니다.");
-	}
 
-	@Override
-	public void deleteReview(long millis) {
-		System.out.println("리뷰 삭제를 진행합니다.");
-		
-		sql = "delete from aboutReview where millisId=?";
-		temp.update(sql, millis);
-		
-		System.out.println("리뷰 삭제를 완료했습니다.");
-	}
 
 }

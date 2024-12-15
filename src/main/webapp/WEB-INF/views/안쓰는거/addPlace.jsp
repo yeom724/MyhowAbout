@@ -1,11 +1,11 @@
-<%@page import="com.springproject.domain.Place"%>
+<%@page import="com.springproject.domain.deleteplace"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page session="false" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-
+<!--
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,31 +15,32 @@
 </head>
 <body>
 	<%
-		String update = (String)request.getAttribute("update");
-		Place place = null;
-		
-		if(update == null){
+	String update = (String)request.getAttribute("update");
+			deleteplace place = null;
+			
+			if(update == null){
 	%>
 
 	<p>관리자 시설 등록 페이지</p>
 	<form:form id="placeForm" modelAttribute="place" method="post">
 		도로명주소 : <form:input id="juso" path="juso" /> <button type="button" id="placeSerch1" >위도/경도 조회</button> <br>
 		지번주소 : <form:input id="jibun" path="jibun" /> <button type="button" id="placeSerch2" >위도/경도 조회</button> <br>
-		업태구분 :<form:select path="category">
-					<form:option value="숙박업"></form:option>
-					<form:option value="일반야영장업"></form:option>
-					<form:option value="외국인관광도시민박업"></form:option>
-					<form:option value="한옥체험업"></form:option>
-					<form:option value="관광펜션업"></form:option>
-					<form:option value="자동차야영장업"></form:option>
-					<form:option value="관광숙박업"></form:option>
-					<form:option value="농어촌민박업"></form:option>
-					<form:option value="모범음식점"></form:option>
-					<form:option value="일반음식점"></form:option>
-					<form:option value="휴게음식점"></form:option>
-					<form:option value="외국인전용유흥음식점업"></form:option>
-					<form:option value="관광식당"></form:option>
+		 업태구분 :<form:select path="category">
+					java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");</form:option>
+					java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");</form:option>
+					java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");</form:option>
+					java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");</form:option>
+					java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");</form:option>
+					java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");</form:option>
+					java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");</form:option>
+					java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");</form:option>
+					java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");</form:option>
+					java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");</form:option>
+					java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");</form:option>
+					java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");</form:option>
+					java.lang.Object value = (java.lang.Object) pageContext.getAttribute("value");</form:option>
 				</form:select>
+		
 		사업장명 : <form:input id="title" path="title" /><br>
 		영업상태 : <form:input path="status" value="영업/정상"/><br>
 		음식점 구분 : <form:input path="foodCategory" placeholder="업태가 음식점인 곳만 작성해주세요" /><br>
@@ -48,8 +49,8 @@
 		<button type="button" id="savePlace">저장</button>
 	</form:form>
 	<%
-		} else if(update.equals("ok")){
-			place = (Place)request.getAttribute("place");
+	} else if(update.equals("ok")){
+		place = (deleteplace)request.getAttribute("place");
 	%>
 		<p>관리자 시설 변경 페이지</p>
 		<form:form id="placeForm" modelAttribute="place" method="post">
@@ -238,3 +239,4 @@
 	</script>
 </body>
 </html>
+ -->

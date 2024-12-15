@@ -9,16 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
+import com.springproject.domain.deleteplace;
 import com.springproject.domain.Place;
-import com.springproject.domain.Restaurant;
 
 
-public class RestaurantRowMapper implements RowMapper<Restaurant>{
+public class RestaurantRowMapper implements RowMapper<Place>{
 
 	@Override
-	public Restaurant mapRow(ResultSet rs, int rowNum) throws SQLException {
+	public Place mapRow(ResultSet rs, int rowNum) throws SQLException {
 		
-		Restaurant rest = new Restaurant();
+		Place rest = new Place();
 		
 		rest.setAddressName(rs.getString(1));
 		rest.setRoadAddress(rs.getString(2));

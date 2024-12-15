@@ -1,41 +1,16 @@
 package com.springproject.controller;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.text.DecimalFormat;
+
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,13 +19,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springproject.domain.Member;
 import com.springproject.domain.Place;
-import com.springproject.domain.Restaurant;
-import com.springproject.repository.PlaceRepository;
 import com.springproject.service.PlaceService;
 
 @Controller
@@ -60,10 +31,31 @@ public class PlaceController {
 	private static final String API_KEY = "14cdbb863b4c2d47cee16ab2b06356c6";
 	
 	@Autowired
-	PlaceRepository placeRepository;
-	
-	@Autowired
 	PlaceService placeService;
+	
+	@GetMapping("/scrap")
+	public String startScrap() {
+		
+		return "placeex";
+	}
+	
+	@PostMapping("/DBconn")
+	public ResponseEntity<String> testWebScrap(@RequestBody List<Place> restaurants) {
+		
+		for(Place rest: restaurants) {
+			
+			try {
+				placeService.addPlace(rest);
+			} catch(Exception e) {
+				System.out.println("중복데이터가 있으므로 넘어갑니다.");
+			}
+			
+			
+		}
+
+        return ResponseEntity.ok("데이터가 성공적으로 저장되었습니다.");
+        
+	}
 	
 	//모든 페이지 반환 (혹 카테고리별 조회 후 반환)
 	@GetMapping("/serchPlaceAll/{range}/{pageNum}")
@@ -97,78 +89,140 @@ public class PlaceController {
 		model.addAttribute("select", select);
 		model.addAttribute("pageNum", pageNum);
 		
-		List<? extends Object> place_list = placeService.getAllPlace(model);
+		List<Place> place_list = placeService.getAllPlace(model);
 		model.addAttribute("place_list", place_list);
 		System.out.println("페이지로 이동합니다.");
 		
-		return "newAllPlace";
+		return "place/newAllPlace";
 	}
 	
 	//하나의 장소 정보를 반환
-	@GetMapping("/newGetOne/{placeID}")
+	@GetMapping("/newGetOne/placeID/{placeID}")
 	public String newGetOnePlace(@PathVariable String placeID, Model model) {
 		
-		Restaurant restaurant = (Restaurant)placeService.getPlace(placeID);
-		model.addAttribute("place", restaurant);
+		Place place = (Place)placeService.getPlace(placeID);
+		model.addAttribute("place", place);
 		
-		return "newOnePlace";
+		return "place/newOnePlace";
+	}
+	
+	@ResponseBody
+	@PostMapping("/newGetOne/placeID/{placeID}")
+	public HashMap<String, Boolean> newGetOnePlace(@PathVariable String placeID, @RequestBody HashMap<String,Object> map) {
+		
+		HashMap<String, Boolean> result = new HashMap<String, Boolean>();
+		Place place = null;
+		
+		if(placeID.equals(map.get("placeID"))) {
+
+			if(map.get("status").equals("update")) {
+				place = (Place)placeService.getPlace(placeID);
+				if(place != null) { result.put("status", true); }
+			}
+			
+			else if (map.get("status").equals("add")) {
+				place = (Place)placeService.getPlace(placeID);
+				if(place != null) { 
+					result.put("status", false);
+					result.put("error01", true);
+				} else { result.put("status", true); }
+			}
+			
+		} else {
+			result.put("status", false);
+			result.put("error02", true);
+		}
+		
+		return result;
 	}
 	
 	//장소추가 페이지, 관리자만 접근 가능
 	@GetMapping("/placeAdd")
-	public String placeAddForm(@ModelAttribute Restaurant restaurant, HttpServletRequest req, Model model) {
+	public String placeAddForm(@ModelAttribute Place place, HttpServletRequest req, Model model) {
 		
 		HttpSession session = req.getSession(false);
 		//String result = "redirect:/user/home";
-		String result = "newAddPlace";
+		String result = "place/newAddPlace";
 			
 		if(session != null) {
 			Member member = (Member)session.getAttribute("userStatus");
-			
 			if(member != null) {
-				
 				if(member.getUserId().equals("admin")) {
 					result = "newAddPlace";
-					
-				} else { System.out.println("관리자가 아닙니다."); }
-	
-			} else { System.out.println("멤버 정보가 없습니다."); };
-			
-		} else { System.out.println("세션 정보가 없습니다."); };
+				} else { result = "redirect:/error/403"; }
+			} else { result = "redirect:/error/401"; }
+		} else { result = "redirect:/error/401"; }
 		
 		return result;
 	
 	}
 	
-	@ResponseBody
-	@PostMapping("/addAPIserch")
-	public Object serchAddr(@RequestBody HashMap<String,Object> map) {
+	@PostMapping("/placeAdd")
+	public String placeAdd(@ModelAttribute Place place, HttpServletRequest req) {
 		
-		try
-		{
-			
-			String address = (String)map.get("address");
-			String placeName = (String)map.get("placeName");
-			String urlStr = "https://dapi.kakao.com/v2/local/search/address.json?query=" + URLEncoder.encode(address, "UTF-8");
-	        URL url = new URL(urlStr);
-	        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-	        conn.setRequestMethod("GET");
-	        conn.setRequestProperty("Authorization", "KakaoAK " + API_KEY);
-
-	        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-	        StringBuilder response = new StringBuilder();
-	        String line;
-	        
-	        while ((line = br.readLine()) != null) { response.append(line); }
-	        br.close();
-			
-		} catch(Exception e) { System.out.println("정보 불러오기에 실패하였습니다."); }
+		String home = "redirect:/user/home";
 		
+		HttpSession session = req.getSession(false);
+		Member member = null;
 		
+		if(session != null) {
+			member = (Member)session.getAttribute("userStatus");
+			if(member != null) {
+				if(member.getUserId().equals("admin")) {
+					placeService.addPlace(place);
+				} else { home = "redirect:/error/403"; }
+			} else { home = "redirect:/error/401"; }
+		} else { home = "redirect:/error/401"; }
 		
-        return null;
+		return home;
 		
 	}
+	
+	//장소 수정 페이지
+	@GetMapping("/placeUpdate/{placeID}")
+	public String placeUpdateForm(@PathVariable String placeID, @ModelAttribute Place place, Model model) {
+		
+		Place oldPlace = placeService.getPlace(placeID);
+		model.addAttribute("update","update");
+		model.addAttribute("oldPlace", oldPlace);
+		
+		return "place/newAddPlace";
+	}
+	
+	@PostMapping("/placeUpdate/{placeID}")
+	public String placeUpdate(@PathVariable String placeID, @ModelAttribute Place place, HttpServletRequest req) {
+		
+		String home = "redirect:/user/home";
+		
+		HttpSession session = req.getSession(false);
+		Member member = null;
+		
+		if(session != null) {
+			member = (Member)session.getAttribute("userStatus");
+			if(member != null) {
+				if(member.getUserId().equals("admin")) {
+					String oldPlaceID = (String)session.getAttribute("oldPlaceID");
+					if(oldPlaceID != null) {
+						
+						if(place.getPlaceID().equals(oldPlaceID)) {
+							
+							session.removeAttribute("oldPlaceID");
+							placeService.updatePlace(place);
+							
+						} else { home = "redirect:/error/400"; }	
+					} else { home = "redirect:/error/400"; }
+				} else { home = "redirect:/error/403"; }
+			} else { home = "redirect:/error/401"; }
+		} else { home = "redirect:/error/401"; }
+		
+		return home;
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 //	@GetMapping("/addPlaceForm")
@@ -480,11 +534,7 @@ public class PlaceController {
 //		placeRepository.runmobum();
 //	}
 //	
-//	@GetMapping("/scrap")
-//	public String startScrap() {
-//		
-//		return "placeex";
-//	}
+
 //	
 //	@GetMapping("/json/rest")
 //	public void jsonRest() {
@@ -510,22 +560,6 @@ public class PlaceController {
 //		}
 //	}
 //	
-//	@PostMapping("/DBconn")
-//	public ResponseEntity<String> testWebScrap(@RequestBody List<Restaurant> restaurants) {
-//		
-//		for(Restaurant rest: restaurants) {
-//			
-//			try {
-//				placeRepository.addRestaurant(rest);
-//			} catch(Exception e) {
-//				System.out.println("중복데이터가 있으므로 넘어갑니다.");
-//			}
-//			
-//			
-//		}
-//
-//        return ResponseEntity.ok("데이터가 성공적으로 저장되었습니다.");
-//        
-//	}
+
 	
 }

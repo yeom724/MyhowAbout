@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.springproject.domain.Member;
-import com.springproject.domain.Place;
+import com.springproject.domain.deleteplace;
 import com.springproject.repository.MemberRepository;
 
 @Service
@@ -16,51 +16,27 @@ public class MemberServiceImpl implements MemberService{
 	MemberRepository memberRepository;
 
 	@Override
-	public void addMember(Member member) {
-		System.out.println("addMember 서비스 도착");
-		memberRepository.addMember(member);
-		
-	}
+	public void addMember(Member member) { memberRepository.addMember(member); }
 
 	@Override
-	public Member getMember(String userId) {
-		System.out.println("getMember 서비스 도착");
-		Member member = memberRepository.getMember(userId);
-		return member;
-	}
+	public Member getMember(String userId) { return memberRepository.getMember(userId); }
 
 	@Override
-	public List<Member> getAllMember() {
-		System.out.println("getAllMember 서비스 도착");
-		List<Member> listMember = memberRepository.getAllMember();
-		return listMember;
-	}
+	public List<Member> getAllMember() { return memberRepository.getAllMember(); }
 
 	@Override
-	public void updateMember(Member member) {
-		System.out.println("updateMember 서비스 도착");
-		memberRepository.updateMember(member);
-	}
+	public void updateMember(Member member) { memberRepository.updateMember(member); }
 
 	@Override
-	public void deleteMember(String userId) {
-		System.out.println("deleteMember 서비스 도착");
-		memberRepository.deleteMember(userId);
-	}
+	public void deleteMember(String userId) { memberRepository.deleteMember(userId); }
 
 	@Override
-	public Member loginMember(String userId, String userPw) {
-		System.out.println("loginMember 서비스 도착");
-		Member member = memberRepository.loginMember(userId, userPw);
-		return member;
-	}
+	public Member loginMember(String userId, String userPw) { return memberRepository.loginMember(userId, userPw); }
 
 	@Override
-	public void emailUpdate(String email) {
-		System.out.println("emailUpdate 서비스 도착");
-		memberRepository.emailUpdate(email);
-	}
+	public void certification(String email) { memberRepository.certification(email); }
 
-
+	@Override
+	public Member getMemberEmail(String email) { return memberRepository.getMemberEmail(email); }
 
 }

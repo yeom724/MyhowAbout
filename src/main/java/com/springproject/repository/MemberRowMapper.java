@@ -23,6 +23,7 @@ public class MemberRowMapper implements RowMapper<Member>{
 		member.setUserDate(rs.getString(6));
 		member.setUserEmail(rs.getString(7));
 		member.setEnabled(rs.getBoolean(8));
+		member.setIconName(rs.getString(9));
 		
 		System.out.println("Member 정보 반환완료");
 		return member;

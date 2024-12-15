@@ -1,4 +1,4 @@
-<%@page import="com.springproject.domain.Restaurant"%>
+<%@page import="com.springproject.domain.Place"%>
 <%@page import="com.springproject.domain.Member"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -12,12 +12,11 @@
 </head>
 <body>
 	<%
-		HttpSession session = request.getSession(false);
-		Member member = null;
-		
-		String select = (String)request.getAttribute("select");
-		List<Restaurant> list = (List<Restaurant>)request.getAttribute("place_list");
-		
+	HttpSession session = request.getSession(false);
+			Member member = null;
+			
+			String select = (String)request.getAttribute("select");
+			List<Place> list = (List<Place>)request.getAttribute("place_list");
 	%>
 	
 		<form action="/howAbout/place/serchPlaceAll/select/1" method="get">
@@ -72,11 +71,11 @@
 			</tr>
 			
 	<%
-		for(int i=0; i<list.size(); i++){
-			Restaurant place = list.get(i);
-	%>
+				for(int i=0; i<list.size(); i++){
+					Place place = list.get(i);
+				%>
 			<tr>
-				<td> <a href="/howAbout/place/newGetOne/<%=place.getPlaceID()%>"> <%=place.getPlaceName() %> </a> </td>
+				<td> <a href="/howAbout/place/newGetOne/placeID/<%=place.getPlaceID()%>"> <%=place.getPlaceName() %> </a> </td>
 				<td> <%=place.getCategory() %> </td>
 				<td> <%=place.getAddressName() %> </td>
 	<%

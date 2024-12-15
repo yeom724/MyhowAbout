@@ -18,6 +18,8 @@ public class ReviewRowMapper implements RowMapper<Review>{
 		review.setReviewText(rs.getString(2));
 		review.setReviewDate(rs.getString(3));
 		review.setMillisId(rs.getLong(4));
+		review.setPlaceID(rs.getString(5));
+		review.setIconName(rs.getString(6));
 
 		return review;
 	}

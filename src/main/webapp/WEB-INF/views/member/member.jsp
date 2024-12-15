@@ -10,6 +10,7 @@
 </head>
 <body>
 	<% Member member = (Member)request.getAttribute("member"); %>
+	
 	유저 이름 : <%= member.getUserName() %> <br>
 	유저 아이디 : <%= member.getUserId() %> <br>
 	유저 비밀번호 : <%= member.getUserPw() %> <br>

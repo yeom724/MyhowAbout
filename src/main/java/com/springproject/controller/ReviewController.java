@@ -2,7 +2,11 @@ package com.springproject.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +15,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.springproject.domain.Member;
 import com.springproject.domain.Review;
@@ -28,77 +35,83 @@ public class ReviewController {
 	@Autowired
 	MemberService memberService;
 	
+	@ResponseBody
+	@GetMapping("/sessionInfo")
+	public HashMap<String, String> sessionMember(HttpServletRequest req){
+		
+		HashMap<String, String> result = new HashMap<String, String>();
+		HttpSession session = req.getSession(false);
+		
+		if(session != null) {
+			Member member = (Member)session.getAttribute("userStatus");
+			if(member != null) {
+				result.put("userId", member.getUserId());
+			} else { result.put("userId", "-----"); }
+		} else { result.put("userId", "-----"); }
+
+		return result;
+	}
+	
+	@ResponseBody
 	@GetMapping("/all")
-	public String reviewAllPage(@ModelAttribute Review review, Model model) {
+	public List<Review> reviewAllPage(@RequestParam String url) {
 		
-		List<Review> rev_list = reviewService.getAllReview();
-		model.addAttribute("rev_list", rev_list);
+		String prefix = "placeID/";
+		int index = url.indexOf(prefix);
+		String placeID = url.substring(index + prefix.length());
 		
-		System.out.println("전체 리뷰 페이지로 진입합니다.");
-		return "reviewpage";
+		List<Review> reviews = reviewService.getPlaceAllReview(placeID);
+
+		return reviews;
 	}
 	
-	@GetMapping("/all/{userId}/oneReview")
-	public String reviewOneMember(@PathVariable String userId, Model model) {
-		System.out.println("해당 멤버의 리뷰를 조회합니다.");
+	@ResponseBody
+	@PostMapping("/addReview")
+	public HashMap<String, Object> reviewCreate(@RequestBody HashMap<String, Object> data, HttpServletRequest req) {
 		
-		List<Review> rev_list = reviewService.getReviewById(userId);
-		model.addAttribute("rev_list", rev_list);
-		
-		return "oneReview";
-	}
-	
-	@PostMapping("/create")
-	public String reviewCreate(@ModelAttribute Review review) {
-		System.out.println("리뷰 정보 도착");
+		HttpSession session = req.getSession(false);
+		Member member = (Member)session.getAttribute("userStatus");
+		Review review = new Review();
+
 		SimpleDateFormat today = new SimpleDateFormat("yyyy/MM/dd");
 		review.setReviewDate(today.format(new Date()));
 		review.setMillisId(System.currentTimeMillis());
-		
-		String userId = review.getUserId();
-		
-		Member member = memberService.getMember(userId);
-		
-		if(member == null) {
-			System.out.println("해당 회원을 찾을 수 없습니다.");
-			System.out.println("예외처리 진행");
-		}
-		
+		review.setUserId(member.getUserId());
+		review.setIconName(member.getIconName());
+		review.setPlaceID((String)data.get("placeID"));
+		review.setReviewText((String)data.get("reviewText"));
 		
 		reviewService.addReview(review);
-		
-		System.out.println("리뷰 전체 페이지로 돌아갑니다.");
-		return "redirect:all";
+
+		return null;
 	}
 	
-	@GetMapping("/update/{millisId}")
-	public String reviewUpdateForm(@PathVariable String millisId, @ModelAttribute Review review, Model model) {
-		System.out.println("리뷰 수정 페이지로 진입합니다.");
+	@GetMapping("/{userId}/selectAll")
+	public String reviewOneMember(@PathVariable String userId, Model model) {
+
+		List<Review> rev_list = reviewService.getReviewById(userId);
+		model.addAttribute("rev_list", rev_list);
 		
-		long millis = Long.parseLong(millisId);
-		Review view = reviewService.getReviewByMillis(millis);
-		model.addAttribute("view",view);
-		
-		return "reviewUpdateForm";
+		return "review/oneReview";
 	}
 	
+	@ResponseBody
 	@PostMapping("/update/{millisId}")
-	public String reviewUpdate(@PathVariable String millisId, @ModelAttribute Review review) {
-		System.out.println("수정 사항이 도착하였습니다.");
+	public String reviewUpdate(@RequestBody Review review, @PathVariable String millisId) {
+
+		String reviewText = review.getReviewText();
 		
-		reviewService.updateReview(review);
-		
-		return "redirect:/review/all";
+		reviewService.updateReview(millisId, reviewText);
+		return null;
 	}
 	
-	@GetMapping("/delete/{millisId}")
+	@ResponseBody
+	@PostMapping("/delete/{millisId}")
 	public String reviewDelete(@PathVariable String millisId) {
-		System.out.println("해당 리뷰를 삭제합니다.");
 		
 		long millis = Long.parseLong(millisId);
-		
 		reviewService.deleteReview(millis);
 		
-		return "redirect:/review/all";
+		return null;
 	}
 }

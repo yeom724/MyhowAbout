@@ -26,73 +26,87 @@ public class MemberRepositoryImpl implements MemberRepository{
 
 	@Override
 	public void addMember(Member member) {
-		System.out.println("addMember 레파지토리 도착");
-		
-		sql = "insert into aboutMember values(?,?,?,?,?,?,?,?)";
+
+		sql = "insert into aboutMember values(?,?,?,?,?,?,?,?,?)";
 		
 		if(member.isEnabled()) {
-			System.out.println("이메일 인증이 완료된 계정입니다. (카카오)");
-			temp.update(sql, member.getUserName(), member.getUserId(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getUserDate(), member.getUserEmail(), true);
+			temp.update(sql, member.getUserName(), member.getUserId(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getUserDate(), member.getUserEmail(), true, member.getIconName());
+			
 		} else {
-			System.out.println("이메일 인증이 필요한 계정입니다.");
-			temp.update(sql, member.getUserName(), member.getUserId(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getUserDate(), member.getUserEmail(), false);
+			temp.update(sql, member.getUserName(), member.getUserId(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getUserDate(), member.getUserEmail(), false, member.getIconName());
 		}
+
+	}
+	
+	@Override
+	public void certification(String email) {
 		
+		sql="select count(*) from aboutMember where userEmail=?";
+		int row = temp.queryForObject(sql, Integer.class, email);
 		
-		
-		System.out.println("aboutMember 테이블에 새 멤버 정보를 입력했습니다.");
+		if(row != 0) {
+			sql = "update aboutMember set enabled=true where userEmail=?";
+			temp.update(sql, email);
+		}
+
 	}
 
 	@Override
 	public Member getMember(String userId) {
-		System.out.println(userId + " : 해당 아이디의 멤버 조회를 시작합니다.");
 		
 		Member member = null;
 		
 		sql="select count(*) from aboutMember where userId=?";
 		int row = temp.queryForObject(sql, Integer.class, userId);
 		if(row != 0) {
-			System.out.println("일치하는 아이디를 발견했습니다.");
 			sql = "select * from aboutMember where userId=?";
 			member = temp.queryForObject(sql, new MemberRowMapper(), userId);
-		} else { System.out.println("일치하는 회원을 발견할 수 없었습니다."); }
+		}
 		
-		System.out.println("해당 멤버 정보를 전송합니다.");
+		return member;
+	}
+	
+	@Override
+	public Member getMemberEmail(String email) {
+		
+		Member member = null;
+		
+		sql="select count(*) from aboutMember where userEmail=?";
+		int row = temp.queryForObject(sql, Integer.class, email);
+		
+		if(row != 0) {
+			sql = "select * from aboutMember where userEmail=?";
+			member = temp.queryForObject(sql, new MemberRowMapper(), email);
+		}
+		
 		return member;
 	}
 
 	@Override
 	public List<Member> getAllMember() {
-		System.out.println("전체 멤버 조회를 시작합니다.");
-		
+
 		sql = "select * from aboutMember";
 		List<Member> mem_list = temp.query(sql, new MemberRowMapper());
-		
-		System.out.println("전체 멤버 조회가 끝났습니다.");
+
 		return mem_list;
 	}
 
 	@Override
 	public void updateMember(Member member) {
-		System.out.println("멤버 정보를 업데이트 합니다.");
 		
-		sql = "update aboutMember set userName=?, userPw=?, userTel=?, userAddr=? where userId=?";
-		temp.update(sql, member.getUserName(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getUserId());
-		
-		System.out.println("정보 업데이트가 완료되었습니다.");
+		sql = "update aboutMember set userName=?, userPw=?, userTel=?, userAddr=?, iconName=? where userId=?";
+		temp.update(sql, member.getUserName(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getIconName(), member.getUserId());
 		
 	}
 
 	@Override
 	public void deleteMember(String userId) {
-		System.out.println("회원 탈퇴를 진행합니다.");
-		
+
 		sql="select count(*) from aboutMember where userId=?";
 		int row = temp.queryForObject(sql, Integer.class, userId);
 		if(row != 0) {
 			sql = "delete from aboutMember where userId=?";
 			temp.update(sql, userId);
-			System.out.println("회원 탈퇴가 완료되었습니다.");
 		} else {
 			System.out.println("일치하는 회원을 찾을 수 없었습니다.");
 		}
@@ -102,40 +116,22 @@ public class MemberRepositoryImpl implements MemberRepository{
 
 	@Override
 	public Member loginMember(String userId, String userPw) {
-		System.out.println("입력한 회원 정보를 조회합니다.");
 		Member member = null;
 		
 		sql="select count(*) from aboutMember where userId=?";
-		
 		int row = temp.queryForObject(sql, Integer.class, userId);
 		
 		if(row != 0) {
-			System.out.println("일치하는 아이디를 발견했습니다.");
-			
 			sql = "select * from aboutMember where userId=?";
 			Member session = temp.queryForObject(sql, new MemberRowMapper(), userId);
 			
 			if(session.getUserPw().equals(userPw)) {
-				System.out.println("비밀번호가 일치합니다.");
 				member = session;
-
-			} else { System.out.println("비밀번호가 일치하지 않습니다."); }
-
-		} else { System.out.println("아이디가 일치하지 않습니다."); }
+			}
+		}
 		
 		return member;
 	}
 
-
-	@Override
-	public void emailUpdate(String email) {
-		System.out.println("이메일 인증 완료 페이지 진입");
-		
-		sql = "update aboutMember set enabled=true where userEmail=?";
-		temp.update(sql, email);
-		
-		System.out.println("이메일 인증이 완료되었습니다.");
-		
-	}
 
 }

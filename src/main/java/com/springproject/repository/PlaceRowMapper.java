@@ -9,15 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-import com.springproject.domain.Place;
+import com.springproject.domain.deleteplace;
 
 
-public class PlaceRowMapper implements RowMapper<Place>{
+public class PlaceRowMapper implements RowMapper<deleteplace>{
 
 	@Override
-	public Place mapRow(ResultSet rs, int rowNum) throws SQLException {
+	public deleteplace mapRow(ResultSet rs, int rowNum) throws SQLException {
 		
-		Place place = new Place();
+		deleteplace place = new deleteplace();
 		
 		place.setJuso(rs.getString(1));
 		place.setJibun(rs.getString(2));

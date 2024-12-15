@@ -15,10 +15,13 @@ public class ReviewServiceImpl implements ReviewService{
 	ReviewRepository reviewRepository;
 
 	@Override
-	public void addReview(Review review) {
-		System.out.println("addReview 서비스 도착");
-		reviewRepository.addReview(review);
-	}
+	public void addReview(Review review) { reviewRepository.addReview(review); }
+	
+	@Override
+	public List<Review> getPlaceAllReview(String placeID) { return reviewRepository.getPlaceAllReview(placeID); }
+
+	@Override
+	public void updateReview(String millisID, String reviewText) { reviewRepository.updateReview(millisID, reviewText); }
 
 	@Override
 	public Review getReviewByMillis(long millis) {
@@ -35,25 +38,14 @@ public class ReviewServiceImpl implements ReviewService{
 		return rev_list;
 	}
 
-	@Override
-	public List<Review> getAllReview() {
-		System.out.println("getAllReview() 서비스 도착");
-		
-		List<Review> rev_list = reviewRepository.getAllReview();
-		
-		return rev_list;
-	}
 
-	@Override
-	public void updateReview(Review review) {
-		System.out.println("updateReview 서비스 도착");
-		reviewRepository.updateReview(review);
-	}
 
 	@Override
 	public void deleteReview(long millis) {
 		System.out.println("deleteReview 서비스 도착");
 		reviewRepository.deleteReview(millis);
 	}
+
+
 
 }

@@ -18,12 +18,16 @@
 		if(session != null){
 			member = (Member)session.getAttribute("userStatus");
 	%>
-			<form:form modelAttribute="member" >
+		<p>현재 이미지</p>
+		<img width="100px" height="100px" src="/howAbout/resources/userIcon/<%= member.getIconName() %>">
+			<form:form method="post" modelAttribute="member" enctype="multipart/form-data">
 				유저 이름 : <form:input path="userName" value="<%= member.getUserName() %>"/><br>
-				<form:input type="hidden" path="userId" value="<%= member.getUserId() %>" /><br>
+				유저 아이디 : <form:input path="userId" value="<%= member.getUserId() %>" /><br>
 				유저 비밀번호 : <form:input path="userPw" value="<%= member.getUserPw() %>" /><br>
 				유저 전화번호 : <form:input path="userTel" value="<%= member.getUserTel() %>" /><br>
 				유저 주소 : <form:input path="userAddr" value="<%= member.getUserAddr() %>" /><br>
+				유저 이메일 : <form:input path="userEmail" value="<%= member.getUserEmail() %>" /><br>
+				프로필 사진 : <input type="file" name="userIcon" />
 				<input type="submit" value="전송">
 			</form:form>
 	<%

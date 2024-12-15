@@ -1,5 +1,5 @@
 <%@page import="com.springproject.domain.Member"%>
-<%@page import="com.springproject.domain.Place"%>
+<%@page import="com.springproject.domain.deleteplace"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -12,16 +12,15 @@
 </head>
 <body>
 	<%
-		HttpSession session = request.getSession(false);	
-		Member member = null;
-	
-		List<Place> list = (List<Place>)request.getAttribute("place_list");
-		String category = (String)request.getAttribute("category");
-		String pageNum = (String)request.getAttribute("pageNum");
+	HttpSession session = request.getSession(false);	
+			Member member = null;
 		
-		int Count = (int)request.getAttribute("Count");
-		int totalPage = (int) Math.ceil((double) Count / 50);
-		
+			List<deleteplace> list = (List<deleteplace>)request.getAttribute("place_list");
+			String category = (String)request.getAttribute("category");
+			String pageNum = (String)request.getAttribute("pageNum");
+			
+			int Count = (int)request.getAttribute("Count");
+			int totalPage = (int) Math.ceil((double) Count / 50);
 	%>
 		<form action="/howAbout/place/allPlace/category/1" method="get">
 			<select id="citySelect" name="city" required>
@@ -92,8 +91,8 @@
 				<th>수정 및 삭제</th>
 			</tr>
 	<%
-		for(int i=0; i<list.size(); i++){
-			Place place = list.get(i);
+	for(int i=0; i<list.size(); i++){
+		deleteplace place = list.get(i);
 	%>
 			<tr>
 				<td> <%=place.getJuso() %> </td>

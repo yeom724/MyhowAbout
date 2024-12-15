@@ -2,14 +2,15 @@ create database howAbout;
 use howAbout;
 
 create table aboutMember(
-	userName varchar(10) ,
-    userId varchar(20) primary key,
-    userPw varchar(20),
+	userName varchar(16) ,
+    userId varchar(50) primary key,
+    userPw varchar(30),
     userTel char(12),
-    userAddr varchar(100),
+    userAddr varchar(30),
     userDate char(10),
-    userEamil varchar(100) unique,
-    enabled boolean
+    userEmail varchar(100) unique,
+    enabled boolean,
+    iconName text
 );
 
 alter table aboutMember change userEamil userEmail varchar(100) unique;
@@ -34,11 +35,18 @@ create table aboutReview(
     reviewText varchar(500),
     reviewDate char(10),
     millisId bigint primary key,
-    foreign key (userId) references aboutMember(userId) on delete cascade
+    placeID varchar(30),
+    iconName text,
+    foreign key (userId) references aboutMember(userId) on delete cascade,
+    foreign key (placeID) references place(placeID) on delete cascade
 );
 
 ALTER TABLE aboutPlace
 ADD COLUMN updateNum INT AUTO_INCREMENT PRIMARY KEY;
+
+insert into aboutReview values('admin', '12345', '2024-12-12', '111111111111', '1000047063', 'icon.jpg');
+insert into aboutReview values('admin', '1235', '2024-12-12', '11111111111', '1000047063', 'icon.jpg');
+insert into aboutReview values('admin', '145', '2024-12-12', '111111111', '1000047063', 'icon.jpg');
 
 ALTER TABLE aboutPlace
 ADD COLUMN mainMenu varchar(50);
@@ -59,6 +67,9 @@ create table Place(
     latitude text
 );
 
+select * from place;
+delete from place;
+
 create table PlaceTime(
 	placeID varchar(30),
     num int auto_increment primary key,
@@ -74,7 +85,7 @@ create table PlaceMenu(
     foreign key (placeID) references Place(placeID)
 );
 
-select * from place limit 20000;
+select * from place limit 50000;
 select * from placetime;
 select * from placemenu;
 drop table place;

@@ -3,15 +3,17 @@ package com.springproject.service;
 import java.util.List;
 
 import com.springproject.domain.Member;
-import com.springproject.domain.Place;
+import com.springproject.domain.deleteplace;
 
 public interface MemberService {
 
 	void addMember(Member member);
 	
+	void certification(String email);
+	
 	Member getMember(String userId);
 	
-	void emailUpdate(String email);
+	Member getMemberEmail(String email);
 	
 	List<Member> getAllMember();
 	

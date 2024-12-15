@@ -1,82 +1,118 @@
 package com.springproject.domain;
 
-import com.springproject.Jackson.GyeongnamGoodRestaurantList;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Place {
 	
-	private Restaurant restaurant;
+	@JsonProperty("address_name")
+	private String addressName;
 	
-	String juso;
-	String jibun;
-	String category;
-	String title;
-	String status;
-	String foodCategory;
-	double latitude;
-	double longitude;
-	int updateNum;
+	@JsonProperty("road_address_name")
+	private String roadAddress;
 	
-	public String getJuso() {
-		return juso;
+	@JsonProperty("place_name")
+	private String placeName;
+
+	@JsonProperty("category_group_name")
+	private String category;
+	
+	@JsonProperty("category_name")
+	private String categoryAll;
+
+	@JsonProperty("phone")
+	private String phone;
+
+	@JsonProperty("place_url")
+	private String placeUrl;
+	
+	@JsonProperty("id")
+	private String placeID;
+	
+	@JsonProperty("x")
+	private String longitude;
+	
+	@JsonProperty("y")
+	private String latitude;
+	
+
+	public String getAddressName() {
+		return addressName;
 	}
-	public void setJuso(String juso) {
-		this.juso = juso;
+
+	public void setAddressName(String addressName) {
+		this.addressName = addressName;
 	}
-	public String getJibun() {
-		return jibun;
+
+	public String getRoadAddress() {
+		return roadAddress;
 	}
-	public void setJibun(String jibun) {
-		this.jibun = jibun;
+
+	public void setRoadAddress(String roadAddress) {
+		this.roadAddress = roadAddress;
 	}
+
+	public String getPlaceName() {
+		return placeName;
+	}
+
+	public void setPlaceName(String placeName) {
+		this.placeName = placeName;
+	}
+
 	public String getCategory() {
 		return category;
 	}
+
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getTitle() {
-		return title;
+
+	public String getPhone() {
+		return phone;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-	public String getStatus() {
-		return status;
+
+	public String getPlaceUrl() {
+		return placeUrl;
 	}
-	public void setStatus(String status) {
-		this.status = status;
+
+	public void setPlaceUrl(String placeUrl) {
+		this.placeUrl = placeUrl;
 	}
-	public double getLatitude() {
-		return latitude;
+
+	public String getPlaceID() {
+		return placeID;
 	}
-	public void setLatitude(double latitude) {
-		this.latitude = latitude;
+
+	public void setPlaceID(String placeID) {
+		this.placeID = placeID;
 	}
-	public double getLongitude() {
+
+	public String getLongitude() {
 		return longitude;
 	}
-	public void setLongitude(double longitude) {
+
+	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
-	public String getFoodCategory() {
-		return foodCategory;
+
+	public String getLatitude() {
+		return latitude;
 	}
-	public void setFoodCategory(String foodCategory) {
-		this.foodCategory = foodCategory;
-	}
-	public int getUpdateNum() {
-		return updateNum;
-	}
-	public void setUpdateNum(int updateNum) {
-		this.updateNum = updateNum;
-	}
-	public Restaurant getRestaurant() {
-		return restaurant;
-	}
-	public void setRestaurant(Restaurant restaurant) {
-		this.restaurant = restaurant;
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
 	}
 	
-	
+	public String getCategoryAll() {
+		return categoryAll;
+	}
+
+	public void setCategoryAll(String categoryAll) {
+		this.categoryAll = categoryAll;
+	}
 	
 }

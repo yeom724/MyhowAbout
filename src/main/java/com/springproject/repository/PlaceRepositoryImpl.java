@@ -31,8 +31,8 @@ import org.springframework.ui.Model;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springproject.Jackson.*;
 import com.springproject.domain.Member;
+import com.springproject.domain.deleteplace;
 import com.springproject.domain.Place;
-import com.springproject.domain.Restaurant;
 
 
 public class PlaceRepositoryImpl implements PlaceRepository{
@@ -70,7 +70,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 
             // 도로명주소 추출 및 API 호출
             for (int i = 0; i < jsonArray.length(); i++) {
-                Restaurant obj = new Restaurant();
+                Place obj = new Place();
                 JSONObject place = jsonArray.getJSONObject(i);
                 System.out.println(place);
                 
@@ -125,7 +125,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
             
             for(int i=0; i<items.size(); i++) {
             	Item item = items.get(i);
-            	Place place = new Place();
+            	deleteplace place = new deleteplace();
             	place.setFoodCategory(item.getMainMenu());
             	place.setTitle(item.getEntrprsNm());
             	place.setJuso(item.getRdnmadr());
@@ -145,7 +145,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 		
 	}
 
-    public void getCoordinates(Place obj) throws Exception {
+    public void getCoordinates(deleteplace obj) throws Exception {
         String address = obj.getJibun();
         
         String urlStr = "https://dapi.kakao.com/v2/local/search/address.json?query=" + URLEncoder.encode(address, "UTF-8");
@@ -184,7 +184,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
         }
     }
     
-    public void jacksonDB(Place obj) throws Exception{
+    public void jacksonDB(deleteplace obj) throws Exception{
     	
     	sql = "select count(*) from aboutPlace where juso LIKE ? and title=?";
     	int row = temp.queryForObject(sql, Integer.class, '%'+obj.getJuso()+'%', obj.getTitle());
@@ -242,7 +242,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
     
 
 	@Override
-	public void addRestaurant(Restaurant restaurant) {
+	public void addRestaurant(Place restaurant) {
 		
 		sql = "insert into Place values(?,?,?,?,?,?,?,?,?,?)";
 		temp.update(sql, restaurant.getAddressName(), restaurant.getRoadAddress(), restaurant.getPlaceName(), restaurant.getCategory(), restaurant.getCategoryAll() ,restaurant.getPhone(), restaurant.getPlaceUrl(), restaurant.getPlaceID(), restaurant.getLongitude(), restaurant.getLatitude());
@@ -305,7 +305,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
     
 
 	@Override
-	public void addPlace(Place place) {
+	public void addPlace(deleteplace place) {
 		
 		System.out.println("addPlace aboutPlace 레파지토리 도착");
 		
@@ -317,9 +317,9 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 	}
 
 	@Override
-	public Place getPlace(String updateNum) {
+	public deleteplace getPlace(String updateNum) {
 		System.out.println("주소지 조회중... : "+updateNum);
-		Place place = null;
+		deleteplace place = null;
 		
 		sql = "select * from aboutPlace where updateNum=?";
 		place = temp.queryForObject(sql, new PlaceRowMapper(), updateNum);
@@ -328,7 +328,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 	}
 
 	@Override
-	public void updatePlace(Place place) {
+	public void updatePlace(deleteplace place) {
 		System.out.println("시설 정보 업데이트를 시작합니다.");
 		
 		sql = "update aboutPlace set juso=?, jibun=?, category=?, title=?, status=?, foodCategory=?, latitude=?, longitude=? where updateNum=?";
@@ -347,7 +347,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 	}
 
 	@Override
-	public boolean matchPlace(Place place) {
+	public boolean matchPlace(deleteplace place) {
 		
 		boolean result = false;
 		
@@ -388,13 +388,13 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 	}
 	
 	@Override
-	public HashMap<String,Boolean> updateMatchPlace(Place place) {
+	public HashMap<String,Boolean> updateMatchPlace(deleteplace place) {
 		System.out.println("업데이트 유효성 도착");
 		
 		HashMap<String,Boolean> result = new HashMap<String, Boolean>();
 		result.put("status", false);
 		
-		Place oldPlace = getPlace(String.valueOf(place.getUpdateNum()));
+		deleteplace oldPlace = getPlace(String.valueOf(place.getUpdateNum()));
 		System.out.println("기존주소 " + oldPlace.getJuso());
 		System.out.println("수정주소 " + place.getJuso());
 		
@@ -478,7 +478,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 	
 
 	@Override
-	public List<Place> getAllPlace(Model model) {
+	public List<deleteplace> getAllPlace(Model model) {
 		
 		String category = (String)model.getAttribute("category");
 		int count = 0;
@@ -490,7 +490,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 		String sub = null;
 		String foodsub = null;
 		
-		List<Place> place_list = null;
+		List<deleteplace> place_list = null;
 		
 		if(category.equals("all")) {
 			System.out.println("Place 전체 조회");
@@ -623,7 +623,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 	@Override
 	public void fetchDataFromDatabase() {
 		
-		List<Restaurant> dataList = null;
+		List<Place> dataList = null;
 
         sql = "SELECT * from place limit 21000"; // 필요한 컬럼 선택
         dataList = temp.query(sql, new RestaurantRowMapper());
@@ -644,9 +644,9 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 	}
 
 	@Override
-	public Restaurant getNewPlace(String placeID) {
+	public Place getNewPlace(String placeID) {
 		
-		Restaurant restaurant = null;
+		Place restaurant = null;
 		
 		try {
 			

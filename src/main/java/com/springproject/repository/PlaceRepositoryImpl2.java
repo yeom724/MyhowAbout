@@ -10,8 +10,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 
+import com.springproject.domain.deleteplace;
 import com.springproject.domain.Place;
-import com.springproject.domain.Restaurant;
 
 @Repository
 public class PlaceRepositoryImpl2 implements PlaceRepository{
@@ -23,24 +23,12 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
     public void setJdbcTemplate(DataSource dataSource) {
         this.temp = new JdbcTemplate(dataSource);
     }
-    
+   
 
 	@Override
-	public void addPlace(Place place) {
-		// TODO Auto-generated method stub
+	public Place getPlace(String placeID) {
 		
-	}
-
-	@Override
-	public void addRestaurant(Restaurant restaurant) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Object getPlace(String placeID) {
-		
-		Restaurant restaurant = null;
+		Place restaurant = null;
 		try {
 			sql = "select * from Place where placeID=?";
 			restaurant = temp.queryForObject(sql, new RestaurantRowMapper(), placeID);
@@ -51,9 +39,9 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 	}
 
 	@Override
-	public List<? extends Object> getAllPlace(Model model) {
+	public List<Place> getAllPlace(Model model) {
 		
-		List<Restaurant> place_list = null;
+		List<Place> place_list = null;
 		String select = (String)model.getAttribute("select");
 		
 		//페이지 계산
@@ -174,29 +162,34 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 		return place_list;
 		
 	}
-
+	
+	@Override
+	public void addPlace(Place place) { 
+		sql = "insert into place values(?,?,?,?,?,?,?,?,?,?)";
+		temp.update(sql, place.getAddressName(), place.getRoadAddress(), place.getPlaceName(), place.getCategory(), place.getCategoryAll(), place.getPhone(), place.getPlaceUrl(), place.getPlaceID(), place.getLongitude(), place.getLatitude());
+	}
+	
 	@Override
 	public void updatePlace(Place place) {
-		// TODO Auto-generated method stub
+		sql = "select count(*) from Place where placeID=?";
+		int row = temp.queryForObject(sql, Integer.class, place.getPlaceID());
 		
+		if(row != 0) {
+			sql = "update Place set placeName=?, addressName=?, roadAddress=?, category=?, categoryAll=?, phone=?, placeUrl=? where placeID=?";
+			temp.update(sql, place.getPlaceName(), place.getAddressName(), place.getRoadAddress(), place.getCategory(), place.getCategoryAll(), place.getPlaceUrl(), place.getPlaceID());
+		}
 	}
 
 	@Override
 	public void deletePlace(String placeID) {
-		// TODO Auto-generated method stub
+		sql = "select count(*) from Place where placeID=?";
+		int row = temp.queryForObject(sql, Integer.class, placeID);
 		
-	}
-
-	@Override
-	public boolean matchPlace(Place place) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public HashMap<String, Boolean> updateMatchPlace(Place place) {
-		// TODO Auto-generated method stub
-		return null;
+		if(row != 0) {
+			sql = "delete from Place where placeID=?";
+			temp.update(sql, placeID);
+		}
+		
 	}
 
 
