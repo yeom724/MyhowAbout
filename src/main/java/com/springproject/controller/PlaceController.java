@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.client.RestTemplate;
 
 import com.springproject.domain.Member;
 import com.springproject.domain.Place;
@@ -56,6 +60,24 @@ public class PlaceController {
         return ResponseEntity.ok("데이터가 성공적으로 저장되었습니다.");
         
 	}
+	
+	@GetMapping("/location")
+	public void getLocationInfo(String placeName) {
+		
+		RestTemplate restTemplate = new RestTemplate();
+		
+		placeName = "통영시 산양읍 연대도";
+        String url = "https://dapi.kakao.com/v2/local/search/keyword.json?query=" + placeName;
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "KakaoAK " + API_KEY);
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+
+        System.out.println(response.getBody());
+    }
+	
 	
 	//모든 페이지 반환 (혹 카테고리별 조회 후 반환)
 	@GetMapping("/serchPlaceAll/{range}/{pageNum}")
@@ -141,14 +163,13 @@ public class PlaceController {
 	public String placeAddForm(@ModelAttribute Place place, HttpServletRequest req, Model model) {
 		
 		HttpSession session = req.getSession(false);
-		//String result = "redirect:/user/home";
-		String result = "place/newAddPlace";
-			
+		String result = "redirect:/user/home";
+		
 		if(session != null) {
 			Member member = (Member)session.getAttribute("userStatus");
 			if(member != null) {
 				if(member.getUserId().equals("admin")) {
-					result = "newAddPlace";
+					result = "place/newAddPlace";
 				} else { result = "redirect:/error/403"; }
 			} else { result = "redirect:/error/401"; }
 		} else { result = "redirect:/error/401"; }

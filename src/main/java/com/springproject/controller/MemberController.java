@@ -111,13 +111,18 @@ public class MemberController{
 	}
 	
 	@GetMapping("/emailcheck")
-	public String emailCheck(@RequestParam String userEmail, RedirectAttributes redirectAttributes) {
+	public String emailCheck(@RequestParam String userEmail, RedirectAttributes redirectAttributes, HttpSession session) {
 
+		if(session != null) { 
+			System.out.println("세션 발견! 세션 죽어라!");
+			session.invalidate();
+			}
+		
 		memberService.certification(userEmail);
 		Member member = memberService.getMemberEmail(userEmail);
 		redirectAttributes.addFlashAttribute("newUser", member);
 		
-		return "redirect:home";
+		return "redirect:/user/home";
 	}
 	
 	//일반 로그인
@@ -312,7 +317,7 @@ public class MemberController{
 					
 					member.setIconName(fileName);
 					memberService.updateMember(member);
-					result = "redirect:home";
+					result = "redirect:/user/home";
 					
 				} else { result = "redirect:/error/403"; }
 			} else { result = "redirect:/error/401"; }

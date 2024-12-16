@@ -41,6 +41,7 @@
 	        method: 'GET',
 	        data: { "url" : currentUrl },
 	        success: function(data) {
+	        	console.log(data);
 				displayReviews(data);
 	        },
 	        error: function(xhr, status, error) {
@@ -248,10 +249,12 @@
 	</div>
     
 <script type="text/javascript">
-	var address = '<%= place.getAddressName() %>'; 
-	var restaurantName = '<%= place.getPlaceName() %>';
+	var placeName = '<%= place.getPlaceName() %>';
 	var targetId = '<%= place.getPlaceID() %>';
+	var x = "<%= place.getLongitude() %>";
+	var y = "<%= place.getLatitude() %>";
     var kakaoInfoUrl = "<%= place.getPlaceUrl() %>";
+    var placeCategory = "<%= place.getCategory() %>";
 </script>
 
 <script src="/howAbout/resources/js/onePlace.js"> </script>

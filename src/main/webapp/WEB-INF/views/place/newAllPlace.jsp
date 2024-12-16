@@ -66,6 +66,7 @@
 				<td>상호명</td>
 				<td>분류</td>
 				<td>지번주소</td>
+				<td>위시리스트</td>
 				<td>수정</td>
 				<td>삭제</td>
 			</tr>
@@ -78,6 +79,7 @@
 				<td> <a href="/howAbout/place/newGetOne/placeID/<%=place.getPlaceID()%>"> <%=place.getPlaceName() %> </a> </td>
 				<td> <%=place.getCategory() %> </td>
 				<td> <%=place.getAddressName() %> </td>
+				<td> <button id="wishList" type="button" onclick="myPlaceAdd('<%= place.getPlaceID()%>')">내 여행지에 담기</button> </td>
 	<%
 				if(session != null){
 					member = (Member)session.getAttribute("userStatus");
@@ -85,8 +87,8 @@
 						
 						if(member.getUserId().equals("admin")){
 	%>
-				<td> <a href="/howAbout/place/newUpdate/<%=place.getPlaceID()%>">수정</a></td>
-				<td> <a href="/howAbout/place/newDelete/<%=place.getPlaceID()%>">삭제</a> </td>
+				<td> <a href="/howAbout/place/placeUpdate/<%=place.getPlaceID()%>">수정</a></td>
+				<td> <a href="/howAbout/place/placeDelete/<%=place.getPlaceID()%>">삭제</a> </td>
 	<%
 						}
 					}
@@ -164,6 +166,7 @@
 </body>
 
 <script>
+	
 	function updateCategory() {
 	    const categorySelect = document.getElementById('categorySelect');
 	    const subCategoryFood = document.getElementById('subCategoryFood');
@@ -175,6 +178,26 @@
 	    	subCategoryFood.style.display = 'none'; // 서브 카테고리 숨김
 	    	subCategoryFood.selectedIndex = 0;
 	    }
+	}
+	
+	function myPlaceAdd(placeID){
+		
+		$.ajax({
+			url : "/howAbout/course/myPlace/",
+			type : "POST",
+			data : JSON.stringify({ "placeID" : placeID }),
+			contentType: 'application/json',
+			success : function(data){
+				
+				if(data.status){
+					alert("추가가 완료되었습니다.");
+				} else {
+					alert("이미 추가된 시설 입니다.");
+				}
+		},
+			error : function(errorThrown){ alert("처리에 실패했습니다."); }
+		})
+
 	}
 </script>
 </html>

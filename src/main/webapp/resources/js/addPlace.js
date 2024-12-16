@@ -111,7 +111,7 @@
 				var placeID = document.querySelector("#placeID").value;
 				
 				$.ajax({
-					url : "/howAbout/place/newGetOne/"+placeID,
+					url : "/howAbout/place/newGetOne/placeID/"+placeID,
 					type : "POST",
 					data : JSON.stringify({"placeID" : placeID, "status" : "add" }),
 					contentType: 'application/json',
@@ -136,7 +136,7 @@
 				var placeID = document.querySelector("#placeID").value;
 				
 				$.ajax({
-					url : "/howAbout/place/newGetOne/"+placeID,
+					url : "/howAbout/place/newGetOne/placeID/"+placeID,
 					type : "POST",
 					data : JSON.stringify({ "placeID" : placeID, "status" : "update" }),
 					contentType: 'application/json',

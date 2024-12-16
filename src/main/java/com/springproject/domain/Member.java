@@ -1,6 +1,7 @@
 package com.springproject.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,6 +17,7 @@ public class Member {
 	private boolean enabled;			//이메일 인증여부
 	private MultipartFile userIcon;		//유저 이미지 파일
 	private String iconName;			//유저 이미지 파일 이름
+	private List<Wish> wishList;
 	
 	
 	public String getUserName() {
@@ -78,5 +80,13 @@ public class Member {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
+	
+	public List<Wish> getWishList() {
+		return wishList;
+	}
+	public void setWishList(List<Wish> wishList) {
+		this.wishList = wishList;
+	}
+	
 	
 }

@@ -176,7 +176,7 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 		
 		if(row != 0) {
 			sql = "update Place set placeName=?, addressName=?, roadAddress=?, category=?, categoryAll=?, phone=?, placeUrl=? where placeID=?";
-			temp.update(sql, place.getPlaceName(), place.getAddressName(), place.getRoadAddress(), place.getCategory(), place.getCategoryAll(), place.getPlaceUrl(), place.getPlaceID());
+			temp.update(sql, place.getPlaceName(), place.getAddressName(), place.getRoadAddress(), place.getCategory(), place.getCategoryAll(), place.getPhone(),place.getPlaceUrl(), place.getPlaceID());
 		}
 	}
 
