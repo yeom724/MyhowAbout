@@ -1,5 +1,6 @@
 package com.springproject.repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -24,6 +25,40 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
         this.temp = new JdbcTemplate(dataSource);
     }
    
+    HashMap<String, ArrayList<Place>> mapOfPlace;
+    
+    //기본 생성자에 싱글톤 추가
+    PlaceRepositoryImpl2() { mapOfPlace = new HashMap<String, ArrayList<Place>>(); }
+    
+
+	@Override
+	public void addMapPlaceList(String city, String subCity, String country, ArrayList<Place> list) {
+		
+		String keyWord = city;
+		if(subCity != null) { keyWord = city+" "+subCity; }
+		if(country != null) { keyWord = city+" "+subCity+" "+country; }
+		
+		mapOfPlace.put(keyWord, list);
+		
+	}
+	
+	@Override
+	public ArrayList<Place> getListOfMap(String city, String subCity, String country) {
+		
+		String keyWord = city;
+		if(subCity != null) { keyWord = city+" "+subCity; }
+		if(country != null) { keyWord = city+" "+subCity+" "+country; }
+		
+		ArrayList<Place> list = null;
+		
+		if(mapOfPlace.get(keyWord) != null) {
+			list = mapOfPlace.get(keyWord);
+			System.out.println("기존 저장된 파일을 반환합니다.");
+		}
+		
+		return list;
+	}
+    
 
 	@Override
 	public Place getPlace(String placeID) {
@@ -191,6 +226,32 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 		}
 		
 	}
+
+
+	@Override
+	public double[] getLocation(String city, String subCity, String country) {
+		
+		String keyword = city;
+		
+		if(subCity != null) { keyword = city + " " + subCity; }
+		if(country != null) { keyword = city + " " + subCity + " " + country; }
+		
+		System.out.println(keyword);
+		
+		sql = "select longitude from locations where address=?";
+		double x = temp.queryForObject(sql, Double.class, keyword);
+		
+		sql = "select latitude from locations where address=?";
+		double y = temp.queryForObject(sql, Double.class, keyword);
+		
+		double[] result = new double[] { x, y };
+		
+		return result;
+	}
+
+
+
+
 
 
 }

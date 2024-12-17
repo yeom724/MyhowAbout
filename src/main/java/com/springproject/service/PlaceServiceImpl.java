@@ -1,5 +1,6 @@
 package com.springproject.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -32,6 +33,15 @@ public class PlaceServiceImpl implements PlaceService{
 
 	@Override
 	public void deletePlace(String placeID) { placeRepository.deletePlace(placeID); }
+
+	@Override
+	public double[] getLocation(String city, String subCity, String country) { return placeRepository.getLocation(city, subCity, country); }
+
+	@Override
+	public void addMapPlaceList(String city, String subCity, String country, ArrayList<Place> list) { placeRepository.addMapPlaceList(city, subCity, country, list); }
+
+	@Override
+	public ArrayList<Place> getListOfMap(String city, String subCity, String country) { return placeRepository.getListOfMap(city, subCity, country); }
 
 
 }

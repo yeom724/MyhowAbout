@@ -1,5 +1,6 @@
 package com.springproject.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -19,6 +20,12 @@ public interface PlaceService {
 	void updatePlace(Place place);
 	
 	void deletePlace(String placeID);
+	
+	double[] getLocation(String city, String subCity, String country);
+	
+	void addMapPlaceList(String city, String subCity, String country, ArrayList<Place> list);
+	
+	ArrayList<Place> getListOfMap(String city, String subCity, String country);
 	
 //	void addPlace(Place place);
 //	

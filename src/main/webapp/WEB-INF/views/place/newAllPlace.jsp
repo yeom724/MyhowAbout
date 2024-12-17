@@ -59,6 +59,7 @@
 			    <option value="900">뷔페</option>
 			</select>
 			<input type="submit" value="검색">
+			<button id="searchButton">검색</button>
 		</form>
 		
 		<table>

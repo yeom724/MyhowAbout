@@ -1,6 +1,10 @@
 package com.springproject.controller;
 
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -23,7 +27,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.springproject.domain.KakaoApiResponse;
 import com.springproject.domain.Member;
 import com.springproject.domain.Place;
 import com.springproject.service.PlaceService;
@@ -32,10 +41,114 @@ import com.springproject.service.PlaceService;
 @RequestMapping("/place")
 public class PlaceController {
 	
-	private static final String API_KEY = "14cdbb863b4c2d47cee16ab2b06356c6";
+	private static final String ADDRESS_SEARCH_URL = "https://dapi.kakao.com/v2/local/search/address.json";
+    private static final String CATEGORY_SEARCH_URL = "https://dapi.kakao.com/v2/local/search/category.json";
+	private static final String KAKAO_API_KEY = "14cdbb863b4c2d47cee16ab2b06356c6";
 	
 	@Autowired
 	PlaceService placeService;
+	
+	@GetMapping("/all")
+	public String apiAllPlace() {
+		
+		return "place/apiAllPlace";
+	}
+	
+	@PostMapping("/serchPlaceApi")
+	public String apiSerchPlace(@RequestParam(required = false) String city,
+								@RequestParam(required = false) String subCity,
+								@RequestParam(required = false) String country,
+								@RequestParam(required = false) String category,
+								@RequestParam(required = false) String sub,
+								Model model) {
+		
+		ArrayList<Place> list = null;
+		
+		if(placeService.getListOfMap(city, subCity, country) != null) {
+			list = placeService.getListOfMap(city, subCity, country);
+			
+		} else {
+			
+			double[] result = placeService.getLocation(city, subCity, country);
+
+		    double LATITUDE = result[1]; // 위도
+		    double LONGITUDE = result[0]; // 경도
+			
+		    try {
+		    	
+		    	if(category == null) { category = "FD6"; }
+		    	if(sub == null) { sub = "맛집"; }
+		    	
+		    	list = searchCategory(category, sub, LATITUDE, LONGITUDE);
+		    	placeService.addMapPlaceList(city, subCity, country, list);
+
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            System.out.println("API 호출 중 오류가 발생했습니다.");
+	        }
+ 
+		}
+		
+		model.addAttribute("list", list);
+		return "place/apiAllPlace";
+	}
+	
+    private ArrayList<Place> searchCategory(String category, String sub, double latitude, double longitude) {
+    	
+    	ArrayList<Place> PlaceList = new ArrayList<Place>();
+    	
+        try {
+        	int totalResults = 45; // 가져올 총 결과 수
+            int pageSize = 15; // 한 페이지당 가져올 장소 수
+            int totalPages = (int) Math.ceil((double) totalResults / pageSize); // 총 페이지 수
+
+            for (int page = 1; page <= totalPages; page++) {
+                // 카테고리 검색 요청 URL
+                String categorySearchUrl = UriComponentsBuilder.fromHttpUrl(CATEGORY_SEARCH_URL)
+                        .queryParam("category_group_code", category) // 카테고리 코드
+                        .queryParam("x", longitude) // 경도
+                        .queryParam("y", latitude) // 위도
+                        .queryParam("size", pageSize) // 한 번에 가져올 장소 수
+                        .queryParam("page", page) // 요청할 페이지
+                        .toUriString();
+
+                System.out.println("Category Search URL for page " + page + ": " + categorySearchUrl);
+
+                HttpHeaders headers = new HttpHeaders();
+                headers.set("Authorization", "KakaoAK " + KAKAO_API_KEY);
+                HttpEntity<String> categoryEntity = new HttpEntity<>(headers);
+
+                // API 호출 및 응답 받기
+                String categoryResponse = new RestTemplate().exchange(
+                        categorySearchUrl,
+                        HttpMethod.GET,
+                        categoryEntity,
+                        String.class
+                ).getBody();
+
+                // JSON 응답을 처리
+                ObjectMapper objectMapper = new ObjectMapper();
+                JsonNode rootNode = objectMapper.readTree(categoryResponse); // categoryResponse를 사용합니다.
+                JsonNode documentsNode = rootNode.path("documents");
+                
+                // List<Place>로 변환
+                ArrayList<Place> places = objectMapper.convertValue(documentsNode, objectMapper.getTypeFactory().constructCollectionType(List.class, Place.class));
+                
+                for(int i=0; i<places.size(); i++) {
+                	Place place = places.get(i);
+                	PlaceList.add(place);
+                }
+                
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("카테고리 검색 중 오류가 발생했습니다.");
+        }
+        
+        return PlaceList;
+    }
+	
 	
 	@GetMapping("/scrap")
 	public String startScrap() {
@@ -70,7 +183,7 @@ public class PlaceController {
         String url = "https://dapi.kakao.com/v2/local/search/keyword.json?query=" + placeName;
 
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", "KakaoAK " + API_KEY);
+        headers.set("Authorization", "KakaoAK " + KAKAO_API_KEY);
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);

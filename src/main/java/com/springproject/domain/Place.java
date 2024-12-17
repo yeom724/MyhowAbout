@@ -1,7 +1,9 @@
 package com.springproject.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Place {
 	
 	@JsonProperty("address_name")
