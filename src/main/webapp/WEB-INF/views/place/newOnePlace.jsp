@@ -270,7 +270,7 @@
 	            contentType: 'application/json',
 	            data: JSON.stringify({
 	                "reviewText": reviewText,
-	                "placeID": targetId // targetId는 정의되어 있어야 함
+	                "placeID": targetId
 	            }),
 	            success: function(response) {
 	                alert('리뷰가 성공적으로 작성되었습니다.');

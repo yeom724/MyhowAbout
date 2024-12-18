@@ -10,9 +10,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=8ba5137fb1c2b1e37ac6722ae8d8e587&libraries=services"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-		<form id="searchForm" action="/howAbout/place/serchPlaceApi" method="post">
+		<form id="searchForm">
 			<select id="citySelect" name="city" required onchange="updatesubCity()">
 			    <option value="" disabled selected>선택하세요</option>
 			    <option value="창원시">창원시</option>
@@ -57,6 +59,7 @@
 				<!-- 성산구 -->
 				<select id="100102subSelect" name="country" required style="display: none;">
 				    <option value="" disabled selected>선택하세요</option>
+				    <option value="귀산동">귀산동</option>
 				    <option value="반송동">반송동</option>
 				    <option value="용지동">용지동</option>
 				    <option value="중앙동">중앙동</option>
@@ -115,8 +118,8 @@
 				    <option value="덕산동">덕산동</option>
 				    <option value="풍호동">풍호동</option>
 				    <option value="웅천동">웅천동</option>
-				    <option value="웅동1동">웅동동</option>
-				    <option value="웅동2동">웅동동</option>
+				    <option value="웅동1동">웅동1동</option>
+				    <option value="웅동2동">웅동2동</option>
 				</select>
 				
 			<!-- 김해시 -->
@@ -462,8 +465,9 @@
 
 			<select id="categorySelect" name="category" onchange="updateCategory()">
 			    <option value="" disabled selected>카테고리를 선택하세요</option>
-			    <option value="FD6">음식점</option>
-				<option value="CE7">카페</option>
+			    <option value="카페">카페</option>
+			    <option value="음식점">음식점</option>
+				<option value="숙박">숙박시설</option>
 			</select>
 			<select id="subCategoryFood" name="sub" style="display: none;">
 			    <option value="" disabled selected>세부 카테고리</option>
@@ -477,32 +481,21 @@
 			    <option value="술집">술집</option>
 			    <option value="뷔페">뷔페</option>
 			</select>
+			<select id="subCategorySleep" name="sub" style="display: none;">
+			    <option value="" disabled selected>세부 카테고리</option>
+			    <option value="모텔">모텔</option>
+			    <option value="호텔">호텔</option>
+			    <option value="온천">온천</option>
+			    <option value="펜션">펜션</option>
+			</select>
 			
-			<input type="button" value="검색" id="searchButton">
+			<input type="submit" value="검색" id="searchButton">
 			
 		</form>
 		
-		<div>
+		<div id="results"></div>
 		
-		
-		<%
-			ArrayList<Place> list = (ArrayList<Place>)request.getAttribute("list");
-		
-			if(list != null){
-				for(int i=0; i<list.size(); i++){
-					
-					Place place = list.get(i);
-			%>
-					<p><a href="/howAbout/place/newGetOne/placeID/<%=place.getPlaceID()%>"> <%=place.getPlaceName() %> </a></p>
-					<hr>
-			<%
-					
-				}
-			
-			}
-			%>
-			
-		</div>
+		<div id="pagination"></div>
 
 
 </body>

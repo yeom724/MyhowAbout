@@ -78,6 +78,7 @@
                 return;
             }
 
+
             // 키워드로 장소 검색 요청
             ps.keywordSearch(keyword, placesSearchCB, {
                 page: currentPage // 요청할 페이지 번호
@@ -102,7 +103,7 @@
                         id: place.id
                     }));
 
-                    sendToController(placeData); // 데이터를 서버로 전송
+                    displayResults(placeData); // 데이터를 서버로 전송
                     document.getElementById('loadMoreButton').style.display = 'block'; // 더 보기 버튼 표시
                 } else {
                     alert('검색 결과가 존재하지 않습니다.');
@@ -118,13 +119,8 @@
 
             results.forEach(place => {
                 var placeEl = document.createElement('div');
-                placeEl.innerHTML = `
-                    <h2>${place.name}</h2>
-                    <p>주소: ${place.address}</p>
-                    <p>전화번호: ${place.phone || '정보 없음'}</p>
-                    <p><a href="${place.placeUrl}" target="_blank">카카오맵에서 보기</a></p>
-                    <hr />
-                `;
+                placeEl.innerHTML = 
+                    "<h2>"+place.place_name+"</h2> <p>주소: "+place.address_name+"</p><p>전화번호: "+place.phone+"</p><p><a href='"+place.place_url+"' target='_blank'>카카오맵에서 보기</a></p><hr />";
                 resultsDiv.appendChild(placeEl);
             });
         }

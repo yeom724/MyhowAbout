@@ -24,6 +24,9 @@ public class PlaceServiceImpl implements PlaceService{
 
 	@Override
 	public Place getPlace(String placeID) { return placeRepository.getPlace(placeID); }
+	
+	@Override
+	public Place getApiPlace(String placeID) { return placeRepository.getApiPlace(placeID); }
 
 	@Override
 	public List<Place> getAllPlace(Model model) { return placeRepository.getAllPlace(model); }
@@ -39,9 +42,24 @@ public class PlaceServiceImpl implements PlaceService{
 
 	@Override
 	public void addMapPlaceList(String city, String subCity, String country, ArrayList<Place> list) { placeRepository.addMapPlaceList(city, subCity, country, list); }
-
+	
+	@Override
+	public void addMapPlaceList(String keyword, ArrayList<Place> list) { placeRepository.addMapPlaceList(keyword, list); }
+	
+	@Override
+	public void addMapPlaceList(String keyword, Place place) { placeRepository.addMapPlaceList(keyword, place); }
+	
 	@Override
 	public ArrayList<Place> getListOfMap(String city, String subCity, String country) { return placeRepository.getListOfMap(city, subCity, country); }
+
+	@Override
+	public ArrayList<Place> getListOfMap(String keyword) { return placeRepository.getListOfMap(keyword); }
+
+
+
+
+
+	
 
 
 }

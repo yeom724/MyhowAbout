@@ -30,6 +30,7 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
     //기본 생성자에 싱글톤 추가
     PlaceRepositoryImpl2() { mapOfPlace = new HashMap<String, ArrayList<Place>>(); }
     
+    
 
 	@Override
 	public void addMapPlaceList(String city, String subCity, String country, ArrayList<Place> list) {
@@ -40,6 +41,25 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 		
 		mapOfPlace.put(keyWord, list);
 		
+	}
+	
+	@Override
+	public void addMapPlaceList(String keyword, Place place) {
+		
+		ArrayList<Place> list = mapOfPlace.get(keyword);
+		list.add(place);
+		System.out.println("기존 키에 밸류 추가완료");
+		
+	}
+	
+	@Override
+	public void addMapPlaceList(String keyword, ArrayList<Place> list) { 
+		mapOfPlace.put(keyword, list);
+		System.out.println("생성될 keyword : "+keyword);
+		
+		for(int i=0; i<list.size(); i++) {
+			System.out.println(i+"회 반복");
+		}
 	}
 	
 	@Override
@@ -58,6 +78,16 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 		
 		return list;
 	}
+	
+	@Override
+	public ArrayList<Place> getListOfMap(String keyword) {
+		
+		ArrayList<Place> list = null;
+		
+		if(mapOfPlace.get(keyword) != null) { list = mapOfPlace.get(keyword); }
+		return list;
+		
+	}
     
 
 	@Override
@@ -71,6 +101,34 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 
 		return restaurant;
 		
+	}
+	
+	@Override
+	public Place getApiPlace(String placeID) {
+		
+		Place result = null;
+		boolean serch = true;
+		
+        for (String key : mapOfPlace.keySet()) {
+            ArrayList<Place> list = mapOfPlace.get(key);
+            
+            if(serch) {
+            	for (int i = 0; i < list.size(); i++) {
+                    Place place = list.get(i);
+                    
+                    if (place.getPlaceID().equals(placeID)) {
+                    	result = place;
+                    	serch = false;
+                    	break;
+                    }
+                }
+            }
+            else {
+            	break;
+            }
+        }
+		
+		return result;
 	}
 
 	@Override
@@ -248,6 +306,22 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 		
 		return result;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

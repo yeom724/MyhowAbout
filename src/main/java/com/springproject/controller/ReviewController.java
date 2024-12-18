@@ -82,6 +82,7 @@ public class ReviewController {
 		review.setReviewText((String)data.get("reviewText"));
 		
 		reviewService.addReview(review);
+		System.out.println("추가완료");
 
 		return null;
 	}

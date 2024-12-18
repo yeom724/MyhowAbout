@@ -36,6 +36,8 @@ public class Place {
 	@JsonProperty("y")
 	private String latitude;
 	
+	@JsonProperty("key")
+	private String keyword;
 
 	public String getAddressName() {
 		return addressName;
@@ -115,6 +117,14 @@ public class Place {
 
 	public void setCategoryAll(String categoryAll) {
 		this.categoryAll = categoryAll;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
 	}
 	
 }

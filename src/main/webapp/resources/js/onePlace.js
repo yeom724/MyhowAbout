@@ -9,8 +9,12 @@ var map;
 function searchRestaurantsByCoordinates(x, y, restaurantName, placeCategory) {
     var ps = new kakao.maps.services.Places();
     var coords = new kakao.maps.LatLng(y, x);
-	if(placeCategory == "음식점") { placeCategory = 'FD6'; }
-	if(placeCategory == "카페") { placeCategory = 'CE7'; }
+	if(placeCategory === "음식점") { placeCategory = 'FD6'; }
+	if(placeCategory === "카페") { placeCategory = 'CE7'; }
+	if(placeCategory === "숙박") { placeCategory = 'AD5' }
+	if(placeCategory === "관광") { placeCategory = 'AT4' }
+	
+	console.log("category : "+placeCategory);
 
     // 지도 초기화
     var mapContainer = document.getElementById('map');
@@ -28,8 +32,9 @@ function searchRestaurantsByCoordinates(x, y, restaurantName, placeCategory) {
 function searchRestaurants(coords, restaurantName, placeCategory, page) {
     var ps = new kakao.maps.services.Places();
 
-    // 음식점 검색
+    
     ps.categorySearch(placeCategory, function(restaurants, status) {
+		console.log(kakao.maps.services.Status);
         if (status === kakao.maps.services.Status.OK) {
             console.log(restaurants); // 검색된 음식점 목록 출력
             var foundRestaurants = [];

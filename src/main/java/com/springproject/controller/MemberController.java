@@ -4,7 +4,9 @@ package com.springproject.controller;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,8 +26,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -58,7 +62,6 @@ public class MemberController{
 	public String defalutHome(@PathVariable(required = false) String email, Model model) {
 		
 		if(email != null) {
-
 			Member member = memberService.getMemberEmail(email);
 			model.addAttribute("newUser", member);
 		}
@@ -110,13 +113,44 @@ public class MemberController{
 		
 	}
 	
+	@ResponseBody
+	@PostMapping("/matchUser")
+	public Map<String, Boolean> matchUser(@RequestBody Map<String, String> data) {
+		
+		String userEmail = null;
+		String userId = null;
+		Map<String, Boolean> result = new HashMap<String, Boolean>();
+		
+		if(data.containsKey("userEmail")) { 
+			userEmail = data.get("userEmail");
+			result.put("email", true);
+		}
+		
+		if(data.containsKey("userId")) { 
+			userId = data.get("userId");
+			result.put("userId", true);
+		}
+
+		Member member = null;
+		
+		if(userId != null) {
+			member = memberService.getMember(userId);
+		} else if(userEmail != null) {
+			member = memberService.getMemberEmail(userEmail);
+		}
+		
+		
+		
+		if(member != null) { result.put("status", false);}
+		else { result.put("status", true); }
+		
+		return result;
+	}
+	
 	@GetMapping("/emailcheck")
 	public String emailCheck(@RequestParam String userEmail, RedirectAttributes redirectAttributes, HttpSession session) {
 
-		if(session != null) { 
-			System.out.println("세션 발견! 세션 죽어라!");
-			session.invalidate();
-			}
+		if(session != null) { session.invalidate(); }
 		
 		memberService.certification(userEmail);
 		Member member = memberService.getMemberEmail(userEmail);
@@ -311,17 +345,24 @@ public class MemberController{
 			                file.transferTo(saveFile);
 			                
 			            } catch (Exception e) { e.printStackTrace(); }
+
 			        } else {
 			        	fileName = user.getIconName();
 			        }
-					
+
 					member.setIconName(fileName);
 					memberService.updateMember(member);
+					Member newData = memberService.loginMember(user.getUserId(), user.getUserPw());
+		            session.setAttribute("userStatus", newData);
 					result = "redirect:/user/home";
 					
 				} else { result = "redirect:/error/403"; }
 			} else { result = "redirect:/error/401"; }
 		} else { result = "redirect:/error/401"; }
+		
+		
+		
+		
 
 		return result;
 	}

@@ -7,6 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -53,6 +54,126 @@ public class PlaceController {
 		
 		return "place/apiAllPlace";
 	}
+	
+	@ResponseBody
+	@PostMapping(value = "/kakaoApiService", produces = "application/json; charset=UTF-8")
+	public Map<String, Object> kakaoApiService(@RequestBody Map<String, Object> keyword) {
+		
+		String city = (String)keyword.get("city");
+		String subCity = (String)keyword.get("subCity");
+		String country = (String)keyword.get("country");
+		String category = (String)keyword.get("category");
+		String sub = (String)keyword.get("subCategory");
+		
+		String serchKey = null;
+		
+		if(subCity.equals("시내동지구")) { serchKey = city + " "; }
+		else { serchKey = city + " " + subCity + " "; }
+		
+		if(country != null && !(country.isEmpty())){ serchKey = serchKey + country  + " "; }
+		
+		if(category.equals("음식점")) {
+			
+			if(sub != null &&!(sub.isEmpty())) {
+				switch (sub) {
+					case "한식" : serchKey = serchKey + "한식"; break;
+					case "중식" : serchKey = serchKey + "중식"; break;
+					case "일식" : serchKey = serchKey + "일식"; break;
+					case "양식" : serchKey = serchKey + "양식"; break;
+					case "동남아" : serchKey = serchKey + "베트남"; break;
+					case "치킨" : serchKey = serchKey + "치킨"; break;
+					case "분식" : serchKey = serchKey + "분식"; break;
+					case "술집" : serchKey = serchKey + "술집"; break;
+					case "뷔페" : serchKey = serchKey + "뷔페"; break;
+				}
+			} else { serchKey = serchKey + "맛집"; }
+		}
+		
+		
+		if(category.equals("숙박")) {
+			if(sub != null &&!(sub.isEmpty())) { 
+				switch (sub) {
+					case "모텔" : serchKey = serchKey + "모텔"; break;
+					case "호텔" : serchKey = serchKey + "호텔"; break;
+					case "온천" : serchKey = serchKey + "온천"; break;
+					case "펜션" : serchKey = serchKey + "펜션"; break;
+				}
+			} else { serchKey = serchKey + "숙박 시설"; }
+		}
+		
+		if(category.equals("관광")) { serchKey = serchKey + "관광 명소"; }
+		
+		if(category.equals("카페")) { serchKey = serchKey + category; }
+		
+		Map<String, Object> jsonApi = new HashMap<String, Object>();
+		ArrayList<Place> list = placeService.getListOfMap(serchKey);
+		
+		if(list != null) { jsonApi.put("list", list); }
+		else { jsonApi.put("keyword", serchKey); }
+		
+		return jsonApi;
+
+	}
+	
+	@ResponseBody
+	@PostMapping("/kakaoMapconn")
+	public Map<String, Object> kakaoMapconn(@RequestBody ArrayList<Place> data) {
+		
+		ArrayList<Place> list = null;
+		ArrayList<Place> apiPlace = data;
+		
+		String keyword = apiPlace.get(0).getKeyword();
+		list = placeService.getListOfMap(keyword);
+		
+//		if(list != null) {
+//			
+//			for(Place newPlace : apiPlace) {
+//				System.out.println("api반복문 입장");
+//				String newID = newPlace.getPlaceID();
+//				
+//				for(Place oldPlace : list) {
+//					String oldID = oldPlace.getPlaceID();
+//					
+//					if(oldID.equals(newID)) { System.out.println("중복 데이터 넘어갑니다."); }
+//					else { 
+//						placeService.addMapPlaceList(keyword, newPlace);
+//						System.out.println("기존 리스트에 신규 데이터 저장중...");
+//					}
+//				}
+//			}
+//			
+//		} else if(list == null || list.isEmpty()) {
+//			System.out.println("신규 키워드로 생성중...");
+//			placeService.addMapPlaceList(keyword, apiPlace);
+//		}
+		
+		if (list != null && !list.isEmpty()) {
+		    for (Place newPlace : apiPlace) {
+		        String newID = newPlace.getPlaceID();
+		        boolean isDuplicate = false;
+
+		        for (Place oldPlace : list) {
+		            String oldID = oldPlace.getPlaceID();
+
+		            if (oldID.equals(newID)) {
+		                isDuplicate = true;
+		                break;
+		            }
+		        }
+
+		        if (!isDuplicate) { placeService.addMapPlaceList(keyword, newPlace); }
+		    }
+		} else { placeService.addMapPlaceList(keyword, apiPlace); }
+		
+		list = placeService.getListOfMap(keyword);
+		
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("list", list);
+		
+		return result;
+		
+	}
+	
 	
 	@PostMapping("/serchPlaceApi")
 	public String apiSerchPlace(@RequestParam(required = false) String city,
@@ -148,31 +269,7 @@ public class PlaceController {
         
         return PlaceList;
     }
-	
-	
-	@GetMapping("/scrap")
-	public String startScrap() {
-		
-		return "placeex";
-	}
-	
-	@PostMapping("/DBconn")
-	public ResponseEntity<String> testWebScrap(@RequestBody List<Place> restaurants) {
-		
-		for(Place rest: restaurants) {
-			
-			try {
-				placeService.addPlace(rest);
-			} catch(Exception e) {
-				System.out.println("중복데이터가 있으므로 넘어갑니다.");
-			}
-			
-			
-		}
 
-        return ResponseEntity.ok("데이터가 성공적으로 저장되었습니다.");
-        
-	}
 	
 	@GetMapping("/location")
 	public void getLocationInfo(String placeName) {
@@ -190,7 +287,6 @@ public class PlaceController {
 
         System.out.println(response.getBody());
     }
-	
 	
 	//모든 페이지 반환 (혹 카테고리별 조회 후 반환)
 	@GetMapping("/serchPlaceAll/{range}/{pageNum}")
@@ -235,10 +331,13 @@ public class PlaceController {
 	@GetMapping("/newGetOne/placeID/{placeID}")
 	public String newGetOnePlace(@PathVariable String placeID, Model model) {
 		
-		Place place = (Place)placeService.getPlace(placeID);
+//		Place place = (Place)placeService.getPlace(placeID);
+		Place place = placeService.getApiPlace(placeID);
 		model.addAttribute("place", place);
 		
 		return "place/newOnePlace";
+		
+		
 	}
 	
 	@ResponseBody
@@ -694,6 +793,29 @@ public class PlaceController {
 //		}
 //	}
 //	
+	@GetMapping("/scrap")
+	public String startScrap() {
+		
+		return "placeex";
+	}
+//	
+//	@PostMapping("/DBconn")
+//	public ResponseEntity<String> testWebScrap(@RequestBody List<Place> restaurants) {
+//		
+//		for(Place rest: restaurants) {
+//			
+//			try {
+//				placeService.addPlace(rest);
+//			} catch(Exception e) {
+//				System.out.println("중복데이터가 있으므로 넘어갑니다.");
+//			}
+//			
+//			
+//		}
+//
+//        return ResponseEntity.ok("데이터가 성공적으로 저장되었습니다.");
+//        
+//	}
 
 	
 }
