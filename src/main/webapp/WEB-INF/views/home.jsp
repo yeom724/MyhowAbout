@@ -35,10 +35,10 @@
 %>
                     <p>환영합니다, <%= member.getUserName() %> 님! </p>
                     <a href="/howAbout/user/update/<%= member.getUserId() %>">회원수정</a><br>
-                    <a href="/howAbout/user/delete/<%= member.getUserId() %>">회원탈퇴</a><br>
+                    <a href="/howAbout/user/delete">회원탈퇴</a><br>
                     <a href="/howAbout/user/logout">로그아웃</a><br>
                     <hr>
-                    <a href="/howAbout/place/serchPlaceAll/all/1">시설조회</a><br>
+                    <a href="/howAbout/place/all">시설조회</a><br>
                     <a href="/howAbout/place/placeAdd">시설등록</a><br>
                     <hr>
                     <a href="/howAbout/review/<%= member.getUserId() %>/selectAll">내 리뷰 조회</a><br>

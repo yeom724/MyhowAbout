@@ -90,14 +90,14 @@ public class PlaceRepositoryImpl implements PlaceRepository{
                 System.out.println(i+"번째 저장완료");
 
                 // Kakao API로 위도와 경도 받아오기
-//                try {
-//                	
-//                    //getCoordinates(obj);
-//                    
-//                } catch (Exception e) {
-//                    System.out.println("정보를 가져오는 데 실패했습니다");
-//                    e.printStackTrace();
-//                }
+                try {
+                	
+                    getCoordinates(obj);
+                    
+                } catch (Exception e) {
+                    System.out.println("정보를 가져오는 데 실패했습니다");
+                    e.printStackTrace();
+                }
             }
 
         } catch (IOException e) {
@@ -322,7 +322,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 		deleteplace place = null;
 		
 		sql = "select * from aboutPlace where updateNum=?";
-		place = temp.queryForObject(sql, new PlaceRowMapper(), updateNum);
+		place = temp.queryForObject(sql, new deleteRowMapper(), updateNum);
 		
 		return place;
 	}
@@ -500,7 +500,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 			model.addAttribute("Count",count);
 			
 			sql = "select * from aboutPlace limit 20 offset ?";
-			place_list = temp.query(sql, new PlaceRowMapper(), offset);
+			place_list = temp.query(sql, new deleteRowMapper(), offset);
 			
 		} else if(category.equals("category")) {
 			System.out.println("category별 조회");
@@ -520,7 +520,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 				model.addAttribute("Count",count);
 				
 				sql = "select * from aboutPlace where juso Like ? limit 20 offset ?";
-				place_list = temp.query(sql, new PlaceRowMapper(), '%'+city+'%', offset);
+				place_list = temp.query(sql, new deleteRowMapper(), '%'+city+'%', offset);
 				
 			} else if(big != null){
 				
@@ -531,7 +531,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 					model.addAttribute("Count",count);
 					
 					sql = "select * from aboutPlace where juso Like ? and category IN ('숙박업','일반야영장업','외국인관광도시민박업','한옥체험업','관광펜션업','자동차야영장업','관광숙박업','농어촌민박업') limit 20 offset ?";
-					place_list = temp.query(sql, new PlaceRowMapper(), '%'+city+'%', offset);
+					place_list = temp.query(sql, new deleteRowMapper(), '%'+city+'%', offset);
 					
 				} else if(big.equals("hotel") && sub != null) {
 					
@@ -549,7 +549,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 					model.addAttribute("Count",count);
 					
 					sql = "select * from aboutPlace where juso Like ? and category IN ("+hotelCategory+") limit 20 offset ?";
-					place_list = temp.query(sql, new PlaceRowMapper(), '%'+city+'%', offset);
+					place_list = temp.query(sql, new deleteRowMapper(), '%'+city+'%', offset);
 					
 				} else if(big.equals("food") && sub == null) {
 					
@@ -559,7 +559,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 					model.addAttribute("Count",count);
 					
 					sql = "select * from aboutPlace where juso Like ? and category IN ('일반음식점', '휴게음식점', '관광식당', '외국인전용유흥음식점업') limit 20 offset ?";
-					place_list = temp.query(sql, new PlaceRowMapper(), '%'+city+'%', offset);
+					place_list = temp.query(sql, new deleteRowMapper(), '%'+city+'%', offset);
 					
 					
 				} else if(big.equals("food") && sub != null) {
@@ -609,7 +609,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 						
 					}
 					
-					place_list = temp.query(sql, new PlaceRowMapper(), '%'+city+'%', offset);
+					place_list = temp.query(sql, new deleteRowMapper(), '%'+city+'%', offset);
 
 				}
 			}
@@ -626,7 +626,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 		List<Place> dataList = null;
 
         sql = "SELECT * from place limit 21000"; // 필요한 컬럼 선택
-        dataList = temp.query(sql, new RestaurantRowMapper());
+        dataList = temp.query(sql, new PlaceRowMapper());
         
         ObjectMapper objectMapper = new ObjectMapper();
         try {
@@ -651,7 +651,7 @@ public class PlaceRepositoryImpl implements PlaceRepository{
 		try {
 			
 			sql = "select * from Place where placeID=?";
-			restaurant = temp.queryForObject(sql, new RestaurantRowMapper(), placeID);
+			restaurant = temp.queryForObject(sql, new PlaceRowMapper(), placeID);
 			
 		} catch(Exception e){ System.out.println("해당 시설을 발견할 수 없었습니다."); }
 

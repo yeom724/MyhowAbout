@@ -14,7 +14,7 @@
 <head>
 <meta charset="UTF-8">
 	<%
-	Place place = (Place)request.getAttribute("place");
+		Place place = (Place)request.getAttribute("place");
 	%>
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -77,9 +77,9 @@
 
 	    $(document).on('click', '.editReview', function(e) {
 	        e.preventDefault();
-	        currentReviewId = $(this).data('id'); // 수정할 리뷰 ID 저장
-	        const reviewText = $(this).data('text'); // 현재 리뷰 텍스트 가져오기
-	        $('#editReviewText').val(reviewText); // 텍스트 박스에 현재 리뷰 텍스트 설정
+	        currentReviewId = $(this).data('id'); 
+	        const reviewText = $(this).data('text'); 
+	        $('#editReviewText').val(reviewText); 
 	        $('#editReviewModal').show();
 	    });
 
@@ -202,6 +202,7 @@
 	<h1><%= place.getPlaceName() %></h1>
 	<p><%= place.getAddressName() %></p>
 	<p><%= place.getCategoryAll() %></p>
+	<p> <button type="button" onclick="saveWishList()">담기</button> </p>
     <div id="map"></div>
     <a href="#" id="openModal">카카오 정보 페이지 보기</a>
     <hr>
@@ -244,7 +245,7 @@
 	        <span class="close">&times;</span>
 	        <h2>리뷰 수정</h2>
 	        <textarea id="editReviewText" rows="4" cols="50"></textarea>
-	        <button id="saveChanges">저장</button>
+	        <button id="saveChanges">수정</button>
 	    </div>
 	</div>
     
@@ -259,6 +260,26 @@
 
 <script src="/howAbout/resources/js/onePlace.js"> </script>
 <script type="text/javascript">
+
+	function saveWishList(){
+		
+		$.ajax({
+            url: '/howAbout/wish/myPlace',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                "placeID": targetId
+            }),
+            success: function(response) {
+                alert('저장되었습니다.');
+            },
+            error: function(xhr, status, error) {
+                alert('에러');
+            }
+        });
+		
+		
+	}
 
 	$(document).ready(function() {
 	    $('#submitButton').on('click', function() {
@@ -283,6 +304,9 @@
 	    });
 
 	});
+	
+	
+	
 	
 </script>
 </body>

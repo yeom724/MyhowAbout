@@ -55,7 +55,6 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 	@Override
 	public void addMapPlaceList(String keyword, ArrayList<Place> list) { 
 		mapOfPlace.put(keyword, list);
-		System.out.println("생성될 keyword : "+keyword);
 		
 		for(int i=0; i<list.size(); i++) {
 			System.out.println(i+"회 반복");
@@ -92,14 +91,32 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 
 	@Override
 	public Place getPlace(String placeID) {
+		Place place = null;
+		boolean loop = true;
 		
-		Place restaurant = null;
 		try {
-			sql = "select * from Place where placeID=?";
-			restaurant = temp.queryForObject(sql, new RestaurantRowMapper(), placeID);
+			//sql = "select * from Place where placeID=?";
+			//restaurant = temp.queryForObject(sql, new RestaurantRowMapper(), placeID);
+			
+			for(String key : mapOfPlace.keySet()) {
+				
+				if(loop) {
+					ArrayList<Place> list = mapOfPlace.get(key);
+					
+					for(int i=0; i<list.size(); i++) {
+						String matchID = list.get(i).getPlaceID();
+						if(matchID.equals(placeID)) {
+							place = list.get(i);
+							loop = false;
+							break;
+						}
+					}
+				}
+			}
+			
 		} catch(Exception e){ System.out.println("해당 시설을 발견할 수 없었습니다."); }
 
-		return restaurant;
+		return place;
 		
 	}
 	
@@ -126,6 +143,11 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
             else {
             	break;
             }
+        }
+        
+        if(result == null) {
+        	sql = "select * from place where placeID=?";
+        	result = temp.queryForObject(sql, new PlaceRowMapper(), placeID);
         }
 		
 		return result;
@@ -214,7 +236,7 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 				model.addAttribute("Count",count);
 				
 				sql = "select * from Place where roadAddress Like ? limit 20 offset ?";
-				place_list = temp.query(sql, new RestaurantRowMapper(), '%'+city+'%', offset);
+				place_list = temp.query(sql, new PlaceRowMapper(), '%'+city+'%', offset);
 			}
 			
 			//지역별 카테고리 조회
@@ -225,7 +247,7 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 				model.addAttribute("Count",count);
 				
 				sql = "select * from Place where roadAddress Like ? and category=? limit 20 offset ?";
-				place_list = temp.query(sql, new RestaurantRowMapper(), '%'+city+'%', category, offset);
+				place_list = temp.query(sql, new PlaceRowMapper(), '%'+city+'%', category, offset);
 			}
 			
 			//지역 및 카테고리 세분류 조회
@@ -236,7 +258,7 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 				model.addAttribute("Count",count);
 				
 				sql = "select * from Place where roadAddress Like ? and category=? and categoryAll Like ? limit 20 offset ?";
-				place_list = temp.query(sql, new RestaurantRowMapper(), '%'+city+'%', category, '%'+sub+'%', offset);
+				place_list = temp.query(sql, new PlaceRowMapper(), '%'+city+'%', category, '%'+sub+'%', offset);
 			}
 			
 		}
@@ -249,7 +271,7 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 			model.addAttribute("Count",count);
 			
 			sql = "select * from Place limit 20 offset ?";
-			place_list = temp.query(sql, new RestaurantRowMapper(), offset);
+			place_list = temp.query(sql, new PlaceRowMapper(), offset);
 		}
 		
 		return place_list;
@@ -257,9 +279,16 @@ public class PlaceRepositoryImpl2 implements PlaceRepository{
 	}
 	
 	@Override
-	public void addPlace(Place place) { 
-		sql = "insert into place values(?,?,?,?,?,?,?,?,?,?)";
-		temp.update(sql, place.getAddressName(), place.getRoadAddress(), place.getPlaceName(), place.getCategory(), place.getCategoryAll(), place.getPhone(), place.getPlaceUrl(), place.getPlaceID(), place.getLongitude(), place.getLatitude());
+	public void addPlace(Place place) {
+		
+		sql = "select count(*) from Place where placeID=?";
+		int row = temp.queryForObject(sql, Integer.class, place.getPlaceID());
+		
+		if(row == 0) {
+			sql = "insert into place values(?,?,?,?,?,?,?,?,?,?)";
+			temp.update(sql, place.getAddressName(), place.getRoadAddress(), place.getPlaceName(), place.getCategory(), place.getCategoryAll(), place.getPhone(), place.getPlaceUrl(), place.getPlaceID(), place.getLongitude(), place.getLatitude());
+		} else { System.out.println("이미 등록된 시설입니다."); }
+		
 	}
 	
 	@Override

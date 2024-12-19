@@ -21,5 +21,6 @@
 		비밀번호 : <input type="password" name="userPw" placeholder="비밀번호를 입력하세요"><br>
 		<input type="submit" value="전송">
 	</form>
+	<p> <a href="/howAbout/user/home">Home</a> </p>
 </body>
 </html>

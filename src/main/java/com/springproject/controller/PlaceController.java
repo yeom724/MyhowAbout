@@ -148,6 +148,7 @@ public class PlaceController {
 //		}
 		
 		if (list != null && !list.isEmpty()) {
+			
 		    for (Place newPlace : apiPlace) {
 		        String newID = newPlace.getPlaceID();
 		        boolean isDuplicate = false;
@@ -269,24 +270,25 @@ public class PlaceController {
         
         return PlaceList;
     }
+    
 
 	
-	@GetMapping("/location")
-	public void getLocationInfo(String placeName) {
-		
-		RestTemplate restTemplate = new RestTemplate();
-		
-		placeName = "통영시 산양읍 연대도";
-        String url = "https://dapi.kakao.com/v2/local/search/keyword.json?query=" + placeName;
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", "KakaoAK " + KAKAO_API_KEY);
-        HttpEntity<String> entity = new HttpEntity<>(headers);
-
-        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
-
-        System.out.println(response.getBody());
-    }
+//	@GetMapping("/location")
+//	public void getLocationInfo(String placeName) {
+//		
+//		  RestTemplate restTemplate = new RestTemplate();
+//		
+//		  placeName = "통영시 산양읍 연대도";
+//        String url = "https://dapi.kakao.com/v2/local/search/keyword.json?query=" + placeName;
+//
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.set("Authorization", "KakaoAK " + KAKAO_API_KEY);
+//        HttpEntity<String> entity = new HttpEntity<>(headers);
+//
+//        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+//
+//        System.out.println(response.getBody());
+//    }
 	
 	//모든 페이지 반환 (혹 카테고리별 조회 후 반환)
 	@GetMapping("/serchPlaceAll/{range}/{pageNum}")
@@ -793,11 +795,11 @@ public class PlaceController {
 //		}
 //	}
 //	
-	@GetMapping("/scrap")
-	public String startScrap() {
-		
-		return "placeex";
-	}
+//	@GetMapping("/scrap")
+//	public String startScrap() {
+//		
+//		return "placeex";
+//	}
 //	
 //	@PostMapping("/DBconn")
 //	public ResponseEntity<String> testWebScrap(@RequestBody List<Place> restaurants) {

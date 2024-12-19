@@ -21,8 +21,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.springproject.domain.Member;
+import com.springproject.domain.Place;
 import com.springproject.domain.Review;
 import com.springproject.service.MemberService;
+import com.springproject.service.PlaceService;
 import com.springproject.service.ReviewService;
 
 @Controller
@@ -34,6 +36,9 @@ public class ReviewController {
 	
 	@Autowired
 	MemberService memberService;
+	
+	@Autowired
+	PlaceService placeService;
 	
 	@ResponseBody
 	@GetMapping("/sessionInfo")
@@ -82,7 +87,9 @@ public class ReviewController {
 		review.setReviewText((String)data.get("reviewText"));
 		
 		reviewService.addReview(review);
-		System.out.println("추가완료");
+		
+		Place place = placeService.getPlace((String)data.get("placeID"));
+		if(place != null) { placeService.addPlace(place); }
 
 		return null;
 	}

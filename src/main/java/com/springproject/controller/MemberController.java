@@ -121,7 +121,7 @@ public class MemberController{
 		String userId = null;
 		Map<String, Boolean> result = new HashMap<String, Boolean>();
 		
-		if(data.containsKey("userEmail")) { 
+		if(data.containsKey("userEmail")) {
 			userEmail = data.get("userEmail");
 			result.put("email", true);
 		}
@@ -138,9 +138,7 @@ public class MemberController{
 		} else if(userEmail != null) {
 			member = memberService.getMemberEmail(userEmail);
 		}
-		
-		
-		
+
 		if(member != null) { result.put("status", false);}
 		else { result.put("status", true); }
 		
@@ -342,6 +340,7 @@ public class MemberController{
 			            try {
 			                fileName = timestamp + "_" +file.getOriginalFilename();
 			                File saveFile = new File(req.getServletContext().getRealPath("/resources/userIcon/") + fileName);
+			                System.out.println(req.getServletContext().getRealPath("/resources/userIcon/") + fileName);
 			                file.transferTo(saveFile);
 			                
 			            } catch (Exception e) { e.printStackTrace(); }
@@ -359,10 +358,6 @@ public class MemberController{
 				} else { result = "redirect:/error/403"; }
 			} else { result = "redirect:/error/401"; }
 		} else { result = "redirect:/error/401"; }
-		
-		
-		
-		
 
 		return result;
 	}

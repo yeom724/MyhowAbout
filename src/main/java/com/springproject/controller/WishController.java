@@ -1,6 +1,7 @@
 package com.springproject.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -17,53 +18,40 @@ import com.springproject.domain.Member;
 import com.springproject.domain.Place;
 import com.springproject.domain.Wish;
 import com.springproject.service.PlaceService;
+import com.springproject.service.WishService;
 
 
 @Controller
-@RequestMapping("/course")
-public class CourseController {
+@RequestMapping("/wish")
+public class WishController {
 	
 	@Autowired
 	PlaceService placeService;
 	
+	@Autowired
+	WishService wishService;
+	
 	@ResponseBody
 	@PostMapping("/myPlace")
-	public boolean addmyPlace(@RequestBody String placeID, HttpServletRequest req) {
+	public boolean addmyPlace(@RequestBody Map<String, String> data, HttpServletRequest req) {
 		
 		HttpSession session = req.getSession(false);
-		int cnt = 0;
+		String placeID = data.get("placeID");
+		Place place = null;
+		
+		place = placeService.getPlace(placeID);
+		if(place != null) { placeService.addPlace(place); }
 		
 		if(session != null) {
 			Member member = (Member)session.getAttribute("userStatus");
 			
 			if(member != null) {
-				
-				List<Wish> cart = member.getWishList();
-				Place place = placeService.getPlace(placeID);
-				
-				if(cart != null) {
-
-					for(int i=0; i<cart.size(); i++) {
-						if(cart.get(i).getPlaceId().equals(placeID)) {cnt++;}
-					}
-					
-					if(cnt == 0) {
-						Wish wish = new Wish();
-						wish.setPlaceId(placeID);
-						wish.setPlaceName(place.getPlaceName());
-						wish.setUserId(member.getUserId());
-						
-					}
-					
-				} else if(cart == null || cart.isEmpty()) {
-					
-				}
-				
+				 String userId = member.getUserId();
+				 wishService.addWishList(userId, place);
 			}
 		}
-		
-		
-		
+
 		return false;
 	}
+
 }

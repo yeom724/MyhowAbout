@@ -10,26 +10,28 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.springproject.domain.deleteplace;
+import com.springproject.domain.Place;
 
 
-public class PlaceRowMapper implements RowMapper<deleteplace>{
+public class PlaceRowMapper implements RowMapper<Place>{
 
 	@Override
-	public deleteplace mapRow(ResultSet rs, int rowNum) throws SQLException {
+	public Place mapRow(ResultSet rs, int rowNum) throws SQLException {
 		
-		deleteplace place = new deleteplace();
+		Place rest = new Place();
 		
-		place.setJuso(rs.getString(1));
-		place.setJibun(rs.getString(2));
-		place.setCategory(rs.getString(3));
-		place.setTitle(rs.getString(4));
-		place.setStatus(rs.getString(5));
-		place.setFoodCategory(rs.getString(6));
-		place.setLatitude(rs.getDouble(7));
-		place.setLongitude(rs.getDouble(8));
-		place.setUpdateNum(rs.getInt(9));
+		rest.setAddressName(rs.getString(1));
+		rest.setRoadAddress(rs.getString(2));
+		rest.setPlaceName(rs.getString(3));
+		rest.setCategory(rs.getString(4));
+		rest.setCategoryAll(rs.getString(5));
+		rest.setPhone(rs.getString(6));
+		rest.setPlaceUrl(rs.getString(7));
+		rest.setPlaceID(rs.getString(8));
+		rest.setLongitude(rs.getString(9));
+		rest.setLatitude(rs.getString(10));
 
-		return place;
+		return rest;
 	}
 
 	

@@ -17,7 +17,7 @@ public class Member {
 	private boolean enabled;			//이메일 인증여부
 	private MultipartFile userIcon;		//유저 이미지 파일
 	private String iconName;			//유저 이미지 파일 이름
-	private List<Wish> wishList;
+//	private List<Wish> wishList;
 	
 	
 	public String getUserName() {
@@ -81,12 +81,12 @@ public class Member {
 		this.enabled = enabled;
 	}
 	
-	public List<Wish> getWishList() {
-		return wishList;
-	}
-	public void setWishList(List<Wish> wishList) {
-		this.wishList = wishList;
-	}
+//	public List<Wish> getWishList() {
+//		return wishList;
+//	}
+//	public void setWishList(List<Wish> wishList) {
+//		this.wishList = wishList;
+//	}
 	
 	
 }

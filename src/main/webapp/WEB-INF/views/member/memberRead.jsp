@@ -40,12 +40,15 @@
 	<p>아이디로 조회하기</p>
 	<form method="post" action="/howAbout/user/readOne">
 		<input type="text" name="userId" >
+		<input type="submit" value="조회">
 	</form>
 	
 	<p>이메일로 조회하기</p>
 	<form method="post" action="/howAbout/user/readOne">
 		<input type="text" name="userEmail" >
+		<input type="submit" value="조회">
 	</form>
 	
+	<p> <a href="/howAbout/user/home">Home</a> </p>
 </body>
 </html>

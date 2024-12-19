@@ -20,6 +20,7 @@
 				<p> <%= review.getUserId() %> </p>
 				<p> <%= review.getReviewText() %> </p>
 				<p> <%= review.getReviewDate() %> </p>
+				<p><a href="/howAbout/place/newGetOne/placeID/<%= review.getPlaceID() %>"> 리뷰 살펴보기 </a>
 			</div>
 	<%
 			}
