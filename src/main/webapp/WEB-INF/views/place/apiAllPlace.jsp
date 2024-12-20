@@ -306,7 +306,7 @@
 			<select class="subCity" id="거창군" name="subCity" required style="display: none;">
 			    <option value="" disabled selected>선택하세요</option>
 			    <option value="거창읍">거창읍</option>
-			    <option value="주상읍">주상읍</option>
+			    <option value="주상면">주상면</option>
 			    <option value="웅양면">웅양면</option>
 			    <option value="고제면">고제면</option>
 			    <option value="북상면">북상면</option>

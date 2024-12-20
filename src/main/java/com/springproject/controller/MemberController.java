@@ -82,6 +82,7 @@ public class MemberController{
         if (!(file.isEmpty()) && file != null) {
             try {
                 fileName = timestamp + "_" +file.getOriginalFilename();
+                System.out.println(req.getServletContext().getRealPath("/resources/userIcon/"));
                 File saveFile = new File(req.getServletContext().getRealPath("/resources/userIcon/") + fileName);
                 file.transferTo(saveFile);
                 
