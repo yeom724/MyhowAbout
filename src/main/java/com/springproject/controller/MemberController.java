@@ -37,6 +37,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springproject.domain.Member;
+import com.springproject.domain.addrLocation;
 import com.springproject.service.MemberService;
 
 @Controller
@@ -95,6 +96,16 @@ public class MemberController{
 		
 		member.setUserDate(today.format(new Date()));
 		member.setIconName(fileName);
+		int[] xy = memberService.addrNxNy(member.getUserAddr());
+		
+		if(xy[0] != 0) {
+			member.setNx(xy[0]);
+			member.setNy(xy[1]);
+		} else {
+			member.setNx(0);
+			member.setNy(0);
+		}
+		
 		memberService.addMember(member);
 
 		String host = "http://localhost:8080/howAbout/user/emailcheck";
@@ -112,6 +123,20 @@ public class MemberController{
 		
 		return "redirect:home/"+member.getUserEmail();
 		
+	}
+	
+	@ResponseBody
+	@PostMapping("/searchLocation")
+	public Map<String, List<addrLocation>> searchLocation(@RequestBody Map<String, String> data){
+		System.out.println("들어왔나?");
+		Map<String, List<addrLocation>> map = new HashMap<String, List<addrLocation>>();
+		String serch = data.get("query");
+		
+		List<addrLocation> list = memberService.getLocation(serch);
+		
+		if(list != null) { map.put("list", list); }
+
+		return map;
 	}
 	
 	@ResponseBody

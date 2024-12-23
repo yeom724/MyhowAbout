@@ -1,5 +1,6 @@
 package com.springproject.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PreDestroy;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 
 import com.springproject.domain.Member;
+import com.springproject.domain.addrLocation;
 
 @Repository
 public class MemberRepositoryImpl implements MemberRepository{
@@ -27,13 +29,13 @@ public class MemberRepositoryImpl implements MemberRepository{
 	@Override
 	public void addMember(Member member) {
 
-		sql = "insert into aboutMember values(?,?,?,?,?,?,?,?,?)";
+		sql = "insert into aboutMember values(?,?,?,?,?,?,?,?,?,?,?)";
 		
 		if(member.isEnabled()) {
-			temp.update(sql, member.getUserName(), member.getUserId(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getUserDate(), member.getUserEmail(), true, member.getIconName());
+			temp.update(sql, member.getUserName(), member.getUserId(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getNx(), member.getNy(), member.getUserDate(), member.getUserEmail(), true, member.getIconName());
 			
 		} else {
-			temp.update(sql, member.getUserName(), member.getUserId(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getUserDate(), member.getUserEmail(), false, member.getIconName());
+			temp.update(sql, member.getUserName(), member.getUserId(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getNx(), member.getNy(), member.getUserDate(), member.getUserEmail(), false, member.getIconName());
 		}
 
 	}
@@ -131,6 +133,46 @@ public class MemberRepositoryImpl implements MemberRepository{
 		}
 		
 		return member;
+	}
+
+
+	@Override
+	public List<addrLocation> getLocation(String qurey) {
+		
+		List<addrLocation> list = new ArrayList<addrLocation>();
+		
+		sql="select count(*) from addrlocations where address Like ?";
+		int row = temp.queryForObject(sql, Integer.class, '%'+qurey+'%');
+		
+		if(row != 0) {
+			sql="select * from addrlocations where address Like ?";
+			list = temp.query(sql, new addrLocationRowMapper(),'%'+qurey+'%');
+		} else { list = null; }
+
+		return list;
+	}
+
+
+	@Override
+	public int[] addrNxNy(String address) {
+		System.out.println("검색할 주소 : "+address);
+		
+		int[] xy;
+		
+		sql="select count(*) from addrlocations where address=?";
+		int row = temp.queryForObject(sql, Integer.class, address);
+		
+		if(row == 1) {
+			sql="select * from addrlocations where address=?";
+			addrLocation result = temp.queryForObject(sql, new addrLocationRowMapper(), address);
+			
+			xy = new int[] {result.getNx(), result.getNy()};
+			System.out.println("X: " + xy[0] + result.getNx());
+			System.out.println("Y: " + xy[1] + result.getNy());
+			
+		} else { xy = new int[] {0}; }
+		
+		return xy;
 	}
 
 

@@ -100,8 +100,8 @@
 				    <option value="양덕2동">양덕2동</option>
 				    <option value="합성1동">합성동</option>
 				    <option value="합성2동">합성동</option>
-				    <option value="구암1동">구암동</option>
-				    <option value="구암2동">구암동</option>
+				    <option value="구암1동">구암1동</option>
+				    <option value="구암2동">구암2동</option>
 				    <option value="봉암동">봉암동</option>
 				</select>
 				<!-- 진해구 -->

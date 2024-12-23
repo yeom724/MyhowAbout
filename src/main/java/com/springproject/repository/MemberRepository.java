@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.ui.Model;
 
 import com.springproject.domain.Member;
+import com.springproject.domain.addrLocation;
 
 public interface MemberRepository {
 	
@@ -23,5 +24,9 @@ public interface MemberRepository {
 	void deleteMember(String userId);
 	
 	Member loginMember(String userId, String userPw);
+	
+	List<addrLocation> getLocation(String qurey);
+	
+	int[] addrNxNy(String address);
 	
 }

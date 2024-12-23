@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.springproject.domain.Member;
+import com.springproject.domain.addrLocation;
 import com.springproject.domain.deleteplace;
 import com.springproject.repository.MemberRepository;
 
@@ -38,5 +39,11 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public Member getMemberEmail(String email) { return memberRepository.getMemberEmail(email); }
+
+	@Override
+	public List<addrLocation> getLocation(String qurey) { return memberRepository.getLocation(qurey); }
+
+	@Override
+	public int[] addrNxNy(String address) { return memberRepository.addrNxNy(address); }
 
 }

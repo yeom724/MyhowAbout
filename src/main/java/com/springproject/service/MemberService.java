@@ -3,6 +3,7 @@ package com.springproject.service;
 import java.util.List;
 
 import com.springproject.domain.Member;
+import com.springproject.domain.addrLocation;
 import com.springproject.domain.deleteplace;
 
 public interface MemberService {
@@ -23,4 +24,7 @@ public interface MemberService {
 	
 	Member loginMember(String userId, String userPw);
 	
+	List<addrLocation> getLocation(String qurey);
+	
+	int[] addrNxNy(String address);
 }

@@ -219,7 +219,7 @@
 		});
 	}
 
-	function displayResults(results) {
+	function displayResults() {
 	    var resultsDiv = document.getElementById('results');
 	    resultsDiv.innerHTML = ''; // 이전 결과 초기화
 

@@ -1,12 +1,47 @@
 create database howAbout;
 use howAbout;
 
+CREATE TABLE locations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    address VARCHAR(255),
+    longitude DOUBLE,
+    latitude DOUBLE,
+    x INT,
+    y INT
+);
+
+select * from locations;
+delete from locations where id=3;
+
+CREATE TABLE addrlocations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    address VARCHAR(255),
+    longitude DOUBLE,
+    latitude DOUBLE,
+    x INT,
+    y INT
+);
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\longlatList.csv'
+INTO TABLE addrlocations
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(address, longitude, latitude, x, y);
+
+SHOW VARIABLES LIKE 'secure_file_priv';
+
+
+
 create table aboutMember(
 	userName varchar(16) ,
     userId varchar(50) primary key,
     userPw varchar(30),
     userTel char(12),
     userAddr varchar(30),
+    nx int,
+    ny int,
     userDate char(10),
     userEmail varchar(100) unique,
     enabled boolean,
@@ -27,18 +62,22 @@ drop table aboutMember;
 drop table aboutReview;
 select * from aboutMember;
 delete from aboutMember;
+delete from aboutReview;
+
+
+
+update aboutMember set enabled=true where userId='slave';
 
 update aboutMember set enabled=true where userId="admin";
 
 create table aboutReview(
-	userId varchar(20),
+	userId varchar(50),
     reviewText varchar(500),
     reviewDate char(10),
     millisId bigint primary key,
     placeID varchar(30),
     iconName text,
-    foreign key (userId) references aboutMember(userId) on delete cascade,
-    foreign key (placeID) references place(placeID) on delete cascade
+    foreign key (userId) references aboutMember(userId) on delete cascade
 );
 
 ALTER TABLE aboutPlace
@@ -50,6 +89,8 @@ insert into aboutReview values('admin', '145', '2024-12-12', '111111111', '10000
 
 ALTER TABLE aboutPlace
 ADD COLUMN mainMenu varchar(50);
+
+select * from aboutReview where placeID='1812156221';
 
 drop table aboutReview;
 select * from aboutReview;
@@ -65,6 +106,13 @@ create table Place(
     placeID varchar(30) primary key,
     longitude text,
     latitude text
+);
+
+create table aboutWishList(
+	userId varchar(50),
+    placeId varchar(50),
+    placeName text,
+    foreign key (userId) references aboutMember(userId) on delete cascade
 );
 
 select * from place;
@@ -129,3 +177,5 @@ select count(*) from aboutPlace;
 delete from aboutPlace where jibun='경상남도 창원시 마산회원구 양덕로 160';
 
 SELECT YEAR(STR_TO_DATE(userDate, '%Y/%m/%d')) AS year, MONTH(STR_TO_DATE(userDate, '%Y/%m/%d')) AS month FROM aboutMember;
+
+

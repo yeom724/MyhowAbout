@@ -36,6 +36,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springproject.domain.KakaoApiResponse;
 import com.springproject.domain.Member;
 import com.springproject.domain.Place;
+import com.springproject.domain.addrLocation;
 import com.springproject.service.PlaceService;
 
 @Controller
@@ -452,12 +453,6 @@ public class PlaceController {
 		
 		return home;
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 //	@GetMapping("/addPlaceForm")

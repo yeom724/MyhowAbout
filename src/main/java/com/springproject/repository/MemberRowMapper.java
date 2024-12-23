@@ -20,10 +20,12 @@ public class MemberRowMapper implements RowMapper<Member>{
 		member.setUserPw(rs.getString(3));
 		member.setUserTel(rs.getString(4));
 		member.setUserAddr(rs.getString(5));
-		member.setUserDate(rs.getString(6));
-		member.setUserEmail(rs.getString(7));
-		member.setEnabled(rs.getBoolean(8));
-		member.setIconName(rs.getString(9));
+		member.setNx(rs.getInt(6));
+		member.setNy(rs.getInt(7));
+		member.setUserDate(rs.getString(8));
+		member.setUserEmail(rs.getString(9));
+		member.setEnabled(rs.getBoolean(10));
+		member.setIconName(rs.getString(11));
 		
 		System.out.println("Member 정보 반환완료");
 		return member;

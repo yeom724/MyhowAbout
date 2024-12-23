@@ -12,6 +12,8 @@ public class Member {
 	private String userPw;				//유저 비밀번호
 	private String userTel;				//유저 전화번호
 	private String userAddr;			//유저 주소
+	private int nx;
+	private int ny;
 	private String userDate;			//유저 가입일
 	private String userEmail;			//유저 이메일
 	private boolean enabled;			//이메일 인증여부
@@ -79,6 +81,18 @@ public class Member {
 	}
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+	public int getNx() {
+		return nx;
+	}
+	public void setNx(int nx) {
+		this.nx = nx;
+	}
+	public int getNy() {
+		return ny;
+	}
+	public void setNy(int ny) {
+		this.ny = ny;
 	}
 	
 //	public List<Wish> getWishList() {
