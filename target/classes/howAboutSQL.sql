@@ -66,7 +66,7 @@ delete from aboutReview;
 
 
 
-update aboutMember set enabled=true where userId='slave';
+update aboutMember set enabled=true where userId='tree1234';
 
 update aboutMember set enabled=true where userId="admin";
 
@@ -115,6 +115,7 @@ create table aboutWishList(
     foreign key (userId) references aboutMember(userId) on delete cascade
 );
 
+select * from aboutWishList;
 select * from place;
 delete from place;
 

@@ -96,8 +96,8 @@ public class MemberRepositoryImpl implements MemberRepository{
 	@Override
 	public void updateMember(Member member) {
 		
-		sql = "update aboutMember set userName=?, userPw=?, userTel=?, userAddr=?, iconName=? where userId=?";
-		temp.update(sql, member.getUserName(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getIconName(), member.getUserId());
+		sql = "update aboutMember set userName=?, userPw=?, userTel=?, userAddr=?, nx=?, ny=?, iconName=? where userId=?";
+		temp.update(sql, member.getUserName(), member.getUserPw(), member.getUserTel(), member.getUserAddr(), member.getNx(), member.getNy(), member.getIconName(), member.getUserId());
 		
 	}
 

@@ -1,5 +1,6 @@
 package com.springproject.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,11 +34,13 @@ public class WishController {
 	
 	@ResponseBody
 	@PostMapping("/myPlace")
-	public boolean addmyPlace(@RequestBody Map<String, String> data, HttpServletRequest req) {
+	public Map<String, Boolean> addmyPlace(@RequestBody Map<String, String> map, HttpServletRequest req) {
 		
 		HttpSession session = req.getSession(false);
-		String placeID = data.get("placeID");
+		String placeID = map.get("placeID");
 		Place place = null;
+		Map<String, Boolean> data = new HashMap<String, Boolean>();
+		Boolean result = false;
 		
 		place = placeService.getPlace(placeID);
 		if(place != null) { placeService.addPlace(place); }
@@ -47,11 +50,13 @@ public class WishController {
 			
 			if(member != null) {
 				 String userId = member.getUserId();
-				 wishService.addWishList(userId, place);
+				 result = wishService.addWishList(userId, place);
 			}
 		}
-
-		return false;
+		
+		data.put("result", result);
+		
+		return data;
 	}
 
 }

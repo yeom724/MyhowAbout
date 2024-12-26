@@ -1,9 +1,9 @@
-package com.springproject.service;
+package com.springproject.repository;
 
 import com.springproject.domain.Place;
 
-public interface WishService {
-	
+public interface WishRepository {
+
 	boolean addWishList(String userId, Place place);
 	
 }

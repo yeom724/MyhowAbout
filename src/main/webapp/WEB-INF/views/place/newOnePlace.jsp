@@ -271,7 +271,12 @@
                 "placeID": targetId
             }),
             success: function(response) {
-                alert('저장되었습니다.');
+            	if(response.result){
+            		alert('저장되었습니다.');
+            	} else {
+            		alert('이미 저장된 시설입니다.');
+            	}
+                
             },
             error: function(xhr, status, error) {
                 alert('에러');

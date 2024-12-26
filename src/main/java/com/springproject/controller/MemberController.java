@@ -374,6 +374,17 @@ public class MemberController{
 			        } else {
 			        	fileName = user.getIconName();
 			        }
+					
+					int[] xy = memberService.addrNxNy(member.getUserAddr());
+					
+					if(xy[0] != 0) {
+						member.setNx(xy[0]);
+						member.setNy(xy[1]);
+						System.out.println("넣었니?");
+					} else {
+						member.setNx(0);
+						member.setNy(0);
+					}
 
 					member.setIconName(fileName);
 					memberService.updateMember(member);
