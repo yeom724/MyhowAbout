@@ -128,7 +128,7 @@ public class MemberController{
 	@ResponseBody
 	@PostMapping("/searchLocation")
 	public Map<String, List<addrLocation>> searchLocation(@RequestBody Map<String, String> data){
-		System.out.println("들어왔나?");
+
 		Map<String, List<addrLocation>> map = new HashMap<String, List<addrLocation>>();
 		String serch = data.get("query");
 		
@@ -315,19 +315,14 @@ public class MemberController{
     		}
     
             
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        } catch (Exception e) { e.printStackTrace(); }
     }
 	
 	@GetMapping("/logout")
 	public String userDeleteSession(HttpServletRequest req) {
 		
 		HttpSession session = req.getSession(false);
-
-		if(session != null) {
-			session.invalidate();
-		}
+		if(session != null) { session.invalidate(); }
 		
 		return "redirect:home";
 	}

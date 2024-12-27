@@ -8,6 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,11 +50,18 @@ public class WeatherController {
 				userNy = String.valueOf(user.getNy());
 			}
 		}
-
-        LocalDate today = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
-        String formattedDate = today.format(formatter);
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+		
+        LocalDate today = null;
         
+        LocalTime currentTime = LocalTime.now();
+        LocalTime fiveAM = LocalTime.of(5, 0);
+        
+        if(currentTime.isAfter(fiveAM)) { today = LocalDate.now(); }
+        else { today = LocalDate.now().minusDays(1); }
+        
+        String formattedDate = today.format(formatter);
         String one = (today.plusDays(1)).format(formatter);
         String two = (today.plusDays(2)).format(formatter);
         String three = (today.plusDays(3)).format(formatter);
@@ -67,7 +75,7 @@ public class WeatherController {
 	        urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("1000", "UTF-8")); /*한 페이지 결과 수*/
 	        urlBuilder.append("&" + URLEncoder.encode("dataType","UTF-8") + "=" + URLEncoder.encode("JSON", "UTF-8")); /*요청자료형식(XML/JSON) Default: XML*/
 	        urlBuilder.append("&" + URLEncoder.encode("base_date","UTF-8") + "=" + URLEncoder.encode(formattedDate, "UTF-8")); /*‘21년 6월 28일 발표*/
-	        urlBuilder.append("&" + URLEncoder.encode("base_time","UTF-8") + "=" + URLEncoder.encode("0500", "UTF-8")); /*06시30분 발표(30분 단위)*/
+	        urlBuilder.append("&" + URLEncoder.encode("base_time","UTF-8") + "=" + URLEncoder.encode("0500", "UTF-8")); /*오전 5시 발표*/
 	        urlBuilder.append("&" + URLEncoder.encode("nx","UTF-8") + "=" + URLEncoder.encode(userNx, "UTF-8")); /*예보지점 X 좌표값*/
 	        urlBuilder.append("&" + URLEncoder.encode("ny","UTF-8") + "=" + URLEncoder.encode(userNy, "UTF-8")); /*예보지점 Y 좌표값*/
 	        URL url = new URL(urlBuilder.toString());
@@ -97,6 +105,7 @@ public class WeatherController {
 	        JSONObject body = response.getJSONObject("body");
 	        JSONObject items = body.getJSONObject("items");
 	        JSONArray item = items.getJSONArray("item");
+	        //System.out.println(item.toString());
 	        
 	        List<ThreeWeather> list = new ArrayList<ThreeWeather>();
 	        ObjectMapper objectMapper = new ObjectMapper(); //JACKSON objectMapper 생성, 이게 있어야 파싱이 가능함

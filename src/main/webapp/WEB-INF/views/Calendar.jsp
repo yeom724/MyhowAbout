@@ -96,6 +96,17 @@ body {
 
 $(document).ready(function() {
 	
+	function addDays(date, days) {
+	    const result = new Date(date); // 입력한 날짜를 복사
+	    result.setDate(result.getDate() + days); // 현재 날짜에 일수 더하기
+	    return result; // 변경된 날짜 반환
+	}
+
+	// 특정 날짜 설정 (2024년 12월 27일)
+	const specificDate = new Date(2024, 11, 27); // 월은 0부터 시작하므로 11은 12월
+	const newDate = addDays(specificDate, 5); // 5일 더하기
+	console.log(newDate);
+	
     $.ajax({
         url: '/howAbout/weather/callThree',
         type: 'GET',

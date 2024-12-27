@@ -64,6 +64,7 @@ select * from aboutMember;
 delete from aboutMember;
 delete from aboutReview;
 
+select count(*) from addrlocations where address='창원시 마산회원구 양덕1동';
 
 
 update aboutMember set enabled=true where userId='tree1234';
@@ -134,12 +135,16 @@ create table PlaceMenu(
     foreign key (placeID) references Place(placeID)
 );
 
+select count(*) from aboutWishList where userId='admin';
+
 select * from place limit 50000;
 select * from placetime;
 select * from placemenu;
 drop table place;
 drop table placetime;
 drop table placemenu;
+
+select count(*) from aboutWishList where userId='admin' and placeID='16495507';
 
 
 create table aboutPlace(
